@@ -50,8 +50,11 @@ class DocumentService:
         pessoa (ex.: "holerite-joao-silva.pdf"), o que seria PII em disco e nos
         logs.
         """
-        self._storage_dir.mkdir(parents=True, exist_ok=True)
+        # O diretório e os arquivos guardam PII: nome, CPF, matrícula, salário
+        # e jornada de pessoas reais. Só o usuário da aplicação precisa lê-los.
+        self._storage_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
         destino = self._storage_dir / f"{transcricao_id}.pdf"
+        destino.touch(mode=0o600, exist_ok=True)
 
         try:
             self._write_with_limit(source, destino)

@@ -42,6 +42,7 @@ def get_transcription_service() -> TranscriptionService:
         documents=get_document_service(),
         pipeline=processar_documento,
         retention_hours=settings.retention_hours,
+        max_simultaneos=settings.max_processamento_simultaneo,
     )
 
 

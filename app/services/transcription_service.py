@@ -14,6 +14,7 @@ banco é a fonte de verdade que o frontend consulta por polling.
 
 from __future__ import annotations
 
+import threading
 import time
 from typing import Any, Callable, Dict, Optional
 
@@ -48,11 +49,30 @@ class TranscriptionService:
         documents: DocumentService,
         pipeline: Pipeline,
         retention_hours: int,
+        max_simultaneos: int = 2,
     ) -> None:
         self._repository = repository
         self._documents = documents
         self._pipeline = pipeline
         self._retention_hours = retention_hours
+
+        # Limita quantos documentos são processados ao mesmo tempo.
+        #
+        # MEDIDO, não suposto. Com 6 uploads simultâneos de um documento que
+        # leva 19 s sozinho, o total foi 189 s — pior que os ~114 s que os
+        # mesmos 6 levariam em fila. Os jobs de OCR disputam CPU entre si e a
+        # vazão cai ABAIXO do sequencial.
+        #
+        # O README exige "comportamento definido para (...) uploads
+        # simultâneos". Sem limite o comportamento não é definido: degrada de
+        # forma imprevisível, e num ambiente de 1 CPU vira timeout ou falta de
+        # memória.
+        #
+        # A fila é o próprio semáforo: o excedente espera com `status`
+        # `processando`, que é exatamente o que o contrato descreve. O `202` do
+        # POST continua imediato, porque o semáforo é adquirido dentro da
+        # tarefa de fundo e não na requisição.
+        self._vagas = threading.BoundedSemaphore(max(1, max_simultaneos))
 
     # ------------------------------------------------------------------ criação
 
@@ -90,7 +110,8 @@ class TranscriptionService:
 
         inicio = time.monotonic()
         try:
-            value = self._pipeline(transcricao.pdf_path, transcricao.tipo)
+            with self._vagas:
+                value = self._pipeline(transcricao.pdf_path, transcricao.tipo)
         except LayoutNaoReconhecido as exc:
             self._repository.set_erro(transcricao_id, str(exc))
             logger.info("layout nao reconhecido id=%s", transcricao_id)
@@ -136,12 +157,21 @@ class TranscriptionService:
     def limpar_expiradas(self) -> int:
         """Remove transcrições e PDFs além da janela de retenção.
 
-        Disparada de forma oportunista a cada upload, em background. Evita
-        adicionar um agendador só para isso — o desafio pede política de
-        retenção definida e aplicada, não infraestrutura de cron.
+        Disparada em dois momentos, ambos sem agendador:
 
-        Limitação conhecida: uma instância que nunca recebe upload nunca limpa.
-        Aceitável para o volume deste projeto, e registrado em SOLUCAO.md.
+        - na inicialização da aplicação;
+        - a cada upload, em background.
+
+        A primeira cobre a instância ociosa, que era a lacuna real: um free
+        tier que dorme e acorda executa a limpeza ao acordar. A segunda cobre a
+        instância em uso.
+
+        O desafio pede política de retenção definida e aplicada, não
+        infraestrutura de cron — e cron/Celery/Redis seriam três serviços a
+        mais para uma consulta que custa milissegundos.
+
+        Limitação residual: uma instância que fica de pé por semanas sem
+        nenhum upload só limpa no próximo reinício. Registrado em SOLUCAO.md.
         """
         expiradas = self._repository.find_expired(self._retention_hours)
         for transcricao in expiradas:

@@ -19,7 +19,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.api import transcriptions
-from app.api.deps import get_repository
+from app.api.deps import get_repository, get_transcription_service
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
 
@@ -35,6 +35,15 @@ async def lifespan(_: FastAPI):
     """Prepara o ambiente antes de aceitar requisições."""
     settings.ensure_directories()
     get_repository().init_db()
+
+    # A retenção também roda na subida, e não só a cada upload. Sem isto, uma
+    # instância ociosa — o caso comum num free tier que dorme — guardaria PII
+    # vencida por tempo indefinido. Custa uma consulta e não precisa de
+    # agendador.
+    removidas = get_transcription_service().limpar_expiradas()
+    if removidas:
+        logger.info("retencao na inicializacao removeu %d transcricoes", removidas)
+
     logger.info("aplicacao iniciada")
     yield
 

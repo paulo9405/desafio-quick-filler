@@ -13,6 +13,11 @@ services:
       QF_MAX_PDF_PAGES: "50"
       QF_RETENTION_HOURS: "24"
 
+      # Quantos documentos são processados ao mesmo tempo. Medido: 6 uploads
+      # simultâneos de um documento de 19 s levaram 189 s no total, pior que em
+      # fila. Ver docs/PROCESSO.md.
+      QF_MAX_PROCESSAMENTO_SIMULTANEO: "2"
+
       # Extração: abaixo deste número de palavras a página vai para OCR.
       # O valor sai de medição nos documentos oficiais — ver
       # app/extraction/extractor.py.

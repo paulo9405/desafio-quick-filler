@@ -45,6 +45,10 @@ class Settings:
     # Política de retenção: por quanto tempo o PDF e a transcrição permanecem.
     retention_hours: int
 
+    # Quantos documentos são processados ao mesmo tempo. Ver a medição em
+    # app/services/transcription_service.py.
+    max_processamento_simultaneo: int
+
     # Extração
     # Abaixo deste número de palavras, a página é tratada como sem camada de
     # texto útil e vai para OCR. Ver app/extraction/extractor.py para a medição
@@ -66,6 +70,9 @@ class Settings:
             max_upload_bytes=_env_int("QF_MAX_UPLOAD_BYTES", 20 * 1024 * 1024),
             max_pdf_pages=_env_int("QF_MAX_PDF_PAGES", 50),
             retention_hours=_env_int("QF_RETENTION_HOURS", 24),
+            max_processamento_simultaneo=_env_int(
+                "QF_MAX_PROCESSAMENTO_SIMULTANEO", 2
+            ),
             min_words_text_layer=_env_int("QF_MIN_WORDS_TEXT_LAYER", 40),
             ocr_lang=os.environ.get("QF_OCR_LANG", "por"),
             ocr_dpi=_env_int("QF_OCR_DPI", 300),
@@ -74,8 +81,15 @@ class Settings:
         )
 
     def ensure_directories(self) -> None:
+        """Cria os diretórios de dados com permissão restrita.
+
+        O `chmod` é explícito porque `mkdir(mode=...)` não altera diretório que
+        já existe — e ele já existe a partir da segunda subida da aplicação.
+        Ambos guardam PII: os PDFs enviados e o banco com as transcrições.
+        """
         self.database_path.parent.mkdir(parents=True, exist_ok=True)
         self.storage_dir.mkdir(parents=True, exist_ok=True)
+        self.storage_dir.chmod(0o700)
 
 
 _settings: Settings | None = None

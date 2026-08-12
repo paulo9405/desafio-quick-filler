@@ -98,6 +98,11 @@ class TranscriptionRepository:
         with self._connect() as connection:
             connection.executescript(_SCHEMA)
 
+        # O banco guarda as transcrições, que são o conteúdo dos documentos —
+        # nome, CPF, salário. O SQLite cria o arquivo com a permissão padrão do
+        # processo; aqui ela é restringida explicitamente.
+        self._database_path.chmod(0o600)
+
     # ------------------------------------------------------------------ escrita
 
     def create(
