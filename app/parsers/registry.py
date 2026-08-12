@@ -22,12 +22,18 @@ from typing import List, Optional, Sequence
 from app.core.logging import get_logger
 from app.extraction.extracted_page import ExtractedPage
 from app.parsers.base import LayoutParser
+from app.parsers.payslip.demonstrativo_mensal import DemonstrativoMensalParser
+from app.parsers.timesheet.cartao_ponto_tabular import CartaoPontoTabularParser
 from app.parsers.timesheet.sipon import SiponTimesheetParser
 
 logger = get_logger(__name__)
 
 # Todos os parsers conhecidos. A ordem não importa: a escolha é pelo score.
-PARSERS: Sequence[LayoutParser] = (SiponTimesheetParser(),)
+PARSERS: Sequence[LayoutParser] = (
+    SiponTimesheetParser(),
+    CartaoPontoTabularParser(),
+    DemonstrativoMensalParser(),
+)
 
 
 class ParserRegistry:

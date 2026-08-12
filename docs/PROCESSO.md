@@ -195,6 +195,83 @@ o parser "chute" mês ou ano. Coberto por dois testes, um para cada ramo.
 avaliação das alternativas → validação com o responsável pelo requisito →
 decisão documentada → implementação.
 
+### 3.9 Tolerância a erro de OCR no cabeçalho da tabela (bloco 2.1)
+
+**O problema, medido.** A detecção de coluna do bloco 4/4 exigia que os títulos
+do cabeçalho casassem exatamente. Ao aplicar isso em `time-card-03`, que é lido
+por OCR, o cabeçalho não foi encontrado — porque **o Tesseract erra o próprio
+cabeçalho**, de forma idêntica nas 5 páginas:
+
+| Impresso | Lido | Confiança |
+|---|---|---|
+| `Ent1` | `Entl` | 66 |
+| `Sai1` | `Sail` | **95** |
+| `Sai2` | `Sai?` | 72 |
+
+**Decisão.** Passar a casar por similaridade, com limiar 0.7. Cada um desses
+casos tem similaridade 0.75 com o título correto.
+
+**Alternativa descartada:** declarar no parser uma lista de apelidos
+(`Ent1` também aceita `Entl`). Seria gravar no código os erros de OCR
+observados num documento específico — exatamente o "ajustar o código ao PDF de
+exemplo" que o INSTRUCOES lista entre os erros que derrubam entregas. Um
+documento novo com outro erro de OCR voltaria a quebrar.
+
+**Salvaguarda contra o risco introduzido.** Tolerância aumenta a chance de uma
+linha qualquer casar por acaso. Para reduzir isso, `detect_columns` passou a
+escolher a linha de **maior similaridade média**, e não a primeira que casa —
+assim o cabeçalho de verdade ganha de um casamento marginal. Coberto por teste.
+
+**Observação que reforça o item 4.4:** `Sail` foi lido **errado com confiança
+95**. É a segunda evidência independente, no mesmo projeto, de que a confiança
+do Tesseract não mede correção.
+
+### 3.10 Decisões P2 resolvidas com evidência do `payroll-03`
+
+**Linha `Total` com dois valores.** O documento imprime o rótulo `Total` uma
+vez só, sob as colunas `Proventos` e `Descontos`, com um valor em cada.
+
+- Alternativa A: emitir duas bases chamadas apenas `"Total"` — ambíguo, o
+  consumidor não distingue qual é qual.
+- Alternativa B (adotada): compor o label com o título da coluna, resultando em
+  `"Total Proventos"` e `"Total Descontos"`.
+
+Nada é inventado: os dois termos estão impressos no documento. O vocabulário
+resultante coincide com o do exemplo oficial do README, que usa
+`"Total Vencimentos"` e `"Total Descontos"` como bases.
+
+**Base sem valor.** `Base I.R.R.F. 13o.:` aparece com rótulo e sem valor, em
+todas as páginas. Adotado: preservar como base com `value` vazio. Omitir
+esconderia que o documento traz o rótulo, e incluir não afeta a planilha,
+porque bases não viram colunas.
+
+### 3.11 Colunas finais declaradas só para limitar a faixa da última
+
+Em `time-card-03`, as colunas `H.Ext`, `Atraso`, `Falta`, `Ad.Not` e `Abono`
+contêm valores no formato `HH:MM` que **não são batidas**.
+
+Como a faixa da última coluna declarada se estende até a borda da página, parar
+a declaração em `Sai4` faria a faixa dela engolir a hora extra — e `07:00` da
+coluna `H.Ext` viraria batida.
+
+Decisão: declarar as cinco colunas finais no cabeçalho mesmo sem lê-las. Elas
+existem apenas para delimitar `Sai4`. Está escrito no próprio parser, e há teste
+usando `01/01/2020`, que tem `07:00` em `H.Ext` e apenas duas batidas reais.
+
+### 3.12 Fixture de extração para os testes de parser sobre OCR
+
+Rodar OCR nas 5 páginas de `time-card-03` leva ~26 s. Repetir isso a cada
+execução tornaria a suíte cara demais — e teste que não se roda não protege.
+
+Decisão: gravar a extração real do Tesseract como fixture
+(`tests/fixtures/time-card-03.json.gz`, 29 KB) e testar o **parser** contra ela.
+O caminho de OCR de verdade continua coberto por um teste de integração que
+processa uma página real.
+
+É o mesmo movimento que o roadmap descreve para receber um layout novo na sessão
+ao vivo: analisar o documento, criar a fixture, criar o teste, implementar o
+parser. `tests/fixtures/gerar.py` regera quando necessário.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
@@ -402,7 +479,31 @@ _(resposta final no fim do projeto.)_
 | 3/4 — Extração (`ExtractedPage`: texto nativo + OCR) | concluído e validado |
 | 4/4 — Registry + primeiro parser real (SIPON) | concluído e validado |
 
-**Fase 1 concluída**, aguardando revisão e autorização para a Fase 2.
+**Fase 1 concluída e commitada.**
+
+### Fase 2 — em andamento
+
+| Bloco | Entrega | Estado |
+|---|---|---|
+| 2.1 | `payroll-03` + `time-card-03` — cobertura dos dois tipos | concluído e validado |
+| 2.2 | Incerteza `?` por caractere | pendente |
+| 2.3 | Avisos derivados + destaques na planilha | pendente |
+| 2.4 | Interface de revisão | pendente |
+| 2.5 | Layouts restantes | pendente |
+
+Cobertura de layouts: **3 de 8** (`time-card-01`, `time-card-03`, `payroll-03`).
+
+Medição do bloco 2.1, contra os PDFs reais:
+
+- `payroll-03`: 5 páginas, competências 10/2019 a 02/2020 (atravessa a virada
+  de ano), 44 verbas, 45 bases, zero vazamento de base para `fields`;
+- `time-card-03`: 5 páginas via OCR, 280 dias, 822 batidas, datas contínuas de
+  16/12/2019 a 20/09/2020 sem lacuna nem duplicata.
+
+Observação operacional: `time-card-03` leva ~28 s para processar por HTTP, por
+causa do OCR. O `status` sai de `processando` e chega em `concluido` sem
+bloquear a requisição — é a primeira validação prática de que a aplicação
+"sobrevive a um documento demorado", que é critério explícito de arquitetura.
 
 Resultado do bloco 4/4, medido contra `time-card-01.pdf`:
 

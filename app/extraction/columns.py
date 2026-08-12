@@ -35,9 +35,26 @@ from __future__ import annotations
 
 import unicodedata
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from typing import List, Optional, Sequence, Tuple
 
 from app.extraction.extracted_page import ExtractedPage, Line, Word
+
+# Similaridade mínima entre um título esperado e a palavra lida.
+#
+# Existe porque o OCR erra o PRÓPRIO CABEÇALHO. Medido em `time-card-03`, de
+# forma idêntica nas 5 páginas:
+#
+#     "Ent1" lido como "Entl"   confiança 66
+#     "Sai1" lido como "Sail"   confiança 95   <- errado com alta confiança
+#     "Sai2" lido como "Sai?"   confiança 72
+#
+# Exigir igualdade exata tornaria o layout indetectável. Cada um desses casos
+# tem similaridade 0.75 com o título correto, então o limiar fica abaixo disso.
+#
+# Note o "Sail" com confiança 95: mais uma evidência de que a confiança do
+# Tesseract não mede correção.
+LIMIAR_SIMILARIDADE = 0.7
 
 
 def normalizar(texto: str) -> str:
@@ -89,6 +106,7 @@ class ColumnLayout:
 def detect_columns(
     page: ExtractedPage,
     header_names: Sequence[str],
+    limiar: float = LIMIAR_SIMILARIDADE,
 ) -> Optional[ColumnLayout]:
     """Procura a linha de cabeçalho e devolve as faixas de coluna.
 
@@ -97,40 +115,73 @@ def detect_columns(
     é o layout esperado, e é melhor o parser não reconhecer o documento do que
     ler as colunas erradas.
 
+    Quando mais de uma linha casa — possível com tolerância a erro de OCR —
+    vence a de MAIOR similaridade média, não a primeira. Assim o cabeçalho de
+    verdade (que casa quase exato) ganha de uma linha de dados que porventura
+    casasse no limite do limiar.
+
     Devolve `None` quando o cabeçalho não é encontrado.
     """
     alvos = [normalizar(nome) for nome in header_names]
 
+    melhor_linha: Optional[Line] = None
+    melhores_palavras: Optional[List[Word]] = None
+    melhor_similaridade = 0.0
+
     for line in page.lines():
-        encontrados = _match_header_words(line, alvos)
-        if encontrados is None:
+        resultado = _match_header_words(line, alvos, limiar)
+        if resultado is None:
             continue
-        return ColumnLayout(
-            columns=_build_columns(encontrados, header_names, page.width),
-            header_top=line.top,
-        )
+        palavras, similaridade = resultado
+        if similaridade > melhor_similaridade:
+            melhor_linha, melhores_palavras = line, palavras
+            melhor_similaridade = similaridade
 
-    return None
+    if melhor_linha is None or melhores_palavras is None:
+        return None
+
+    return ColumnLayout(
+        columns=_build_columns(melhores_palavras, header_names, page.width),
+        header_top=melhor_linha.top,
+    )
 
 
-def _match_header_words(line: Line, alvos: Sequence[str]) -> Optional[List[Word]]:
+def _match_header_words(
+    line: Line, alvos: Sequence[str], limiar: float
+) -> Optional[Tuple[List[Word], float]]:
     """Casa os títulos, em ordem, com as palavras da linha.
 
     Percorre a linha uma vez só: cada título precisa aparecer depois do
     anterior. Palavras entre títulos são ignoradas, o que tolera cabeçalho com
     texto extra sem exigir que ele seja exatamente igual.
+
+    Devolve as palavras casadas e a similaridade média do casamento, ou `None`
+    se algum título não foi encontrado.
     """
     encontrados: List[Word] = []
+    similaridades: List[float] = []
     indice_alvo = 0
 
     for palavra in line.words:
         if indice_alvo >= len(alvos):
             break
-        if normalizar(palavra.text) == alvos[indice_alvo]:
+        semelhanca = _similaridade(normalizar(palavra.text), alvos[indice_alvo])
+        if semelhanca >= limiar:
             encontrados.append(palavra)
+            similaridades.append(semelhanca)
             indice_alvo += 1
 
-    return encontrados if indice_alvo == len(alvos) else None
+    if indice_alvo != len(alvos):
+        return None
+
+    return encontrados, sum(similaridades) / len(similaridades)
+
+
+def _similaridade(lido: str, esperado: str) -> float:
+    """1.0 para igual; abaixo disso, proporção de caracteres em comum."""
+    if lido == esperado:
+        return 1.0
+    return SequenceMatcher(None, lido, esperado).ratio()
 
 
 def _build_columns(
