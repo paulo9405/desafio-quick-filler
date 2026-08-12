@@ -352,6 +352,64 @@ não produzir candidatos.
 `payroll-04`, em contraste, lê valores monetários com confiança mínima de 93 e
 nenhuma violação estrutural.
 
+### 3.15 Destaque derivado do dado, não do texto da célula (bloco 2.3)
+
+**O problema, descoberto no fim do bloco 2.2.** A especificação manda pintar de
+amarelo a linha que tiver "algum `?`". A implementação óbvia — procurar `?` no
+texto das células — **não funcionaria neste projeto**.
+
+Caso real de `time-card-03`:
+
+```
+time_raw  = "23:00?"      <- a evidência de incerteza está aqui
+time_hhmm = "23:00"       <- e é ISTO que a planilha mostra
+```
+
+Os dígitos foram lidos bem; só o marcador de sistema não. A célula da planilha
+não contém `?` nenhum, e as 4 linhas afetadas nunca seriam destacadas.
+
+**Decisão.** O destaque é derivado dos **dados estruturados** da linha,
+varrendo todos os campos de texto — incluindo os `_raw`, que não aparecem na
+planilha. A separação entre valor bruto, valor normalizado, estado de incerteza
+e apresentação é preservada: nada é removido do raw para facilitar a exibição.
+
+**Verificado:** as 4 linhas de `time-card-03` saem pintadas de amarelo no XLSX
+mesmo com a célula mostrando `23:00`.
+
+### 3.16 Regras de sequência: onde o alarme falso mora
+
+As duas regras finas do README são fáceis de implementar errado, e as duas
+falhas seriam silenciosas — alarme demais, que faz a pessoa parar de olhar.
+
+**Dezembro → janeiro.** Comparar só o número do mês faria `12/2019 → 01/2020`
+parecer uma quebra. `payroll-03` atravessa exatamente essa virada, e a planilha
+dele sai **sem nenhum destaque**. Há teste separado garantindo que
+`12/2019 → 01/2019` (sem somar o ano) continue sendo sinalizado.
+
+**Competência ilegível não quebra a cadeia.** Uma página que não deu para ler
+não pode gerar aviso nela nem na seguinte: comparam-se as próximas legíveis
+entre si. Sem isso, uma leitura ruim produziria dois avisos em cascata sobre
+dados corretos.
+
+**Extensão registrada:** o README define a regra da ilegibilidade apenas para
+competências. Apliquei o mesmo princípio às datas do cartão de ponto — uma data
+que não dá para interpretar não quebra a cadeia. É uma decisão, não uma regra
+oficial, e está registrada aqui porque havia outra resposta razoável (tratar a
+data ilegível como quebra). Escolhi a que não gera alarme falso em cima de uma
+leitura ruim.
+
+**Data impossível.** `38/07/2019` tem forma de data e não existe no calendário.
+O enunciado usa exatamente esse exemplo como erro de leitura, e ele quebra a
+sequência por definição — então é sinalizado como data não sequencial. Não
+ocorre nos documentos atuais; a regra existe porque a especificação a cita.
+
+### 3.17 Aviso não altera o documento transcrito
+
+Nenhuma função de `warnings_service` modifica o `value`. `29/10/2012` continua
+com **uma** batida na saída — o sistema sinaliza, não completa. As 4 batidas
+recuperadas no bloco 2.2 continuam presentes depois deste bloco, com teste de
+regressão travando a contagem em 826.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
@@ -567,7 +625,7 @@ _(resposta final no fim do projeto.)_
 |---|---|---|
 | 2.1 | `payroll-03` + `time-card-03` — cobertura dos dois tipos | concluído e validado |
 | 2.2 | Incerteza `?` por caractere | concluído e validado |
-| 2.3 | Avisos derivados + destaques na planilha | pendente |
+| 2.3 | Avisos derivados + destaques na planilha | concluído e validado |
 | 2.4 | Interface de revisão | pendente |
 | 2.5 | Layouts restantes | pendente |
 

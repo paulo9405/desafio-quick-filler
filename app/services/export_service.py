@@ -14,9 +14,26 @@ Formato das colunas (README oficial):
 - Holerite: `Pág.`, `Mês`, `Ano`, depois uma coluna por verba distinta, na
   ordem de primeira aparição.
 
-ESCOPO DA FASE 1: estrutura das colunas, transposição e estilo do cabeçalho.
-Os destaques de linha (amarelo/vermelho) dependem dos avisos derivados e
-entram na Fase 2 — ver docs/roadmap.md seções 14 e 26.4.
+SEPARAÇÃO DE RESPONSABILIDADES
+
+Este módulo NÃO decide o que é um problema. Ele recebe a avaliação pronta de
+`app/services/warnings_service.py` e apenas a pinta. A regra de negócio fica
+fora do código do openpyxl para que interface e planilha usem exatamente a
+mesma decisão e nunca divirjam.
+
+    value estruturado
+        ↓  warnings_service.avaliar()
+    LinhaAvaliada[]
+        ↓  este módulo
+    xlsx com destaque · csv · json
+
+CSV E JSON NÃO CARREGAM DESTAQUE
+
+CSV não suporta formatação, e acrescentar uma coluna de aviso desviaria do
+conjunto de colunas que a especificação define. O JSON exporta a transcrição
+como está persistida, e é ele que carrega a evidência de incerteza com
+fidelidade total — inclusive os `?` que vivem só no `_raw`. Simular formatação
+em texto seria pior que não ter.
 """
 
 from __future__ import annotations
@@ -24,11 +41,20 @@ from __future__ import annotations
 import csv
 import io
 import json
-from dataclasses import dataclass
-from typing import Any, Dict, List
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
 
 from openpyxl import Workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+
+from app.services.warnings_service import (
+    AMARELO,
+    BORDA_VERMELHA,
+    VERMELHO,
+    LinhaAvaliada,
+    Severidade,
+    avaliar,
+)
 
 # Estilo exigido literalmente pelo README: cabeçalho em negrito branco sobre
 # fundo #173772, nos dois tipos de planilha.
@@ -63,10 +89,20 @@ class Tabela:
 
     Existe para que xlsx e csv compartilhem exatamente a mesma montagem de
     colunas. Se divergissem, a planilha baixada mudaria conforme o formato.
+
+    `avaliacoes` acompanha `rows` posição a posição — uma avaliação por linha,
+    na mesma ordem. É o único acoplamento entre dado e apresentação, e ele é
+    verificado antes de pintar.
     """
 
     header: List[str]
     rows: List[List[str]]
+    avaliacoes: List[LinhaAvaliada] = field(default_factory=list)
+
+    def severidade_da_linha(self, indice: int) -> Optional[Severidade]:
+        if indice >= len(self.avaliacoes):
+            return None
+        return self.avaliacoes[indice].severidade
 
 
 # --------------------------------------------------------------------- montagem
@@ -142,9 +178,27 @@ def montar_tabela_holerite(value: Dict[str, Any]) -> Tabela:
 
 
 def montar_tabela(tipo: str, value: Dict[str, Any]) -> Tabela:
-    if tipo == "cartao-ponto":
-        return montar_tabela_cartao_ponto(value)
-    return montar_tabela_holerite(value)
+    """Monta a tabela e acopla a avaliação de cada linha.
+
+    As duas listas são construídas a partir da mesma estrutura, na mesma ordem
+    — uma linha por dia no cartão de ponto, uma por página no holerite. A
+    verificação abaixo existe para que uma divergência futura falhe alto, em
+    vez de pintar a linha errada em silêncio.
+    """
+    tabela = (
+        montar_tabela_cartao_ponto(value)
+        if tipo == "cartao-ponto"
+        else montar_tabela_holerite(value)
+    )
+    tabela.avaliacoes = avaliar(tipo, value)
+
+    if len(tabela.avaliacoes) != len(tabela.rows):
+        raise RuntimeError(
+            "Avaliação e linhas da planilha estão fora de sincronia: "
+            f"{len(tabela.avaliacoes)} avaliações para {len(tabela.rows)} linhas."
+        )
+
+    return tabela
 
 
 # ------------------------------------------------------------------ renderização
@@ -166,11 +220,44 @@ def _render_xlsx(tabela: Tabela, titulo: str) -> bytes:
     for linha in tabela.rows:
         sheet.append(linha)
 
+    _pintar_destaques(sheet, tabela)
     _ajustar_larguras(sheet, tabela)
 
     buffer = io.BytesIO()
     workbook.save(buffer)
     return buffer.getvalue()
+
+
+def _pintar_destaques(sheet, tabela: Tabela) -> None:
+    """Aplica as cores oficiais, linha a linha.
+
+    Este é o único ponto que sabe pintar. Ele não sabe POR QUE a linha está
+    marcada — a decisão veio pronta de `warnings_service`.
+
+    Regras do README: amarelo para batidas ímpares, página vazia ou `?` na
+    linha; vermelho para data ou mês não sequencial, com borda esquerda
+    `#DC3545` na primeira célula. Vermelho ganha quando os dois valem.
+    """
+    preenchimentos = {
+        Severidade.AMARELO: PatternFill("solid", fgColor=AMARELO),
+        Severidade.VERMELHO: PatternFill("solid", fgColor=VERMELHO),
+    }
+    borda_esquerda = Border(left=Side(style="medium", color=BORDA_VERMELHA))
+
+    for indice in range(len(tabela.rows)):
+        severidade = tabela.severidade_da_linha(indice)
+        if severidade is None:
+            continue
+
+        # +2 porque a linha 1 é o cabeçalho e o openpyxl indexa a partir de 1.
+        numero_da_linha = indice + 2
+        for coluna in range(1, len(tabela.header) + 1):
+            sheet.cell(row=numero_da_linha, column=coluna).fill = preenchimentos[
+                severidade
+            ]
+
+        if severidade is Severidade.VERMELHO:
+            sheet.cell(row=numero_da_linha, column=1).border = borda_esquerda
 
 
 def _ajustar_larguras(sheet, tabela: Tabela) -> None:
