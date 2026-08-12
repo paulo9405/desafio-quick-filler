@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      QF_DATABASE_PATH: /data/quickfiller.db
+      QF_STORAGE_DIR: /data/pdfs
+      QF_MAX_UPLOAD_BYTES: "20971520"
+      QF_MAX_PDF_PAGES: "50"
+      QF_RETENTION_HOURS: "24"
+      QF_OCR_LANG: por
+      QF_OCR_DPI: "300"
+      QF_LOG_LEVEL: INFO
+    volumes:
+      - qf-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  qf-data:

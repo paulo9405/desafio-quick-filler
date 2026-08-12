@@ -1,1 +1,21 @@
 docs/roadmap.md
+
+# Dados gerados em runtime: banco SQLite e PDFs enviados.
+# Contêm PII — nunca versionar.
+data/
+
+# Ambiente
+.env
+.env.local
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDEs / SO
+.vscode/
+.idea/
+.DS_Store
