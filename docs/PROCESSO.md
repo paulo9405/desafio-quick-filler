@@ -410,6 +410,60 @@ com **uma** batida na saída — o sistema sinaliza, não completa. As 4 batidas
 recuperadas no bloco 2.2 continuam presentes depois deste bloco, com teste de
 regressão travando a contagem em 826.
 
+### 3.18 Como a interface recebe os avisos (bloco 2.4)
+
+**O problema.** O README exige que a tabela editável siga "as colunas da
+planilha do tipo correspondente" e mostre os problemas "nas mesmas cores da
+planilha", com o motivo legível. Ou seja: a tela e o arquivo baixado precisam
+ser a mesma coisa.
+
+**Alternativas consideradas.**
+
+1. **Recalcular no JavaScript.** O frontend leria o `value` do GET e
+   reimplementaria as colunas da planilha e as quatro regras de aviso.
+   Rejeitada: duplica regra de negócio, e as duas implementações divergiriam na
+   primeira mudança. Pior ainda no caso da incerteza — o JS teria que saber que
+   precisa olhar `time_raw`, e não o valor exibido.
+
+2. **Acrescentar os avisos ao GET obrigatório.** Rejeitada de imediato: o
+   contrato é literal e avaliado automaticamente, e o README diz que os avisos
+   **não são campo do JSON**.
+
+3. **Endpoint auxiliar (adotada).** `GET /api/transcricoes/{id}/revisao`
+   devolve a projeção pronta: colunas da planilha, valor de cada célula,
+   severidade da linha e motivos legíveis.
+
+**O caminho de cada célula.** A planilha é uma projeção do JSON — a coluna
+`Entrada 2` do dia 5 é `pages.0.days.4.punches.2.time_hhmm`. O endpoint devolve
+esse caminho junto com o valor, e o JavaScript só aplica `caminho → valor` num
+objeto antes do PUT. Isso é genérico: o script não sabe distinguir cartão de
+ponto de holerite.
+
+Célula sem campo correspondente (verba que não existe naquela página, par de
+batidas que o dia não tem) vem com caminho vazio e é somente leitura.
+
+**Segundo endpoint auxiliar.** `GET /api/transcricoes/{id}/arquivo` serve o PDF
+original `inline`, para o requisito de "PDF visível ao lado da tabela". O nome
+exposto é derivado do id — o nome original do upload nunca foi guardado.
+
+**Ambos são auxiliares e não substituem nenhum dos cinco endpoints
+obrigatórios**, que continuam inalterados.
+
+**Bootstrap versionado, não via CDN.** O arquivo está em `app/static/`. A
+aplicação precisa funcionar dentro do `docker compose up` sem depender de rede
+externa, e a página é a demonstração do produto.
+
+### 3.19 Onde a interface deliberadamente não vai
+
+- **Não adiciona batida.** Só é editável a célula que corresponde a um campo
+  existente. Corrigir um dia com batida ímpar acrescentando a batida que falta
+  exigiria mexer na estrutura do JSON pela tela, e isso ficou de fora — a
+  interface é de revisão, não de composição.
+- **Não corrige nada sozinha.** Nenhum valor é ajustado automaticamente; a
+  tela sinaliza e deixa a pessoa decidir.
+- **Não recalcula aviso após a edição.** Depois de cada PUT ela recarrega
+  `/revisao`, então quem reavalia continua sendo o backend.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
@@ -626,7 +680,7 @@ _(resposta final no fim do projeto.)_
 | 2.1 | `payroll-03` + `time-card-03` — cobertura dos dois tipos | concluído e validado |
 | 2.2 | Incerteza `?` por caractere | concluído e validado |
 | 2.3 | Avisos derivados + destaques na planilha | concluído e validado |
-| 2.4 | Interface de revisão | pendente |
+| 2.4 | Interface de revisão | concluído — falta confirmação visual |
 | 2.5 | Layouts restantes | pendente |
 
 Cobertura de layouts: **3 de 8** (`time-card-01`, `time-card-03`, `payroll-03`).

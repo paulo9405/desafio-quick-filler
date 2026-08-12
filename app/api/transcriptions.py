@@ -6,6 +6,8 @@ Há avaliação automatizada. Ver docs/roadmap.md seções 3 e 8.
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import (
     APIRouter,
     BackgroundTasks,
@@ -29,6 +31,7 @@ from app.schemas.common import (
 )
 from app.services.document_service import UploadInvalido, UploadMuitoGrande
 from app.services.export_service import FormatoInvalido, gerar_planilha
+from app.services.review_service import montar_revisao
 from app.services.transcription_service import TranscriptionService
 
 router = APIRouter(prefix="/api", tags=["transcricoes"])
@@ -178,5 +181,80 @@ def baixar_planilha(
         media_type=planilha.media_type,
         headers={
             "Content-Disposition": f'attachment; filename="{planilha.filename}"'
+        },
+    )
+
+
+# ---------------------------------------------------------------------------
+# ENDPOINTS AUXILIARES DA INTERFACE
+#
+# Os dois abaixo NÃO fazem parte do contrato obrigatório e não substituem
+# nenhum dos cinco endpoints oficiais. Existem porque a interface de revisão
+# precisa de duas coisas que o contrato não prevê: a projeção em tabela com os
+# avisos já calculados, e o PDF original para exibir ao lado.
+#
+# A alternativa seria reimplementar em JavaScript as colunas da planilha e as
+# quatro regras de aviso — duplicando regra de negócio no frontend, que é
+# exatamente o que se quer evitar.
+# ---------------------------------------------------------------------------
+
+
+@router.get("/transcricoes/{transcricao_id}/revisao")
+def obter_revisao(
+    transcricao_id: str,
+    service: TranscriptionService = Depends(get_transcription_service),
+) -> dict:
+    """AUXILIAR: transcrição projetada em tabela, com avisos e caminhos.
+
+    Devolve as mesmas colunas da planilha, a severidade de cada linha e o
+    motivo legível de cada aviso — tudo calculado pelo backend.
+    """
+    transcricao = service.obter(transcricao_id)
+    if transcricao is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Transcrição não encontrada.",
+        )
+
+    if transcricao.status != StatusTranscricao.CONCLUIDO.value or transcricao.value is None:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="A transcrição ainda não está concluída.",
+        )
+
+    return montar_revisao(transcricao.tipo, transcricao.value)
+
+
+@router.get("/transcricoes/{transcricao_id}/arquivo")
+def obter_arquivo(
+    transcricao_id: str,
+    service: TranscriptionService = Depends(get_transcription_service),
+) -> Response:
+    """AUXILIAR: o PDF original, para a interface exibir ao lado da tabela.
+
+    Servido `inline` para poder ser embutido num visualizador. O arquivo some
+    quando a política de retenção o remove.
+    """
+    transcricao = service.obter(transcricao_id)
+    if transcricao is None or not transcricao.pdf_path:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Transcrição não encontrada.",
+        )
+
+    caminho = Path(transcricao.pdf_path)
+    if not caminho.exists():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="O arquivo original não está mais disponível.",
+        )
+
+    return Response(
+        content=caminho.read_bytes(),
+        media_type="application/pdf",
+        headers={
+            # Nome derivado do id: o nome original do upload nunca é guardado,
+            # porque costuma conter o nome da pessoa.
+            "Content-Disposition": f'inline; filename="{transcricao.id}.pdf"'
         },
     )

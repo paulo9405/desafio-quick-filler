@@ -98,6 +98,19 @@ class Tabela:
     header: List[str]
     rows: List[List[str]]
     avaliacoes: List[LinhaAvaliada] = field(default_factory=list)
+    caminhos: List[List[str]] = field(default_factory=list)
+    """Caminho de cada célula dentro do `value`, no formato `pages.0.days.3.date_raw`.
+
+    Existe para a interface de revisão: ela precisa saber onde gravar de volta
+    a correção que a pessoa digitou numa célula. String vazia quando a célula
+    não corresponde a nenhum campo (verba ausente naquela página, par de
+    batidas que aquele dia não tem).
+
+    Os exports ignoram este campo. Ele mora aqui, e não num módulo separado,
+    porque as colunas da tabela de revisão precisam ser AS MESMAS da planilha —
+    é exigência do README. Montar as duas em lugares diferentes garantiria que
+    um dia divergissem.
+    """
 
     def severidade_da_linha(self, indice: int) -> Optional[Severidade]:
         if indice >= len(self.avaliacoes):
@@ -110,12 +123,12 @@ class Tabela:
 
 def montar_tabela_cartao_ponto(value: Dict[str, Any]) -> Tabela:
     """Uma linha por dia, na ordem do documento."""
-    dias: List[Dict[str, Any]] = []
-    for page in value.get("pages", []):
-        for day in page.get("days", []):
-            dias.append(day)
+    dias: List[Any] = []  # (indice_da_pagina, indice_do_dia, dia)
+    for indice_pagina, page in enumerate(value.get("pages", [])):
+        for indice_dia, day in enumerate(page.get("days", [])):
+            dias.append((indice_pagina, indice_dia, day))
 
-    max_batidas = max((len(d.get("punches", [])) for d in dias), default=0)
+    max_batidas = max((len(d.get("punches", [])) for _p, _d, d in dias), default=0)
     # Colunas vão em pares Entrada/Saída; um número ímpar de batidas ainda
     # ocupa o par inteiro, deixando a última célula vazia.
     pares = (max_batidas + 1) // 2
@@ -125,16 +138,28 @@ def montar_tabela_cartao_ponto(value: Dict[str, Any]) -> Tabela:
         header.extend([f"Entrada {indice}", f"Saída {indice}"])
 
     rows: List[List[str]] = []
-    for dia in dias:
+    caminhos: List[List[str]] = []
+
+    for indice_pagina, indice_dia, dia in dias:
+        raiz = f"pages.{indice_pagina}.days.{indice_dia}"
+
         linha = [str(dia.get("date_raw", ""))]
-        for punch in dia.get("punches", []):
+        caminho = [f"{raiz}.date_raw"]
+
+        for indice_batida, punch in enumerate(dia.get("punches", [])):
             # `time_hhmm` é o valor interpretado, e preserva os `?` de
             # incerteza. `time_raw` continua no JSON para auditoria.
             linha.append(str(punch.get("time_hhmm", "")))
-        linha.extend([""] * (len(header) - len(linha)))
-        rows.append(linha)
+            caminho.append(f"{raiz}.punches.{indice_batida}.time_hhmm")
 
-    return Tabela(header=header, rows=rows)
+        faltando = len(header) - len(linha)
+        linha.extend([""] * faltando)
+        caminho.extend([""] * faltando)
+
+        rows.append(linha)
+        caminhos.append(caminho)
+
+    return Tabela(header=header, rows=rows, caminhos=caminhos)
 
 
 def montar_tabela_holerite(value: Dict[str, Any]) -> Tabela:
@@ -158,23 +183,39 @@ def montar_tabela_holerite(value: Dict[str, Any]) -> Tabela:
     header = ["Pág.", "Mês", "Ano"] + labels
 
     rows: List[List[str]] = []
-    for pagina in paginas:
+    caminhos: List[List[str]] = []
+
+    for indice_pagina, pagina in enumerate(paginas):
+        raiz = f"pages.{indice_pagina}"
+
         # Label repetido na mesma página: mantém a primeira ocorrência.
         # Decisão provisória — ver docs/roadmap.md seção 2.2, pendência P2.
         valores: Dict[str, str] = {}
-        for campo in pagina.get("fields", []):
+        posicoes: Dict[str, int] = {}
+        for indice_campo, campo in enumerate(pagina.get("fields", [])):
             label = str(campo.get("label", ""))
-            valores.setdefault(label, str(campo.get("value", "")))
+            if label not in valores:
+                valores[label] = str(campo.get("value", ""))
+                posicoes[label] = indice_campo
 
         linha = [
             str(pagina.get("page", "")),
             str(pagina.get("month", "")),
             str(pagina.get("year", "")),
         ]
-        linha.extend(valores.get(label, "") for label in labels)
-        rows.append(linha)
+        # `Pág.` reflete o índice real do PDF e não é corrigível pela pessoa.
+        caminho = ["", f"{raiz}.month", f"{raiz}.year"]
 
-    return Tabela(header=header, rows=rows)
+        for label in labels:
+            linha.append(valores.get(label, ""))
+            caminho.append(
+                f"{raiz}.fields.{posicoes[label]}.value" if label in posicoes else ""
+            )
+
+        rows.append(linha)
+        caminhos.append(caminho)
+
+    return Tabela(header=header, rows=rows, caminhos=caminhos)
 
 
 def montar_tabela(tipo: str, value: Dict[str, Any]) -> Tabela:

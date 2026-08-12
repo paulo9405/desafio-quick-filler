@@ -1,0 +1,84 @@
+/* CSS mínimo e específico. As cores são as MESMAS da planilha, exigidas
+   literalmente pelo README — se divergissem, a tela mostraria um alerta
+   diferente do arquivo baixado. */
+
+:root {
+  --qf-amarelo: #FFF3CD;
+  --qf-vermelho: #F8D7DA;
+  --qf-borda-vermelha: #DC3545;
+  --qf-cabecalho: #173772;
+}
+
+#visualizador-pdf {
+  height: calc(100vh - 340px);
+  min-height: 420px;
+}
+
+#area-tabela {
+  max-height: calc(100vh - 340px);
+  min-height: 420px;
+  overflow: auto;
+}
+
+/* Cabeçalho da tabela igual ao da planilha: negrito branco sobre #173772. */
+#area-tabela thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--qf-cabecalho);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#area-tabela td {
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* A célula é um input para poder ser corrigida; o visual continua de tabela. */
+#area-tabela td input {
+  border: 0;
+  background: transparent;
+  width: 100%;
+  min-width: 6rem;
+  padding: 0.3rem 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+#area-tabela td input:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: -2px;
+  background: #fff;
+}
+
+#area-tabela td input[readonly] {
+  color: #6c757d;
+}
+
+tr.linha-amarelo td { background: var(--qf-amarelo); }
+tr.linha-vermelho td { background: var(--qf-vermelho); }
+
+/* Borda esquerda na primeira célula, como na planilha. */
+tr.linha-vermelho td:first-child {
+  box-shadow: inset 3px 0 0 0 var(--qf-borda-vermelha);
+}
+
+.celula-motivo {
+  cursor: help;
+}
+
+.amostra-cor {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  vertical-align: -2px;
+  margin-right: 0.25rem;
+}
+
+.amostra-amarelo { background: var(--qf-amarelo); }
+.amostra-vermelho {
+  background: var(--qf-vermelho);
+  border-left: 3px solid var(--qf-borda-vermelha);
+}

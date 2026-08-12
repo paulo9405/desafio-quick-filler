@@ -12,13 +12,18 @@ Contrato HTTP oficial (README da Quick Filler) — obrigatório e literal:
 from __future__ import annotations
 
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.api import transcriptions
 from app.api.deps import get_repository
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
+
+DIRETORIO_ESTATICO = Path(__file__).resolve().parent / "static"
 
 settings = get_settings()
 configure_logging(settings.log_level)
@@ -45,6 +50,19 @@ app = FastAPI(
 )
 
 app.include_router(transcriptions.router)
+
+# Interface de revisão: HTML + Bootstrap + JavaScript puro, sem build step e
+# sem framework de frontend. O Bootstrap está versionado em `static/` em vez de
+# vir de CDN, para a aplicação funcionar sem depender de rede externa.
+app.mount(
+    "/static", StaticFiles(directory=DIRETORIO_ESTATICO), name="static"
+)
+
+
+@app.get("/", include_in_schema=False)
+def interface() -> FileResponse:
+    """Página única da interface de revisão."""
+    return FileResponse(DIRETORIO_ESTATICO / "index.html")
 
 
 @app.get("/healthz")
