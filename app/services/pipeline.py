@@ -1,36 +1,56 @@
 """Pipeline de processamento: PDF → ExtractedPage → parser → JSON oficial.
 
-ESTADO ATUAL (bloco 2 da Fase 1): ainda não há extração nem parser
-registrado, então todo documento termina como "layout não reconhecido".
+    PDF
+     ↓  extração (texto nativo ou OCR, decidido por página)
+    ExtractedPage[]
+     ↓  registry (qual layout sabe ler isto?)
+    parser do layout
+     ↓
+    value no formato oficial
 
-Isso é intencional e não é um placeholder vazio: recusar honestamente um
-documento que a aplicação não sabe ler é o comportamento CORRETO e final para
-esse caso. O README oficial diz que responder "não sei ler este documento" é
-melhor que devolver lixo.
-
-Os blocos seguintes preenchem este caminho:
-
-- bloco 3: extração (texto nativo e OCR) produzindo `ExtractedPage`;
-- bloco 4: registry de parsers, que decide qual layout sabe ler o documento.
-
-Quando um parser reconhecer o documento, este mesmo caminho passa a devolver
-`value` e a transcrição termina como `concluido`. Nenhuma outra camada muda.
+Nenhuma camada acima daqui conhece pdfplumber, Tesseract ou layout de
+documento. Nenhum parser conhece HTTP, banco ou planilha.
 """
 
 from __future__ import annotations
 
 from typing import Any, Dict
 
+from app.core.config import get_settings
+from app.core.logging import get_logger
+from app.extraction.extractor import extract_document
+from app.parsers.registry import ParserRegistry
 from app.services.transcription_service import LayoutNaoReconhecido
+
+logger = get_logger(__name__)
 
 MENSAGEM_LAYOUT_DESCONHECIDO = (
     "Não foi possível reconhecer o layout deste documento."
 )
 
+_registry = ParserRegistry()
+
 
 def processar_documento(pdf_path: str, tipo: str) -> Dict[str, Any]:
     """Transforma um PDF no `value` do formato oficial.
 
-    Levanta `LayoutNaoReconhecido` quando nenhum parser sabe ler o documento.
+    Levanta `LayoutNaoReconhecido` quando nenhum parser registrado sabe ler o
+    documento — o que vira `status: "erro"` com mensagem legível, em vez de uma
+    transcrição inventada.
     """
-    raise LayoutNaoReconhecido(MENSAGEM_LAYOUT_DESCONHECIDO)
+    settings = get_settings()
+
+    paginas = extract_document(
+        pdf_path=pdf_path,
+        min_words_text_layer=settings.min_words_text_layer,
+        ocr_lang=settings.ocr_lang,
+        ocr_dpi=settings.ocr_dpi,
+        ocr_psm=settings.ocr_psm,
+    )
+
+    parser = _registry.select(tipo, paginas)
+    if parser is None:
+        logger.info("nenhum parser reconheceu tipo=%s paginas=%d", tipo, len(paginas))
+        raise LayoutNaoReconhecido(MENSAGEM_LAYOUT_DESCONHECIDO)
+
+    return parser.parse(paginas)

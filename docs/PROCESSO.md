@@ -140,6 +140,63 @@ limpa. Para o volume deste projeto é aceitável.
 
 ---
 
+### 3.8 Ambiguidade de `date_raw` levada ao responsável pelo requisito (P1)
+
+Este item não registra um erro, e sim o tratamento de uma ambiguidade real da
+especificação.
+
+**A ambiguidade.** Durante a análise dos 8 documentos, três dos quatro cartões
+de ponto mostraram que a linha traz apenas o dia (`01`), enquanto mês e ano
+aparecem separadamente no cabeçalho da página. O README define `date_raw` como
+"a data exatamente como está impressa, sem normalizar", e o formato de cartão de
+ponto não possui campo normalizado equivalente ao `time_hhmm` — não há onde
+colocar uma data composta.
+
+**As duas interpretações razoáveis.**
+
+1. preservar exatamente o valor da linha, `"01"`;
+2. compor a data com a competência do cabeçalho, `"01/07/2012"`.
+
+Ambas são defensáveis: a primeira é a leitura literal de "exatamente como está
+impressa"; a segunda produz o dado que a planilha e a verificação de data
+sequencial realmente precisam.
+
+**A decisão foi deixada deliberadamente em aberto.** A pendência foi registrada
+como P1 em `docs/roadmap.md` seção 2.2, com instrução explícita de não
+implementar nenhuma das alternativas até haver definição. As Fases seguintes do
+bloco de implementação foram conduzidas normalmente, porque nenhuma delas
+dependia dessa resposta — só o parser de cartão de ponto dependia.
+
+**Consulta ao responsável pelo requisito.** A dúvida foi enviada diretamente à
+equipe da Quick Filler antes de consolidar qualquer comportamento. O próprio
+README incentiva isso: "perguntar quando o enunciado está ambíguo é
+comportamento desejável, não sinal de fraqueza".
+
+**Resposta oficial.** A Quick Filler confirmou que **as duas abordagens seriam
+aceitas**, e indicou que a data completa é o melhor resultado quando dia, mês e
+ano puderem ser associados à linha com segurança, com a ressalva de evitar
+completar informação quando houver ambiguidade ou incerteza.
+
+**Implementação.** A preferência indicada foi adotada, mantendo o valor parcial
+quando a associação não for segura:
+
+| Documento | Competência no cabeçalho | `date_raw` |
+|---|---|---|
+| `time-card-01` | `Mes/Ano : 7 / 2012`, legível | `"01/07/2012"` — composta |
+| `time-card-02` | `Mês/Ano: 05/2010`, legível | composta (Fase 2) |
+| `time-card-03` | data completa já na linha | não se aplica |
+| `time-card-04` | manuscrita ilegível / em branco | só o dia — **não compõe** |
+
+No parser SIPON isso vive numa única função, `_montar_date_raw`, que devolve o
+dia impresso quando a competência não pôde ser lida. Não existe caminho em que
+o parser "chute" mês ou ano. Coberto por dois testes, um para cada ramo.
+
+**O que este item registra como processo:** identificação de ambiguidade →
+avaliação das alternativas → validação com o responsável pelo requisito →
+decisão documentada → implementação.
+
+---
+
 ## 4. Erros e caminhos errados do agente
 
 Registro honesto, feito no momento em que cada um aconteceu.
@@ -276,11 +333,18 @@ candidatos na mesma página real (`time-card-03`, página 1):
 | `--psm 3` (padrão) | 431 | 89.5 | 48.3s | `16/ 2/20 dO` — quebradas |
 | `--psm 6` | 643 | 87.2 | 25.9s | `16/12/2019` — corretas |
 
-`--psm 6` lê mais, lê certo e leva metade do tempo neste tipo de documento
-tabular. Ficou como padrão, configurável por `QF_OCR_PSM`.
+A conclusão registrada é restrita ao que foi medido: **para os documentos
+testados neste desafio**, `--psm 6` apresentou melhor resultado prático e menor
+tempo. Não se conclui daqui que `psm 6` seja universalmente melhor — o modo
+adequado depende da estrutura da página, e estes documentos são tabulares.
 
-Repare que a confiança média de `psm 3` é **maior**, e ainda assim o resultado é
-pior — confiança média não é medida de qualidade de transcrição.
+Ficou como padrão, configurável por `QF_OCR_PSM` justamente para poder ser
+revisto quando aparecer um documento de estrutura diferente.
+
+Aprendizado registrado: a confiança média de `psm 3` foi **maior** (89,5 contra
+87,2) e ainda assim o resultado foi pior — as datas saíram quebradas. Confiança
+média não é medida de qualidade de transcrição, e usá-la como critério de
+escolha teria levado à decisão errada.
 
 ### 4.6 `@app.on_event("startup")` deprecado
 
@@ -336,7 +400,18 @@ _(resposta final no fim do projeto.)_
 | 1/4 — Fundação, Docker, Tesseract, `/healthz` | concluído e validado |
 | 2/4 — Contrato HTTP, persistência, processamento assíncrono | concluído e validado |
 | 3/4 — Extração (`ExtractedPage`: texto nativo + OCR) | concluído e validado |
-| 4/4 — Registry + primeiro parser real | pendente |
+| 4/4 — Registry + primeiro parser real (SIPON) | concluído e validado |
+
+**Fase 1 concluída**, aguardando revisão e autorização para a Fase 2.
+
+Resultado do bloco 4/4, medido contra `time-card-01.pdf`:
+
+- 5 páginas, 153 dias, 369 batidas;
+- dias por página (31, 31, 30, 31, 30) conferem com o calendário de julho a
+  novembro de 2012;
+- nenhuma data duplicada, nenhuma linha perdida;
+- zero falsas batidas vindas das colunas `Jornada` e `Qtde`;
+- `date_raw` composto como `01/07/2012`, conforme a regra da P1.
 
 **Pendência P1 (`date_raw`) — RESOLVIDA em 12/08/2026.**
 

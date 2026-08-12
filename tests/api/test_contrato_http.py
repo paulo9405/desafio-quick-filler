@@ -37,13 +37,23 @@ def test_get_devolve_envelope_oficial_completo(client, pdf_valido):
     assert corpo["status"] in {"processando", "concluido", "erro"}
 
 
-def test_status_erro_traz_mensagem_legivel(client, pdf_valido):
-    """Enquanto nenhum parser existe, o documento termina em erro explicado.
+def test_status_erro_traz_mensagem_legivel(client):
+    """Documento de layout ainda não suportado termina em erro explicado.
 
     Protege duas coisas: `erro` não pode ser null quando o status é `erro`, e a
-    mensagem precisa ser legível — não um traceback nem um código interno.
+    mensagem precisa ser legível — não um traceback nem um código interno, que
+    além de inútil para quem usa poderia vazar trecho do documento.
+
+    Usa `payroll-01` (ficha financeira, parser da Fase 2) de propósito. Antes
+    este teste usava `time-card-01`, mas o parser SIPON passou a lê-lo com
+    sucesso e o caso deixou de exercitar o caminho de erro.
     """
-    criado = client.post("/api/transcricoes", **upload(pdf_valido, "cartao-ponto"))
+    from pathlib import Path
+
+    exemplos = Path(__file__).resolve().parents[2] / "exemplos"
+    conteudo = (exemplos / "payroll-01.pdf").read_bytes()
+
+    criado = client.post("/api/transcricoes", **upload(conteudo, "holerite"))
     transcricao_id = criado.json()["id"]
 
     corpo = client.get(f"/api/transcricoes/{transcricao_id}").json()
