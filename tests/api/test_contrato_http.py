@@ -44,16 +44,18 @@ def test_status_erro_traz_mensagem_legivel(client):
     mensagem precisa ser legível — não um traceback nem um código interno, que
     além de inútil para quem usa poderia vazar trecho do documento.
 
-    Usa `payroll-01` (ficha financeira, parser da Fase 2) de propósito. Antes
-    este teste usava `time-card-01`, mas o parser SIPON passou a lê-lo com
-    sucesso e o caso deixou de exercitar o caminho de erro.
+    Usa `time-card-04` de propósito: é o cartão de papel escaneado, e o OCR
+    não recupera horário nenhum dele. Nenhum parser o reconhece.
+
+    Este teste já foi repontado duas vezes, e isso é sinal de progresso: antes
+    usava `time-card-01`, depois `payroll-01`, e os dois passaram a ser lidos.
     """
     from pathlib import Path
 
     exemplos = Path(__file__).resolve().parents[2] / "exemplos"
-    conteudo = (exemplos / "payroll-01.pdf").read_bytes()
+    conteudo = (exemplos / "time-card-04.pdf").read_bytes()
 
-    criado = client.post("/api/transcricoes", **upload(conteudo, "holerite"))
+    criado = client.post("/api/transcricoes", **upload(conteudo, "cartao-ponto"))
     transcricao_id = criado.json()["id"]
 
     corpo = client.get(f"/api/transcricoes/{transcricao_id}").json()

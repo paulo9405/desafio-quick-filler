@@ -22,8 +22,12 @@ from typing import List, Optional, Sequence
 from app.core.logging import get_logger
 from app.extraction.extracted_page import ExtractedPage
 from app.parsers.base import LayoutParser
+from app.parsers.payslip.declaracao_remuneracao import DeclaracaoRemuneracaoParser
 from app.parsers.payslip.demonstrativo_mensal import DemonstrativoMensalParser
+from app.parsers.payslip.ficha_financeira import FichaFinanceiraParser
+from app.parsers.payslip.recibo_pagamento import ReciboPagamentoParser
 from app.parsers.timesheet.cartao_ponto_tabular import CartaoPontoTabularParser
+from app.parsers.timesheet.ponto_eletronico import PontoEletronicoParser
 from app.parsers.timesheet.sipon import SiponTimesheetParser
 
 logger = get_logger(__name__)
@@ -32,7 +36,11 @@ logger = get_logger(__name__)
 PARSERS: Sequence[LayoutParser] = (
     SiponTimesheetParser(),
     CartaoPontoTabularParser(),
+    PontoEletronicoParser(),
     DemonstrativoMensalParser(),
+    ReciboPagamentoParser(),
+    DeclaracaoRemuneracaoParser(),
+    FichaFinanceiraParser(),
 )
 
 

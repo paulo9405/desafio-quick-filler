@@ -63,14 +63,16 @@ def test_planilha_do_pdf_real_sai_com_as_colunas_certas(client):
 
 
 def test_documento_de_layout_ainda_nao_suportado_falha_de_forma_honesta(client):
-    """`payroll-01` é uma ficha financeira — parser é da Fase 2.
+    """`time-card-04` é o cartão de papel escaneado.
 
-    Enquanto não existir, a resposta correta é dizer que não sabe ler, e não
-    devolver uma transcrição vazia como se estivesse tudo bem.
+    Medido em 19 combinações de DPI, modo de segmentação e pré-processamento:
+    o OCR recupera no máximo 1 de ~48 horários da página, e esse é lixo. A
+    resposta correta é dizer que não sabe ler — devolver uma transcrição com
+    dias sem batida afirmaria algo falso sobre o documento.
     """
-    conteudo = (EXEMPLOS / "payroll-01.pdf").read_bytes()
+    conteudo = (EXEMPLOS / "time-card-04.pdf").read_bytes()
 
-    criado = client.post("/api/transcricoes", **upload(conteudo, "holerite"))
+    criado = client.post("/api/transcricoes", **upload(conteudo, "cartao-ponto"))
     transcricao_id = criado.json()["id"]
 
     corpo = client.get(f"/api/transcricoes/{transcricao_id}").json()

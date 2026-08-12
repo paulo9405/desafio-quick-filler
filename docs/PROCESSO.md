@@ -464,6 +464,112 @@ externa, e a página é a demonstração do produto.
 - **Não recalcula aviso após a edição.** Depois de cada PUT ela recarrega
   `/revisao`, então quem reavalia continua sendo o backend.
 
+### 3.20 `time-card-04`: investigação de OCR e decisão de NÃO suportar (bloco 2.5)
+
+**O documento.** Cartão de ponto de papel, fotografado. Página de 268×354 pt,
+imagem embutida de 1116×1474 px. Marcações feitas por relógio de ponto
+matricial, algumas em vermelho desbotado, com o mês escrito à mão.
+
+**Causa medida.** A 300 dpi o render já iguala a resolução da imagem de origem.
+Renderizar acima disso amplia sem acrescentar detalhe — não há informação nova
+a recuperar.
+
+**Alternativas testadas — 19 combinações.** Métrica: quantos tokens `HH:MM` o
+OCR devolve na página 1. Verdade de campo por leitura visual: 8 linhas com 6
+marcações cada, **~48 horários**.
+
+| Variante | psm | horários |
+|---|---|---|
+| render 300 dpi | 6 / 4 / 12 | 0 |
+| render 300 dpi | 11 | 1 (`9:20`) |
+| 300 dpi cinza | 6 | 1 (`42:62`) |
+| 300 dpi autocontraste | 6 / 11 | 1 / 0 |
+| 300 dpi binarizada | 6 / 11 | 0 |
+| 300 dpi binarizada + whitelist `0-9:` | 11 | 0 |
+| render 600 dpi | 6 / 4 / 11 / 12 | 0 |
+| 600 dpi cinza / autocontraste / binarizada | 6 / 11 | 0 |
+
+**Melhor resultado: 1 horário de ~48 — e ele é lixo** (`42:62` não é hora).
+
+**Alternativas de saída consideradas:**
+
+1. **Emitir os dias com `punches: []`.** Rejeitada, e é a mais perigosa: a
+   transcrição afirmaria que dias com 6 marcações não têm nenhuma. É
+   exatamente o "valor errado com cara de certo" que o README chama de pior
+   resultado possível.
+2. **Emitir tudo marcado com `?`.** Rejeitada: o INSTRUCOES diz que "encher a
+   saída de `?` para se proteger também não funciona — se você diz que não leu
+   nada, você não transcreveu nada".
+3. **Serviço de OCR em nuvem.** Fora do orçamento e exigiria credencial, o que
+   conflita com "nenhum segredo no repositório".
+4. **Não suportar (adotada).** Nenhum parser reconhece o documento, e o
+   pipeline responde `status: "erro"` com mensagem legível.
+
+A opção 4 é o comportamento que o próprio README recomenda: "responder 'não sei
+ler este documento' é melhor que devolver lixo". Verificado: os seis parsers
+devolvem score `0.0` para este documento.
+
+**Onde a solução não merece confiança:** este é o principal item. Um quarto dos
+cartões de ponto oficiais não é transcrito. Um produto real precisaria de OCR
+especializado em dígitos matriciais ou de um serviço de nuvem.
+
+### 3.21 `psm 4` melhoraria um documento e quebraria outro
+
+Ao investigar a truncagem de rótulo do `payroll-04`, `--psm 4` recuperou 5
+rótulos que o `psm 6` perde. Antes de trocar o padrão global, a mudança foi
+medida nos outros documentos OCR:
+
+| Documento | psm 6 | psm 4 |
+|---|---|---|
+| `time-card-03` | 56 dias, 158 batidas | **46 dias, 126 batidas** |
+| `time-card-02` | equivalente | equivalente |
+| `payroll-04` | 0 rótulos certos | 5 rótulos certos |
+
+Trocar globalmente custaria **10 dias e 32 batidas** no `time-card-03`. O padrão
+`psm 6` foi mantido e a truncagem do `payroll-04` fica registrada como
+limitação. Um mecanismo de `psm` por documento não foi criado: a extração
+acontece antes da seleção do parser, e inverter essa ordem por causa de um
+layout seria pagar caro em arquitetura por um ganho pequeno.
+
+### 3.22 Decisões P2 resolvidas neste bloco
+
+| Documento | Situação | Decisão | Alternativa descartada |
+|---|---|---|---|
+| `payroll-04` | duas vias idênticas por página | uma entrada por página, cortando na segunda via | duas entradas — duplicaria toda verba e toda base |
+| `payroll-02` | dois blocos (`MÊS`/`ACERTO`), mesma competência | uma entrada por bloco, compartilhando o `page` | fundir — rótulos iguais nos dois blocos colidiriam e o valor do `ACERTO` seria perdido |
+| `payroll-01` | várias competências por página | uma entrada por competência, compartilhando o `page` | é o precedente que o próprio README descreve |
+| `time-card-02` | horários de intervalo | primeiro é `OUT` (saída para o intervalo), segundo é `IN` | alternância por posição — daria `IN` para a saída |
+
+### 3.23 Três perdas silenciosas encontradas e corrigidas no bloco 2.5
+
+Todas descobertas conferindo a saída contra o documento, não por teste que
+falhou.
+
+**1. `time-card-02`: dois dias sumindo.** Agosto saía com 30 dias e setembro
+com 29. Causa: o OCR cola o dia no dia da semana (`18QUA`, `18SAB`) e o parser
+exigia um token puramente numérico. Percebido ao conferir a contagem de dias
+contra o calendário. Corrigido extraindo os dígitos do início do token.
+
+**2. `time-card-02`: batidas em token colado.** O OCR às vezes junta os dois
+horários do intervalo num só token (`09:52-16:07`). Cada ocorrência custava uma
+batida. Corrigido separando o token pelos separadores antes de ler. Total do
+documento: 362 → **372 batidas**.
+
+**3. `payroll-02`: uma verba inteira desaparecendo.** A primeira versão
+distinguia referência de rótulo pela presença de `/` — supondo que só
+referências como `JULHO/18` teriam barra. A verba
+`192 ATFC-AD.TEMP.FATORES/COMI` tem barra **no nome**: o nome virou referência,
+o rótulo ficou vazio e a linha foi descartada. Percebido conferindo a lista de
+verbas da página 1 contra o PDF: 9 na saída, 10 no documento.
+
+Corrigido trocando a adivinhação pelo conteúdo por uma decisão **posicional** —
+a referência é o token que cai na faixa da coluna `Base / Saldo / Benefício`.
+Total do documento: 86 → **92 verbas**.
+
+O padrão dos três é o mesmo, e vale registrar: heurística baseada em conteúdo
+(`tem barra?`, `é só dígito?`) falha em documento real; posição de coluna e
+estrutura são mais confiáveis.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
@@ -681,9 +787,10 @@ _(resposta final no fim do projeto.)_
 | 2.2 | Incerteza `?` por caractere | concluído e validado |
 | 2.3 | Avisos derivados + destaques na planilha | concluído e validado |
 | 2.4 | Interface de revisão | concluído — falta confirmação visual |
-| 2.5 | Layouts restantes | pendente |
+| 2.5 | Layouts restantes | concluído — 7 de 8 PDFs suportados |
 
-Cobertura de layouts: **3 de 8** (`time-card-01`, `time-card-03`, `payroll-03`).
+Cobertura de layouts: **7 de 8**. O único não suportado é `time-card-04`, e a
+investigação que sustenta essa decisão está na seção 3.20.
 
 Medição do bloco 2.1, contra os PDFs reais:
 
