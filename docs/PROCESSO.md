@@ -272,6 +272,86 @@ processa uma página real.
 ao vivo: analisar o documento, criar a fixture, criar o teste, implementar o
 parser. `tests/fixtures/gerar.py` regera quando necessário.
 
+### 3.13 Estratégia de incerteza: validação estrutural, não confiança (bloco 2.2)
+
+**A decisão.** A marcação `?` é feita por **validação estrutural por posição**:
+um campo com formato conhecido (horário, valor monetário) tem uma classe de
+caractere esperada em cada posição, e o que viola essa classe — e só isso —
+vira `?`.
+
+**A alternativa óbvia, e por que foi rejeitada com dado.** O caminho natural
+seria `confiança < X → marcar ?`. Medição em `time-card-03`, sobre 822
+horários lidos corretamente numa coluna de batida:
+
+| | |
+|---|---|
+| confiança mínima | 0 |
+| percentil 10 | 55 |
+| mediana | 91 |
+| **lidos CERTO com confiança < 30** | **47** |
+
+E os 4 tokens realmente errados do mesmo documento têm confiança 25, 41, 44 e
+53 — dentro da faixa dos corretos. Um corte em 50 marcaria dezenas de valores
+corretos para pegar 4 errados. As distribuições se sobrepõem; a confiança não
+separa certo de errado nestes documentos.
+
+Somam-se os dois contraexemplos já registrados: valores corretos com confiança
+9, 10 e 16 (item 4.4) e `Sai1` lido errado como `Sail` com confiança 95
+(item 3.9).
+
+**O que a regra encontrou nos documentos reais.** Exatamente 4 casos, todos em
+`time-card-03`: `23:00c` e `15:12c` com o marcador lido como `€`.
+
+**Efeito colateral que era um bug sério.** Esses 4 tokens não eram só
+"não marcados" — eram **descartados**. O parser exigia casamento estrito com o
+padrão de horário e jogava fora o que não casasse. O documento perdia 4 batidas
+sem qualquer sinal, que é o erro que o INSTRUCOES chama de "perder linhas em
+silêncio".
+
+Depois da mudança: `time-card-03` passou de 822 para **826 batidas**.
+
+**Impacto medido nos outros documentos** — a mudança tinha que afetar só os 4
+casos conhecidos:
+
+| Documento | Antes | Depois |
+|---|---|---|
+| `time-card-03` (OCR) | 822 batidas | 826, sendo 4 marcadas |
+| `time-card-01` (nativo) | 153 dias / 369 batidas | idêntico, 0 marcações |
+| `payroll-03` (nativo) | 44 verbas | idêntico, 0 marcações |
+
+**Horário impossível.** `25:00` é erro de leitura, não horário — o README é
+explícito quanto a datas, e o mesmo raciocínio vale aqui. O componente
+impossível vira `??` no normalizado, porque sabemos que está errado mas não
+qual dígito é o certo. O valor lido continua íntegro em `time_raw`. Não ocorre
+em nenhum dos documentos atuais; a regra existe porque a especificação a exige.
+
+**Falso negativo conhecido, e é o principal.** Um dígito trocado por outro
+dígito — `07:00` lido como `01:00` — passa pela validação estrutural, porque
+`1` é um dígito válido naquela posição. Não há como detectar isso sem uma
+segunda fonte de leitura. É o ponto onde a solução menos merece confiança, e
+entra na resposta da pergunta 3 do desafio.
+
+**Onde a marcação aparece.** O `?` fica no `time_raw`; o `time_hhmm` das 4
+batidas continua limpo (`23:00`), porque os dígitos foram lidos bem. Como a
+planilha mostra `time_hhmm`, o `?` **não** aparece na célula. Consequência para
+o bloco 2.3: o destaque amarelo de "qualquer `?` na linha" precisa ser
+calculado sobre o **dado** da linha, incluindo `time_raw`, e não sobre o texto
+da célula exibida. Sem isso, essas 4 linhas nunca seriam destacadas.
+
+### 3.14 `time-card-04` não produz nenhum horário legível hoje
+
+Medição feita durante o bloco 2.2, com a configuração atual (300 dpi, `psm 6`):
+o scan real de cartão de papel devolve **zero** tokens com forma de horário.
+O que sai são fragmentos como `(5520)`, `17083`, `5122226`.
+
+Isto é registrado agora porque muda a expectativa sobre o bloco 2.5: o problema
+de `time-card-04` não é de marcação de incerteza, é de OCR não conseguir ler o
+documento. A estratégia de `?` não pode ser validada nele enquanto a extração
+não produzir candidatos.
+
+`payroll-04`, em contraste, lê valores monetários com confiança mínima de 93 e
+nenhuma violação estrutural.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
@@ -486,7 +566,7 @@ _(resposta final no fim do projeto.)_
 | Bloco | Entrega | Estado |
 |---|---|---|
 | 2.1 | `payroll-03` + `time-card-03` — cobertura dos dois tipos | concluído e validado |
-| 2.2 | Incerteza `?` por caractere | pendente |
+| 2.2 | Incerteza `?` por caractere | concluído e validado |
 | 2.3 | Avisos derivados + destaques na planilha | pendente |
 | 2.4 | Interface de revisão | pendente |
 | 2.5 | Layouts restantes | pendente |

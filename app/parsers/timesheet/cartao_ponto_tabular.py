@@ -43,6 +43,7 @@ from typing import Any, Dict, List, Optional
 from app.extraction.columns import ColumnLayout, detect_columns, normalizar
 from app.extraction.extracted_page import ExtractedPage, Line
 from app.parsers.base import LayoutParser
+from app.parsers.uncertainty import ler_horario
 
 # Todas as colunas da tabela, na ordem impressa.
 #
@@ -76,10 +77,6 @@ COLUNAS_DE_BATIDA = (
     ("Ent4", "IN"),
     ("Sai4", "OUT"),
 )
-
-# `07:00d`, `23:00c`, `+03:00d`, `12:00`.
-# O `+` marca virada de dia; a letra final é marcação do sistema emissor.
-PADRAO_HORA = re.compile(r"^(\+?)(\d{1,2}):(\d{2})([A-Za-z]?)$")
 
 # `16/12/2019` — data completa impressa na própria linha.
 PADRAO_DATA = re.compile(r"^\d{2}/\d{2}/\d{4}$")
@@ -150,42 +147,30 @@ class CartaoPontoTabularParser(LayoutParser):
     def _ler_batidas(self, linha: Line, layout: ColumnLayout) -> List[Dict[str, str]]:
         """Lê as 8 colunas de batida, na ordem do documento.
 
-        Texto que não é horário (`NATAL`, `DESCANSO`) simplesmente não vira
-        batida. A linha continua existindo com `punches: []`, porque um dia sem
-        batida é uma linha válida — descartá-la seria perder dia.
+        Texto que não tem forma de horário (`NATAL`, `ATESTADO MEDICO`,
+        `SEG`) não vira batida. A linha continua existindo com `punches: []`,
+        porque um dia sem batida é uma linha válida.
+
+        Já um token COM forma de horário nunca é descartado, mesmo imperfeito:
+        ele volta com `?` nas posições ilegíveis. Ver `app/parsers/uncertainty.py`.
+
+        Isto corrigiu uma perda silenciosa real: `23:00€` e `15:12€` — o
+        marcador `c` lido como `€` — eram jogados fora, e o documento perdia 4
+        batidas sem nenhum sinal.
         """
         batidas: List[Dict[str, str]] = []
 
         for nome_da_coluna, kind in COLUNAS_DE_BATIDA:
             for palavra in layout.cell_words(linha, nome_da_coluna):
-                if not PADRAO_HORA.match(palavra.text):
+                leitura = ler_horario(palavra.text)
+                if leitura is None:
                     continue
                 batidas.append(
                     {
                         "kind": kind,
-                        "time_raw": palavra.text,
-                        "time_hhmm": self._normalizar_hora(palavra.text),
+                        "time_raw": leitura.raw,
+                        "time_hhmm": leitura.normalizado,
                     }
                 )
 
         return batidas
-
-    @staticmethod
-    def _normalizar_hora(time_raw: str) -> str:
-        """`07:00d` → `07:00`; `+03:00d` → `03:00`.
-
-        O `+` indica que a batida caiu no dia seguinte, e a letra final é
-        marcação do sistema. Nenhum dos dois cabe em `HH:MM`, e é por isso que
-        `time_raw` existe: o dado original continua auditável.
-
-        Horário impossível volta como está — não se corrige nem se arredonda.
-        """
-        casado = PADRAO_HORA.match(time_raw)
-        if not casado:
-            return time_raw
-
-        horas, minutos = int(casado.group(2)), int(casado.group(3))
-        if horas > 23 or minutos > 59:
-            return time_raw
-
-        return f"{horas:02d}:{minutos:02d}"

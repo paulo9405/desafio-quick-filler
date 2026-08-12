@@ -46,6 +46,20 @@ from typing import Any, Dict, List, Optional, Tuple
 from app.extraction.columns import ColumnLayout, detect_columns, normalizar
 from app.extraction.extracted_page import ExtractedPage, Line
 from app.parsers.base import LayoutParser
+from app.parsers.uncertainty import ler_valor_monetario
+
+
+def _marcar_valor(texto: str) -> str:
+    """Aplica a marcação de incerteza a um valor monetário.
+
+    Devolve o texto original quando ele não tem forma de valor — preservar o
+    que foi lido é sempre preferível a descartar.
+
+    Neste documento, que tem camada de texto, a marcação nunca dispara. Ela
+    existe porque o mesmo caminho será usado por holerites lidos via OCR.
+    """
+    leitura = ler_valor_monetario(texto)
+    return leitura.raw if leitura is not None else texto
 
 COLUNAS = ("Cod.", "Descrição", "Unidade", "Proventos", "Descontos")
 
@@ -160,7 +174,7 @@ class DemonstrativoMensalParser(LayoutParser):
             "code": layout.cell_text(linha, "Cod.").strip(),
             "label": label,
             "reference": layout.cell_text(linha, "Unidade").strip(),
-            "value": valor,
+            "value": _marcar_valor(valor),
         }
 
     # --------------------------------------------------------------- bases

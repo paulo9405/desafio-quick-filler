@@ -45,6 +45,7 @@ from typing import Any, Dict, List, Optional
 from app.extraction.columns import ColumnLayout, detect_columns, normalizar
 from app.extraction.extracted_page import ExtractedPage, Line
 from app.parsers.base import LayoutParser
+from app.parsers.uncertainty import ler_horario
 
 # Títulos da tabela, na ordem em que aparecem. É a impressão digital do layout
 # e a origem das faixas de coluna.
@@ -53,10 +54,6 @@ COLUNAS = ("Dia", "Semana", "Jornada", "Entrada", "Saida", "Ocorrencia", "Qtde")
 # Colunas que contêm batidas — e a semântica de cada uma.
 # `kind` vem DA COLUNA, não da posição na lista de batidas. Ver roadmap 10.1.
 COLUNAS_DE_BATIDA = (("Entrada", "IN"), ("Saida", "OUT"))
-
-# `HH:MM` estrito. Exigir o formato exato impede que um carimbo de rodapé como
-# `08:34:23` seja lido como batida, mesmo que caísse numa faixa de coluna.
-PADRAO_HORA = re.compile(r"^(\d{1,2}):(\d{2})$")
 
 # `Mes/Ano : 7 / 2012` — o mês pode vir com um ou dois dígitos.
 PADRAO_COMPETENCIA = re.compile(r"(\d{1,2})\s*/\s*(\d{4})")
@@ -178,40 +175,20 @@ class SiponTimesheetParser(LayoutParser):
 
         for nome_da_coluna, kind in COLUNAS_DE_BATIDA:
             for palavra in layout.cell_words(linha, nome_da_coluna):
-                time_raw = palavra.text
-                if not PADRAO_HORA.match(time_raw):
+                leitura = ler_horario(palavra.text)
+                if leitura is None:
                     continue
                 batidas.append(
                     {
                         "kind": kind,
-                        "time_raw": time_raw,
-                        "time_hhmm": self._normalizar_hora(time_raw),
+                        "time_raw": leitura.raw,
+                        "time_hhmm": leitura.normalizado,
                     }
                 )
 
         return batidas
 
     # ------------------------------------------------------------- auxiliares
-
-    @staticmethod
-    def _normalizar_hora(time_raw: str) -> str:
-        """Normaliza para `HH:MM` em 24 horas.
-
-        Devolve o valor original quando ele não é um horário possível. NÃO
-        corrige, NÃO arredonda e NÃO inventa: um horário impossível é erro de
-        leitura, e mascarar isso é o pior desfecho possível neste domínio. O
-        par `time_raw` / `time_hhmm` existe justamente para o problema ficar
-        visível na revisão.
-        """
-        casado = PADRAO_HORA.match(time_raw)
-        if not casado:
-            return time_raw
-
-        horas, minutos = int(casado.group(1)), int(casado.group(2))
-        if horas > 23 or minutos > 59:
-            return time_raw
-
-        return f"{horas:02d}:{minutos:02d}"
 
     @staticmethod
     def _ler_competencia(page: ExtractedPage) -> Optional[tuple]:
