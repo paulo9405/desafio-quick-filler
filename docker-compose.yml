@@ -4,13 +4,26 @@ services:
     ports:
       - "8000:8000"
     environment:
+      # Persistência: banco SQLite e PDFs enviados, ambos no volume.
       QF_DATABASE_PATH: /data/quickfiller.db
       QF_STORAGE_DIR: /data/pdfs
-      QF_MAX_UPLOAD_BYTES: "20971520"
+
+      # Limites de upload (segurança) e retenção.
+      QF_MAX_UPLOAD_BYTES: "20971520"   # 20 MB
       QF_MAX_PDF_PAGES: "50"
       QF_RETENTION_HOURS: "24"
+
+      # Extração: abaixo deste número de palavras a página vai para OCR.
+      # O valor sai de medição nos documentos oficiais — ver
+      # app/extraction/extractor.py.
+      QF_MIN_WORDS_TEXT_LAYER: "40"
+
+      # OCR. `psm 6` foi escolhido por medição comparativa; trocar por 4 custa
+      # 10 dias e 32 batidas num dos documentos oficiais. Ver docs/PROCESSO.md.
       QF_OCR_LANG: por
       QF_OCR_DPI: "300"
+      QF_OCR_PSM: "6"
+
       QF_LOG_LEVEL: INFO
     volumes:
       - qf-data:/data
