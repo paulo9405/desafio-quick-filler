@@ -45,9 +45,16 @@ class Settings:
     # Política de retenção: por quanto tempo o PDF e a transcrição permanecem.
     retention_hours: int
 
+    # Extração
+    # Abaixo deste número de palavras, a página é tratada como sem camada de
+    # texto útil e vai para OCR. Ver app/extraction/extractor.py para a medição
+    # que sustenta o valor padrão.
+    min_words_text_layer: int
+
     # OCR
     ocr_lang: str
     ocr_dpi: int
+    ocr_psm: int
 
     log_level: str
 
@@ -59,8 +66,10 @@ class Settings:
             max_upload_bytes=_env_int("QF_MAX_UPLOAD_BYTES", 20 * 1024 * 1024),
             max_pdf_pages=_env_int("QF_MAX_PDF_PAGES", 50),
             retention_hours=_env_int("QF_RETENTION_HOURS", 24),
+            min_words_text_layer=_env_int("QF_MIN_WORDS_TEXT_LAYER", 40),
             ocr_lang=os.environ.get("QF_OCR_LANG", "por"),
             ocr_dpi=_env_int("QF_OCR_DPI", 300),
+            ocr_psm=_env_int("QF_OCR_PSM", 6),
             log_level=os.environ.get("QF_LOG_LEVEL", "INFO").upper(),
         )
 

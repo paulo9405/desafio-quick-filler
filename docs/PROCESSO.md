@@ -218,7 +218,71 @@ arquivo de teste.
 **Aprendizado:** teste verde não é evidência de cobertura. Vale perguntar por
 que ele passou.
 
-### 4.4 `@app.on_event("startup")` deprecado
+### 4.4 Limiar de confiança que apagava dados corretos — o pior erro até agora
+
+**O que aconteceu:** ao escrever o caminho de OCR, o agente adicionou um filtro
+descartando toda palavra com confiança do Tesseract abaixo de 30, com um
+comentário justificando que seriam "ruído de borda, carimbo ou artefato de
+digitalização". O número não veio de medição nenhuma — foi inventado, e a
+justificativa foi escrita depois, para acompanhá-lo.
+
+**Por que era grave:** medindo a saída real do Tesseract em `time-card-03`, o
+filtro apagava **batidas corretas**:
+
+```
+' 07:00d'  conf=10   leitura correta, descartada
+' 15:00d'  conf=16   leitura correta, descartada
+' 06:59d'  conf=9    leitura correta, descartada
+' 06:59d'  conf=13   leitura correta, descartada
+'23:00€'   conf=25   leitura errada — caso de `?`, não de descarte
+```
+
+Uma página perdia batidas sem nenhum sinal. É literalmente o erro que o
+INSTRUCOES nomeia — "perder linhas em silêncio" — e o oposto da regra central
+do desafio, que é nunca descartar em vez de marcar incerteza.
+
+**Como foi percebido:** comparando a saída do OCR com a renderização da página.
+A linha `19/12/2019` do `time-card-03` devolveu 3 batidas, e o documento mostra
+4. A diferença foi notada porque as linhas vizinhas (`18/12` e `20/12`) tinham
+4, o que tornava a lacuna visível.
+
+**Investigação:** um script imprimiu todas as palavras daquela linha com suas
+confianças, sem filtro. O `07:00d` estava lá, correto, com confiança 10.
+
+**Correção:** o limiar foi removido por completo. O único descarte que
+permanece é `conf = -1`, que o Tesseract usa para marcar bloco e parágrafo — não
+são palavras. Toda palavra lida é preservada com sua confiança, e a decisão de
+marcar `?` fica para a Fase 2, que é onde ela pertence. Glifos de borda de
+tabela (`|`, `—`) também ficam: o parser os ignora por posição de coluna, e
+mantê-los é mais seguro do que arriscar apagar dado.
+
+**Teste de regressão:** `tests/extraction/test_ocr.py::test_palavra_de_baixa_confianca_e_preservada`,
+com os valores reais do caso.
+
+**Aprendizado:** o agente produz constantes com aparência de decisão técnica e
+escreve uma justificativa convincente para elas. Toda constante que descarta
+dado precisa de medição, não de comentário. E vale repetir o padrão do erro
+4.2: a justificativa soar razoável não é evidência de que está certa.
+
+### 4.5 `--psm 3` vs `--psm 6`: decisão tomada por medição
+
+Não foi um erro, mas registra o método oposto ao do item anterior.
+
+O modo de segmentação de página do Tesseract foi escolhido comparando os dois
+candidatos na mesma página real (`time-card-03`, página 1):
+
+| | palavras | confiança média | tempo | datas |
+|---|---|---|---|---|
+| `--psm 3` (padrão) | 431 | 89.5 | 48.3s | `16/ 2/20 dO` — quebradas |
+| `--psm 6` | 643 | 87.2 | 25.9s | `16/12/2019` — corretas |
+
+`--psm 6` lê mais, lê certo e leva metade do tempo neste tipo de documento
+tabular. Ficou como padrão, configurável por `QF_OCR_PSM`.
+
+Repare que a confiança média de `psm 3` é **maior**, e ainda assim o resultado é
+pior — confiança média não é medida de qualidade de transcrição.
+
+### 4.6 `@app.on_event("startup")` deprecado
 
 **O que aconteceu:** a inicialização foi escrita com `@app.on_event`, que está
 deprecado no FastAPI.
@@ -271,10 +335,30 @@ _(resposta final no fim do projeto.)_
 |---|---|
 | 1/4 — Fundação, Docker, Tesseract, `/healthz` | concluído e validado |
 | 2/4 — Contrato HTTP, persistência, processamento assíncrono | concluído e validado |
-| 3/4 — Extração (`ExtractedPage`: texto nativo + OCR) | pendente |
+| 3/4 — Extração (`ExtractedPage`: texto nativo + OCR) | concluído e validado |
 | 4/4 — Registry + primeiro parser real | pendente |
 
-**Pendência de especificação em aberto:** P1 (`date_raw` nos documentos que não
-imprimem a data completa na linha). Pergunta enviada à Quick Filler, aguardando
-resposta. Nenhuma interpretação foi implementada. Ver `docs/roadmap.md`, seção
-2.2.
+**Pendência P1 (`date_raw`) — RESOLVIDA em 12/08/2026.**
+
+A dúvida sobre o que colocar em `date_raw` nos documentos que imprimem apenas o
+dia na linha, com mês e ano no cabeçalho da página, foi levantada durante a
+análise inicial, enviada à Quick Filler e respondida oficialmente.
+
+A resposta aceitou as duas abordagens e indicou que compor a data completa é o
+melhor resultado **quando dia, mês e ano puderem ser associados com segurança**,
+com a ressalva explícita de não completar informação quando houver ambiguidade
+ou incerteza.
+
+Regra adotada, registrada em `docs/roadmap.md` seção 2.2:
+
+1. associação segura → `date_raw` recebe a data completa;
+2. associação insegura → preservar só o valor disponível na linha;
+3. nunca inferir mês/ano sob ambiguidade — esta regra tem precedência.
+
+Consequência prática: `time-card-01` e `time-card-02` compõem a data;
+`time-card-04` não compõe, porque o mês é manuscrito ilegível numa página e
+está em branco na outra.
+
+Vale registrar o processo em si: perguntar em vez de assumir custou uma
+mensagem e eliminou o risco de implementar uma interpretação errada de um campo
+que aparece em toda linha de todo cartão de ponto.
