@@ -1,0 +1,43 @@
+# Proxy reverso com HTTPS automático.
+#
+# POR QUE HTTPS É OBRIGATÓRIO AQUI
+#
+# A aplicação recebe documentos com nome, CPF, matrícula, salário e jornada de
+# pessoas reais. Publicar isso em HTTP puro exporia o conteúdo em trânsito —
+# não é questão de acabamento, é a mesma exigência de privacidade que rege o
+# resto do projeto.
+#
+# O Caddy obtém e renova o certificado Let's Encrypt sozinho, desde que o
+# domínio aponte para o IP da máquina e as portas 80 e 443 estejam abertas.
+#
+# O domínio vem de variável de ambiente: nada de host gravado no arquivo.
+
+{$QF_DOMINIO} {
+	encode zstd gzip
+
+	# A aplicação só é alcançável pela rede interna do compose. A porta 8000
+	# não é publicada no host — ver docker-compose.prod.yml.
+	reverse_proxy app:8000 {
+		# OCR pode levar dezenas de segundos. O padrão do Caddy é suficiente
+		# para o contrato atual, porque o processamento é assíncrono: o POST
+		# responde 202 na hora e o resto é polling. Este valor cobre uploads
+		# grandes em conexão lenta.
+		transport http {
+			read_timeout 120s
+			write_timeout 120s
+		}
+	}
+
+	# Limite de corpo alinhado ao limite de upload da aplicação (20 MB), com
+	# folga para o overhead do multipart. Recusar cedo evita gastar banda e
+	# memória com algo que a aplicação rejeitaria depois.
+	request_body {
+		max_size 25MB
+	}
+
+	# Sem PII: o formato padrão registra método, caminho e status. O caminho
+	# contém apenas o id opaco da transcrição.
+	log {
+		output stdout
+	}
+}

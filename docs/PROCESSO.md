@@ -44,7 +44,15 @@ ele, não pelo agente.
 | 1.2 | Fase 1, bloco 1: fundação FastAPI + Docker + Tesseract + `/healthz` | _(a preencher)_ |
 | 1.3 | Fase 1, bloco 2: contrato HTTP + persistência + processamento assíncrono | _(a preencher)_ |
 
-**Tempo acumulado:** _(a preencher)_
+**Tempo acumulado até o bloco 27.3 (deploy): ~8 horas efetivas.**
+
+Estimativa informada pelo candidato. Desconta as pausas do dia — não é o tempo
+corrido desde o início da manhã. Não há precisão maior que essa, e inventá-la
+seria pior que a estimativa.
+
+Contra o orçamento de ~14 h sugerido pela Quick Filler, restam **~6 horas** para
+deploy, documentação, planilhas dos exemplos e revisão final. A escolha de
+infraestrutura precisa caber nessa margem.
 
 ---
 

@@ -1,0 +1,76 @@
+# Stack de produção: aplicação + proxy reverso com HTTPS.
+#
+# O `docker-compose.yml` principal NÃO é alterado por este arquivo — ele
+# continua sendo o que a Quick Filler executa localmente com um
+# `docker compose up`, que é o requisito duro do desafio.
+#
+# Como subir na EC2:
+#
+#     export QF_DOMINIO=seu.dominio.exemplo
+#     docker compose -f docker-compose.prod.yml up -d
+#
+# Diferenças em relação ao compose local:
+#
+#   - a porta da aplicação NÃO é publicada no host; só o Caddy escuta 80/443;
+#   - `restart: unless-stopped` nos dois serviços;
+#   - concorrência 1, coerente com 1 GB de RAM (ver comentário abaixo);
+#   - volumes nomeados para /data, certificados e configuração do Caddy.
+
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    # Sem `ports`: a aplicação é alcançável apenas pela rede interna do
+    # compose. Expor 8000 no host permitiria acesso por HTTP puro, contornando
+    # o TLS — exatamente o que o proxy existe para impedir.
+    expose:
+      - "8000"
+    environment:
+      QF_DATABASE_PATH: /data/quickfiller.db
+      QF_STORAGE_DIR: /data/pdfs
+
+      QF_MAX_UPLOAD_BYTES: "20971520"
+      QF_MAX_PDF_PAGES: "50"
+      QF_RETENTION_HOURS: "24"
+
+      # UM documento por vez. Medido nesta aplicação:
+      #
+      #   pico de memória de um documento OCR ......... 402 MB
+      #   2 simultâneos em 512 MB ..................... morto pelo OOM killer
+      #   2 simultâneos em 1 GB (processo isolado) .... 87 s, sem erro
+      #
+      # Numa t3.micro há 1 GB TOTAL, e dele saem ainda o sistema operacional, o
+      # Caddy e o próprio servidor. Dois jobs de 402 MB não cabem com margem.
+      # O valor 1 é a leitura conservadora da medição, não um chute.
+      QF_MAX_PROCESSAMENTO_SIMULTANEO: "1"
+
+      QF_MIN_WORDS_TEXT_LAYER: "40"
+      QF_OCR_LANG: por
+      QF_OCR_DPI: "300"
+      QF_OCR_PSM: "6"
+
+      QF_LOG_LEVEL: INFO
+    volumes:
+      - qf-data:/data
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"    # necessária para o desafio HTTP-01 do Let's Encrypt
+      - "443:443"
+    environment:
+      # Definido no ambiente antes de subir. Sem domínio o Caddy não emite
+      # certificado.
+      QF_DOMINIO: ${QF_DOMINIO:?defina QF_DOMINIO com o domínio publico}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data      # certificados — precisa persistir
+      - caddy-config:/config
+
+volumes:
+  qf-data:
+  caddy-data:
+  caddy-config:
