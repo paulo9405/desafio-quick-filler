@@ -1,30 +1,57 @@
-# Stack de produção: aplicação + proxy reverso com HTTPS.
+# Stack de produção para a EC2 existente.
 #
 # O `docker-compose.yml` principal NÃO é alterado por este arquivo — ele
-# continua sendo o que a Quick Filler executa localmente com um
-# `docker compose up`, que é o requisito duro do desafio.
+# continua sendo o que a Quick Filler executa com `docker compose up`, que é o
+# requisito duro do desafio.
 #
-# Como subir na EC2:
+# ARQUITETURA
 #
-#     export QF_DOMINIO=seu.dominio.exemplo
-#     docker compose -f docker-compose.prod.yml up -d
+#     Internet → HTTPS → Nginx (host) → 127.0.0.1:8002 → este container
 #
-# Diferenças em relação ao compose local:
+# O TLS e o roteamento por domínio ficam com o Nginx que já existe na máquina e
+# já serve outras aplicações. Este compose entrega apenas a aplicação numa
+# porta de loopback.
 #
-#   - a porta da aplicação NÃO é publicada no host; só o Caddy escuta 80/443;
-#   - `restart: unless-stopped` nos dois serviços;
-#   - concorrência 1, coerente com 1 GB de RAM (ver comentário abaixo);
-#   - volumes nomeados para /data, certificados e configuração do Caddy.
+# Como subir:
+#
+#     docker compose -f docker-compose.prod.yml up -d --build
 
 services:
   app:
     build: .
     restart: unless-stopped
-    # Sem `ports`: a aplicação é alcançável apenas pela rede interna do
-    # compose. Expor 8000 no host permitiria acesso por HTTP puro, contornando
-    # o TLS — exatamente o que o proxy existe para impedir.
-    expose:
-      - "8000"
+
+    # PORTA 8002, PUBLICADA SOMENTE EM LOOPBACK.
+    #
+    # Por que 8002 e não 8001: a 8001 está livre porque o container do MOSTQI
+    # foi parado, mas ele continua existindo e pode ser religado. Ocupar a porta
+    # dele criaria um conflito silencioso no dia em que isso acontecer. 8002 é
+    # nova, e a numeração fica legível: 8000 Nícia, 8001 MOSTQI, 8002 Quick
+    # Filler.
+    #
+    # O prefixo `127.0.0.1:` é a parte que importa para segurança. Sem ele o
+    # Docker publica em 0.0.0.0 e insere uma regra de DNAT que passa por cima
+    # do Security Group — a aplicação ficaria acessível pela internet em HTTP
+    # puro, contornando o TLS. Com o prefixo, só o Nginx local alcança.
+    ports:
+      - "127.0.0.1:8002:8000"
+
+    # LIMITE DE MEMÓRIA — protege os vizinhos, não a si mesmo.
+    #
+    # A instância tem ~912 MiB e já roda Nícia (~101 MiB) e PostgreSQL
+    # (~41 MiB), nenhum deles com limite. Um pico do OCR (medido: 402 MB)
+    # sem limite poderia levar o OOM killer do host a escolher a vítima — e
+    # PostgreSQL é um alvo comum, por ser o processo com maior RSS.
+    #
+    # Com limite, o estouro fica contido no cgroup deste container: quem morre
+    # é o Quick Filler, e a transcrição termina em `erro`. É o desfecho certo,
+    # porque este é o serviço descartável dos três.
+    #
+    # `memswap_limit` maior que `mem_limit` libera a diferença em swap: até
+    # 600 MiB de RAM e mais 1 GiB de swap como amortecedor de pico.
+    mem_limit: 600m
+    memswap_limit: 1600m
+
     environment:
       QF_DATABASE_PATH: /data/quickfiller.db
       QF_STORAGE_DIR: /data/pdfs
@@ -33,15 +60,9 @@ services:
       QF_MAX_PDF_PAGES: "50"
       QF_RETENTION_HOURS: "24"
 
-      # UM documento por vez. Medido nesta aplicação:
-      #
-      #   pico de memória de um documento OCR ......... 402 MB
-      #   2 simultâneos em 512 MB ..................... morto pelo OOM killer
-      #   2 simultâneos em 1 GB (processo isolado) .... 87 s, sem erro
-      #
-      # Numa t3.micro há 1 GB TOTAL, e dele saem ainda o sistema operacional, o
-      # Caddy e o próprio servidor. Dois jobs de 402 MB não cabem com margem.
-      # O valor 1 é a leitura conservadora da medição, não um chute.
+      # UM por vez, obrigatoriamente. Medido nesta aplicação: um documento OCR
+      # chega a 402 MB de pico. A instância tem ~912 MiB no total, dividida com
+      # outras duas aplicações. Dois jobs não cabem, com ou sem swap.
       QF_MAX_PROCESSAMENTO_SIMULTANEO: "1"
 
       QF_MIN_WORDS_TEXT_LAYER: "40"
@@ -50,27 +71,18 @@ services:
       QF_OCR_PSM: "6"
 
       QF_LOG_LEVEL: INFO
+
     volumes:
       - qf-data:/data
 
-  caddy:
-    image: caddy:2-alpine
-    restart: unless-stopped
-    depends_on:
-      - app
-    ports:
-      - "80:80"    # necessária para o desafio HTTP-01 do Let's Encrypt
-      - "443:443"
-    environment:
-      # Definido no ambiente antes de subir. Sem domínio o Caddy não emite
-      # certificado.
-      QF_DOMINIO: ${QF_DOMINIO:?defina QF_DOMINIO com o domínio publico}
-    volumes:
-      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy-data:/data      # certificados — precisa persistir
-      - caddy-config:/config
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
 volumes:
+  # Nomeado pelo projeto do compose, então não colide com os volumes das outras
+  # aplicações da máquina. Guarda o SQLite e os PDFs enviados.
   qf-data:
-  caddy-data:
-  caddy-config:

@@ -578,6 +578,80 @@ O padrão dos três é o mesmo, e vale registrar: heurística baseada em conteú
 (`tem barra?`, `é só dígito?`) falha em documento real; posição de coluna e
 estrutura são mais confiáveis.
 
+### 3.25 Deploy: a infraestrutura real mudou a arquitetura (bloco 27.3)
+
+**O que foi planejado.** A primeira preparação de deploy usava Caddy como proxy
+reverso, com HTTPS automático via Let's Encrypt, num compose de produção
+próprio. A escolha se sustentava na medição de memória: 512 MB não comporta o
+pico de 402 MB do OCR com folga, e 1 GiB comporta.
+
+**O que a inspeção da infraestrutura mostrou.** A EC2 escolhida **já estava em
+produção**, com:
+
+- Amazon Linux 2023 (não Ubuntu, como o guia inicial supunha);
+- **Nginx e Certbot instalados no host**, ocupando as portas 80 e 443;
+- Nícia Track em `127.0.0.1:8000` com PostgreSQL 16;
+- MOSTQI em `127.0.0.1:8001`, de um desafio técnico anterior;
+- certificados válidos, gerenciados por Certbot.
+
+**A decisão: não introduzir um segundo proxy reverso.** Caddy precisaria das
+portas 80 e 443, que já servem duas aplicações. Rodar os dois é impossível sem
+derrubar o que está no ar. Reaproveitar o Nginx existente é mais simples — um
+proxy, uma renovação de certificado, nenhum risco para os vizinhos.
+
+O `deploy/Caddyfile` foi removido em vez de mantido "por histórico": config de
+uma arquitetura descartada envelhece mal e confunde quem lê. O histórico é este
+registro.
+
+**Diagnóstico da instância.** `t3.micro`, 2 vCPU, **~912 MiB de RAM**, EBS
+20 GB. Com as três aplicações no ar, `MemAvailable` estava em **~298 MiB** —
+menos que o pico de 402 MB de um único OCR. Consumo observado: Nícia ~101 MiB,
+PostgreSQL ~41 MiB, MOSTQI ~67 MiB em repouso. **Nenhum container tinha limite
+de memória.** CPU praticamente ociosa (load ~0,01, idle 99–100%), sem registro
+de OOM no kernel, disco sem gargalo.
+
+**O risco, explicitamente.** Subir o Quick Filler ali sem proteção poderia
+levar o OOM killer do host a escolher a vítima — e o PostgreSQL é um alvo
+provável, por ser o processo de maior RSS. O serviço de menor valor derrubaria
+o de maior.
+
+**Três medidas, todas reversíveis:**
+
+1. **MOSTQI parado** (`docker stop`, container e imagem preservados). Liberou
+   `MemAvailable` de ~298 para ~339 MiB. Reversível com `docker start`.
+2. **2 GiB de swap** no EBS existente, persistido em `/etc/fstab`. Swap aqui é
+   **amortecedor de pico, não substituto de RAM** — a intenção é absorver o
+   momento do OCR, não rodar a aplicação em disco.
+3. **`vm.swappiness` de 60 para 10**, persistido em
+   `/etc/sysctl.d/99-swap.conf`, para o kernel preferir RAM física e recorrer
+   à swap só sob pressão.
+
+**Mais duas decisões no projeto:**
+
+- `QF_MAX_PROCESSAMENTO_SIMULTANEO=1`, obrigatório e não negociável nesta
+  instância;
+- **limite de memória no container** (`mem_limit: 600m`,
+  `memswap_limit: 1600m`), que os vizinhos não têm. Com ele, um estouro fica
+  contido no cgroup do Quick Filler: quem morre é o serviço descartável, e a
+  transcrição termina em `erro` — em vez de o kernel escolher o PostgreSQL.
+
+**Porta 8002, publicada em loopback.** A 8001 está livre porque o MOSTQI foi
+parado, mas ele pode voltar; ocupá-la criaria conflito silencioso. E o prefixo
+`127.0.0.1:` é o que impede o Docker de publicar em `0.0.0.0` e inserir uma
+regra de DNAT que passaria por cima do Security Group, expondo a aplicação em
+HTTP puro.
+
+**Trade-offs assumidos.** Três aplicações numa `t3.micro` de 912 MiB é apertado.
+Ganha-se custo zero adicional e nenhuma infraestrutura nova; paga-se com margem
+estreita e com o Quick Filler dependendo de swap num pico. É aceitável **porque
+o tráfego esperado é de demonstração**, não de produção real.
+
+**Esta arquitetura NÃO está validada.** Ela só passa a estar depois de medir um
+OCR real na instância: RAM antes e durante, `MemAvailable`, swap usada, CPU,
+consumo por container, ausência de OOM, e o comportamento depois que o
+processamento termina. O critério para abandoná-la e migrar para uma instância
+de ~2 GiB está escrito em `deploy/README.md`.
+
 ---
 
 ## 4. Erros e caminhos errados do agente
