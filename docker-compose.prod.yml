@@ -29,10 +29,17 @@ services:
     # nova, e a numeração fica legível: 8000 Nícia, 8001 MOSTQI, 8002 Quick
     # Filler.
     #
-    # O prefixo `127.0.0.1:` é a parte que importa para segurança. Sem ele o
-    # Docker publica em 0.0.0.0 e insere uma regra de DNAT que passa por cima
-    # do Security Group — a aplicação ficaria acessível pela internet em HTTP
-    # puro, contornando o TLS. Com o prefixo, só o Nginx local alcança.
+    # O prefixo `127.0.0.1:` é a parte que importa para segurança: só o Nginx
+    # local alcança a aplicação, e todo acesso externo passa obrigatoriamente
+    # pelo proxy — ou seja, por TLS.
+    #
+    # Precisão: o Security Group da AWS continua valendo mesmo com bind em
+    # 0.0.0.0, porque é aplicado fora da instância, no nível da ENI/VPC. O que
+    # o bind em loopback faz é reduzir a superfície de exposição — sem ele, a
+    # aplicação ficaria alcançável por qualquer caminho que chegue à instância
+    # naquela porta, e o Docker publica regras de DNAT que não respeitam
+    # firewall configurado no host (firewalld/iptables INPUT). O SG protege; o
+    # loopback garante.
     ports:
       - "127.0.0.1:8002:8000"
 

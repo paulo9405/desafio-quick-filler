@@ -636,10 +636,14 @@ o de maior.
   transcrição termina em `erro` — em vez de o kernel escolher o PostgreSQL.
 
 **Porta 8002, publicada em loopback.** A 8001 está livre porque o MOSTQI foi
-parado, mas ele pode voltar; ocupá-la criaria conflito silencioso. E o prefixo
-`127.0.0.1:` é o que impede o Docker de publicar em `0.0.0.0` e inserir uma
-regra de DNAT que passaria por cima do Security Group, expondo a aplicação em
-HTTP puro.
+parado, mas ele pode voltar; ocupá-la criaria conflito silencioso. O prefixo
+`127.0.0.1:` garante que só o Nginx local alcance a aplicação, de modo que todo
+acesso externo passe por TLS.
+
+> A justificativa original deste item afirmava que o bind em `0.0.0.0` faria o
+> Docker "passar por cima do Security Group". **Isso está errado** e foi
+> corrigido — ver o fim da seção 3.26. A decisão continua a mesma; só o motivo
+> estava impreciso.
 
 **Trade-offs assumidos.** Três aplicações numa `t3.micro` de 912 MiB é apertado.
 Ganha-se custo zero adicional e nenhuma infraestrutura nova; paga-se com margem
@@ -651,6 +655,115 @@ OCR real na instância: RAM antes e durante, `MemAvailable`, swap usada, CPU,
 consumo por container, ausência de OOM, e o comportamento depois que o
 processamento termina. O critério para abandoná-la e migrar para uma instância
 de ~2 GiB está escrito em `deploy/README.md`.
+
+### 3.26 Deploy executado: medições reais da EC2 (bloco 27.3)
+
+O deploy foi realizado na EC2 compartilhada. Os números abaixo são **da
+instância**, não do ambiente de desenvolvimento — a distinção importa, porque
+as duas medições não coincidem.
+
+**Publicado em:** `https://quickfiller.paulodev.net` · commit `e75493d`
+
+#### Incidente: Buildx incompatível
+
+O primeiro `docker compose up --build` falhou **antes de qualquer build**:
+
+    compose build requires buildx 0.17.0 or later
+
+A Amazon Linux 2023 entrega o Buildx **0.12.1** dentro do próprio pacote do
+Docker (`docker-25.0.16-1.amzn2023.0.2.x86_64`), em
+`/usr/libexec/docker/cli-plugins/`. Não há pacote separado no `dnf`, e o
+Compose instalado (v5.3.0) exige 0.17.0+.
+
+**Alternativa descartada:** atualizar ou trocar o Docker do sistema. Ele
+sustenta Nícia, PostgreSQL e MOSTQI — mexer nele para publicar um desafio
+técnico inverteria a prioridade entre o serviço crítico e o descartável.
+
+**Solução adotada:** instalar o Buildx **apenas para o usuário**, em
+`~/.docker/cli-plugins/docker-buildx` (v0.36.1). O plugin do usuário tem
+precedência sobre o do sistema, o 0.12.1 original permanece intacto, e a
+mudança é reversível apagando um arquivo. Nenhum serviço existente foi
+reiniciado.
+
+Build subsequente: **34 s**, sem falha de memória.
+
+#### Baseline antes do OCR
+
+| | |
+|---|---|
+| RAM | 912 MiB total · 439 usada · **313 disponível** |
+| Swap em uso | 21,5 MiB |
+| Quick Filler | 61,34 MiB / 600 |
+| Nícia | 89,72 MiB |
+| PostgreSQL | 36,95 MiB |
+| Load | 0,04 / 0,10 / 0,05 |
+
+#### Durante um OCR real, pela interface pública
+
+Documento de 280 linhas, 4 marcadas como "precisam de atenção" — o mesmo
+resultado obtido localmente, agora por HTTPS.
+
+| | Observado |
+|---|---|
+| Quick Filler | **~459–466 MiB / 600** |
+| CPU do container | ~115–143% |
+| **RAM disponível no host** | **caiu a ~61–67 MiB** |
+| **Swap em uso** | **subiu a ~315–325 MiB** |
+
+Estes são os maiores valores vistos numa amostragem de 2 s — **não
+necessariamente o pico absoluto**.
+
+Comparação com o ambiente de desenvolvimento: localmente, o mesmo container com
+o mesmo limite chegou a 507,4 MiB. A EC2 observou 459–466 MiB. Mesma ordem de
+grandeza, ambos abaixo do limite de 600 MiB — a estimativa local se sustentou.
+
+#### Depois do OCR
+
+RAM voltou a 305 MiB disponíveis, swap a ~21 MiB, Quick Filler a ~61 MiB.
+`OOMKilled=false`, `RestartCount=0`, **nenhum registro de OOM no kernel**,
+Nícia e PostgreSQL ativos. Load 0,15 / 0,08 / 0,04.
+
+O swap voltou ao patamar de repouso, o que confirma que ele funcionou como
+**amortecedor de pico** e não como memória de trabalho permanente.
+
+#### HTTPS
+
+Certbot emitiu e implantou o certificado (`--nginx`), com renovação automática
+configurada. Validade até 2026-11-11. `http://` responde **301** para
+`https://`. `nginx -t` passou antes e depois. Os arquivos de configuração da
+Nícia e do MOSTQI não foram tocados.
+
+#### Conclusão de capacidade — agora com evidência real
+
+A configuração (t3.micro · 2 GiB swap · `swappiness=10` · MOSTQI parado ·
+limite de 600 MiB · concorrência 1) **concluiu um OCR real sem OOM, sem
+reinício e sem queda observada da Nícia ou do PostgreSQL**.
+
+**Mas a margem é estreita.** A RAM disponível do host caiu para ~60–70 MiB e a
+swap passou de 300 MiB durante o processamento.
+
+Portanto:
+
+- **adequada** para o cenário atual: desafio, demonstração, tráfego baixo;
+- **não adequada** para concorrência real ou vários usuários simultâneos;
+- **não aumentar** `QF_MAX_PROCESSAMENTO_SIMULTANEO` acima de 1 nesta EC2;
+- swap **não** é substituto permanente de RAM — se ela passar a ser usada de
+  forma sustentada, o dimensionamento está errado, não resolvido;
+- havendo crescimento de tráfego ou impacto nos outros serviços, migrar o
+  Quick Filler para instância com mais RAM ou infraestrutura separada.
+
+#### Correção de uma imprecisão minha
+
+O comentário original no `docker-compose.prod.yml` afirmava que publicar em
+`0.0.0.0` faria o Docker "passar por cima do Security Group". **Está errado:**
+o Security Group é aplicado fora da instância, no nível da ENI, e continua
+valendo independentemente do bind.
+
+O que o Docker de fato contorna são regras de firewall configuradas **no
+host** (firewalld/iptables na cadeia INPUT), porque publica via DNAT. O bind em
+`127.0.0.1` continua sendo a decisão certa — por reduzir superfície de
+exposição e garantir que todo acesso externo passe pelo proxy, ou seja, por
+TLS. Só a justificativa estava imprecisa, e foi corrigida.
 
 ---
 

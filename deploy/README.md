@@ -18,6 +18,9 @@ Internet → HTTPS → Nginx (host) ─┬─ 127.0.0.1:8000 → Nícia Track
 | TLS | Nginx + Certbot **já instalados no host** |
 | Domínio | `quickfiller.paulodev.net` (DNS no Cloudflare) |
 
+**Publicado e validado em produção.** As medições reais da instância estão em
+`docs/PROCESSO.md`, seção 3.26.
+
 ## Por que não Caddy
 
 A preparação anterior usava Caddy com HTTPS automático. **Foi descartada**: o
@@ -34,10 +37,15 @@ A 8001 ficou livre porque o container do MOSTQI foi parado — mas ele continua
 existindo e pode ser religado. Ocupar a porta dele criaria um conflito
 silencioso nesse dia. A 8002 é nova e mantém a numeração legível.
 
-A publicação é **em loopback** (`127.0.0.1:8002:8000`). Sem o prefixo, o Docker
-publicaria em `0.0.0.0` e criaria uma regra de DNAT que passa por cima do
-Security Group — a aplicação ficaria acessível pela internet em HTTP puro,
-contornando o TLS.
+A publicação é **em loopback** (`127.0.0.1:8002:8000`): só o Nginx local
+alcança a aplicação, então todo acesso externo passa pelo proxy — ou seja, por
+TLS.
+
+O Security Group da AWS continua valendo mesmo com bind em `0.0.0.0`, porque é
+aplicado fora da instância, no nível da ENI. O que o loopback acrescenta é
+reduzir a superfície de exposição: o Docker publica portas via DNAT, e essas
+regras não respeitam firewall configurado no host (`firewalld`/`iptables`
+INPUT). O SG protege; o loopback garante.
 
 ---
 
@@ -66,14 +74,36 @@ git clone https://github.com/paulo9405/desafio-quick-filler.git
 cd desafio-quick-filler
 ```
 
-### 3. Subir a aplicação (ainda sem Nginx)
+### 3. Buildx — necessário na Amazon Linux 2023
+
+O primeiro `--build` falha antes de compilar qualquer coisa:
+
+```
+compose build requires buildx 0.17.0 or later
+```
+
+A AL2023 entrega o Buildx **0.12.1** dentro do próprio pacote do Docker
+(`/usr/libexec/docker/cli-plugins/`), e não há pacote separado no `dnf`.
+
+**Não atualize o Docker do sistema** — ele sustenta as outras aplicações da
+máquina. Instale o Buildx apenas para o usuário; o plugin do usuário tem
+precedência e a mudança é reversível apagando o arquivo:
+
+```bash
+mkdir -p ~/.docker/cli-plugins
+curl -sSL -o ~/.docker/cli-plugins/docker-buildx \
+  https://github.com/docker/buildx/releases/latest/download/buildx-v0.36.1.linux-amd64
+chmod +x ~/.docker/cli-plugins/docker-buildx
+docker buildx version    # deve mostrar v0.36.1
+```
+
+### 4. Subir a aplicação (ainda sem Nginx)
 
 ```bash
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
-O build leva alguns minutos e é a etapa mais pesada em memória — é para ela
-que o swap existe.
+Build medido na instância: **~34 s**, sem falha de memória.
 
 Validar antes de expor:
 
@@ -89,7 +119,7 @@ docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 free -m
 ```
 
-### 4. Nginx
+### 5. Nginx
 
 ```bash
 sudo cp deploy/nginx-quickfiller.conf /etc/nginx/conf.d/quickfiller.conf
@@ -99,7 +129,7 @@ sudo systemctl reload nginx
 
 `reload` não derruba conexões — Nícia continua servindo.
 
-### 5. Certificado
+### 6. Certificado
 
 ```bash
 sudo certbot --nginx -d quickfiller.paulodev.net
@@ -110,7 +140,7 @@ redirecionamento. **Não toca nos outros arquivos.**
 
 Depois disso, religar o proxy do Cloudflare, se desejado.
 
-### 6. Validação
+### 7. Validação
 
 ```bash
 curl -i https://quickfiller.paulodev.net/healthz
@@ -119,10 +149,27 @@ curl -I  http://quickfiller.paulodev.net/            # 301/308 → https
 
 ---
 
-## Monitoramento durante o primeiro OCR
+## Capacidade — medido em produção
 
-A arquitetura **ainda não está validada**. Ela só passa a estar depois de medir
-um OCR real na instância. Antes de enviar o documento:
+Um OCR real foi executado pela interface pública. Resultado:
+
+| Momento | RAM disponível | Swap em uso | Quick Filler |
+|---|---|---|---|
+| Antes | 313 MiB | 21,5 MiB | 61 MiB |
+| **Durante o OCR** | **~61–67 MiB** | **~315–325 MiB** | **~459–466 MiB / 600** |
+| Depois | 305 MiB | ~21 MiB | 61 MiB |
+
+Sem OOM, sem reinício, Nícia e PostgreSQL ativos o tempo todo. O swap voltou ao
+patamar de repouso — funcionou como amortecedor de pico, não como memória de
+trabalho.
+
+**A margem é estreita.** Adequada para demonstração e tráfego baixo; **não**
+para concorrência real. Não aumente `QF_MAX_PROCESSAMENTO_SIMULTANEO` nesta
+instância.
+
+### Como repetir a medição
+
+Antes de enviar o documento:
 
 ```bash
 free -m; cat /proc/pressure/memory
@@ -143,7 +190,7 @@ dmesg -T | grep -i -E 'oom|killed process' | tail   # precisa sair vazio
 docker ps --format 'table {{.Names}}\t{{.Status}}'  # Nícia e PostgreSQL de pé
 ```
 
-### Critério para abandonar esta arquitetura
+### Critério para migrar para instância maior
 
 Migrar para uma instância dedicada com ~2 GiB se qualquer um ocorrer:
 
