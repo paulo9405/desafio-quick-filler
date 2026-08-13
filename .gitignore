@@ -15,7 +15,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# IDEs / SO
+# IDEs / SO / ferramentas locais
 .vscode/
 .idea/
 .DS_Store
+.claude/

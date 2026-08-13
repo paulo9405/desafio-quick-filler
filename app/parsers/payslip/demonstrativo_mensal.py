@@ -208,7 +208,7 @@ class DemonstrativoMensalParser(LayoutParser):
         Decisão: compor o label com o título da coluna, que o próprio documento
         imprime. Nada é inventado, e o vocabulário resultante coincide com o do
         exemplo oficial do README ("Total Vencimentos", "Total Descontos").
-        Registrada como decisão P2 em docs/PROCESSO.md.
+        Registrada como decisão P2 em PROCESSO.md.
         """
         bases: List[Dict[str, str]] = []
         for coluna in ("Proventos", "Descontos"):

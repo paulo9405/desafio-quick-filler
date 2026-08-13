@@ -2,7 +2,7 @@
 
 O primeiro é uma REGRESSÃO de um bug real: um limiar de confiança apagava
 batidas corretas em silêncio. Ver o comentário em `app/extraction/ocr.py` e
-`docs/PROCESSO.md`.
+`PROCESSO.md`.
 """
 
 from __future__ import annotations

@@ -1,6 +1,6 @@
 """Persistência das transcrições em SQLite.
 
-Por que SQLite e não PostgreSQL: ver docs/roadmap.md seção 4. Resumo — a
+Por que SQLite e não PostgreSQL: ver PROCESSO.md, decisão 3.1. Resumo — a
 Quick Filler não exige banco, a persistência necessária é um documento JSON por
 transcrição, e um serviço a menos deixa o `docker compose up` mais rápido e mais
 confiável, que é o requisito duro do desafio.

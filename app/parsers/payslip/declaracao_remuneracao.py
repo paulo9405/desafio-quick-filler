@@ -17,7 +17,7 @@ PARTICULARIDADES
 1. DOIS BLOCOS por página, com a MESMA competência e folhas diferentes
    (`MÊS` e `ACERTO`). Cada bloco vira uma entrada, e as duas compartilham o
    mesmo `page` — mesmo precedente que o README descreve para a ficha
-   financeira. Ver decisão em docs/PROCESSO.md.
+   financeira. Ver decisão em PROCESSO.md.
 
 2. Descontos vêm com sinal negativo impresso (`-433,20`). O sinal é preservado
    como está: guardamos o que o documento mostra.

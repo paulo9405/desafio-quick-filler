@@ -15,7 +15,7 @@ services:
 
       # Quantos documentos são processados ao mesmo tempo. Medido: 6 uploads
       # simultâneos de um documento de 19 s levaram 189 s no total, pior que em
-      # fila. Ver docs/PROCESSO.md.
+      # fila. Ver PROCESSO.md.
       QF_MAX_PROCESSAMENTO_SIMULTANEO: "2"
 
       # Extração: abaixo deste número de palavras a página vai para OCR.
@@ -24,7 +24,7 @@ services:
       QF_MIN_WORDS_TEXT_LAYER: "40"
 
       # OCR. `psm 6` foi escolhido por medição comparativa; trocar por 4 custa
-      # 10 dias e 32 batidas num dos documentos oficiais. Ver docs/PROCESSO.md.
+      # 10 dias e 32 batidas num dos documentos oficiais. Ver PROCESSO.md.
       QF_OCR_LANG: por
       QF_OCR_DPI: "300"
       QF_OCR_PSM: "6"

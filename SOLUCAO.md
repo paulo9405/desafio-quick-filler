@@ -3,7 +3,7 @@
 Como o sistema funciona e por que foi construído assim.
 
 O histórico do desenvolvimento — decisões tomadas no caminho, erros, medições e
-uso de IA — está em [`docs/PROCESSO.md`](docs/PROCESSO.md). Este documento
+uso de IA — está em [`PROCESSO.md`](PROCESSO.md). Este documento
 descreve o **resultado**.
 
 ---
@@ -32,6 +32,10 @@ ver [Limitações](#limitações).
 | `payroll-02` | texto nativo | 10 entradas · 92 verbas · 85 bases |
 | `payroll-03` | texto nativo | 5 entradas · 44 verbas · 45 bases |
 | `payroll-04` | OCR | 5 entradas · 42 verbas · 40 bases |
+
+As planilhas geradas a partir desses PDFs estão em
+[`planilhas/`](planilhas/README.md), nos três formatos, produzidas pelo fluxo
+real da aplicação. `time-card-04` não tem planilha, e o motivo está lá.
 
 ---
 

@@ -189,7 +189,6 @@ def montar_tabela_holerite(value: Dict[str, Any]) -> Tabela:
         raiz = f"pages.{indice_pagina}"
 
         # Label repetido na mesma página: mantém a primeira ocorrência.
-        # Decisão provisória — ver docs/roadmap.md seção 2.2, pendência P2.
         valores: Dict[str, str] = {}
         posicoes: Dict[str, int] = {}
         for indice_campo, campo in enumerate(pagina.get("fields", [])):

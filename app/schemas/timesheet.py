@@ -19,7 +19,7 @@
     }
 
 Regras que estes modelos NÃO conseguem impor sozinhos, e que são
-responsabilidade dos parsers (ver docs/roadmap.md seções 10, 10.1 e 10.2):
+responsabilidade dos parsers (ver SOLUCAO.md, "Estratégia dos parsers"):
 
 - `days` segue a ordem física do documento — nunca ordenar por data;
 - dias sem batida permanecem, com `punches: []` — nunca descartar linha;

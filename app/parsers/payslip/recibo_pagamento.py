@@ -19,7 +19,7 @@ LAYOUT
 PARTICULARIDADES
 
 1. DUAS VIAS IDÊNTICAS por página — via da empresa e via do empregado, com o
-   mesmo conteúdo. Sai UMA entrada por página; ver decisão em docs/PROCESSO.md.
+   mesmo conteúdo. Sai UMA entrada por página; ver decisão em PROCESSO.md.
 
 2. Competência por extenso (`SETEMBRO/2019`), não numérica.
 

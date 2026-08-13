@@ -19,7 +19,7 @@ Internet → HTTPS → Nginx (host) ─┬─ 127.0.0.1:8000 → Nícia Track
 | Domínio | `quickfiller.paulodev.net` (DNS no Cloudflare) |
 
 **Publicado e validado em produção.** As medições reais da instância estão em
-`docs/PROCESSO.md`, seção 3.26.
+`PROCESSO.md`, seção 3.26.
 
 ## Por que não Caddy
 
@@ -29,7 +29,7 @@ Nícia e MOSTQI. Rodar os dois é impossível sem derrubar o que já está no ar
 
 Reaproveitar o Nginx é mais simples e mais seguro: um proxy só, uma renovação
 de certificado só, e nenhum risco para as aplicações existentes. O histórico da
-decisão está em `docs/PROCESSO.md`.
+decisão está em `PROCESSO.md`.
 
 ## Por que a porta 8002
 

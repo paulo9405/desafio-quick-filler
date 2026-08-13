@@ -31,8 +31,6 @@ Pontos críticos, todos exigidos literalmente pela especificação:
   Converter para float perde o formato e introduz erro de arredondamento.
   Valores negativos preservam o sinal (`"-433,20"`).
 - Qualquer campo pode conter `?` quando um caractere não foi lido.
-
-Ver docs/roadmap.md seções 11, 11.1 e 11.2.
 """
 
 from __future__ import annotations

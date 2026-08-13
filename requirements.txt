@@ -4,7 +4,7 @@ python-multipart==0.0.20
 
 # PDF: extração de palavras com coordenadas (pdfplumber) e
 # renderização de página para o caminho de OCR (pypdfium2).
-# Ver docs/roadmap.md seção 4 (PDF) para a justificativa da escolha.
+# Ver PROCESSO.md, decisão 3.2, para a justificativa da escolha.
 pdfplumber==0.11.5
 pypdfium2==4.30.0
 

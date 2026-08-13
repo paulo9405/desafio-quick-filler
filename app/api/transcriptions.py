@@ -1,7 +1,7 @@
 """Rotas do contrato HTTP oficial.
 
 CONTRATO LITERAL — não renomear rota, campo, status ou valor de enum.
-Há avaliação automatizada. Ver docs/roadmap.md seções 3 e 8.
+Há avaliação automatizada. Ver SOLUCAO.md, seção "API".
 """
 
 from __future__ import annotations

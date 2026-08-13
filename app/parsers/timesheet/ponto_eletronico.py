@@ -35,7 +35,7 @@ SEMÂNTICA DE IN/OUT NO INTERVALO
 
 Numa coluna de intervalo, o primeiro horário é a SAÍDA para o intervalo e o
 segundo é o RETORNO. Portanto `OUT` e depois `IN` — o `kind` sai do significado
-da coluna, não da posição na lista. Decisão registrada em docs/PROCESSO.md.
+da coluna, não da posição na lista. Decisão registrada em PROCESSO.md.
 """
 
 from __future__ import annotations

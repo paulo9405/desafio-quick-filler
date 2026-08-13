@@ -1,6 +1,7 @@
 """`ExtractedPage` — o contrato interno entre extração e parsing.
 
-Esta é a decisão arquitetural central do projeto (docs/roadmap.md seção 5.1).
+Esta é a decisão arquitetural central do projeto — ver SOLUCAO.md,
+"`ExtractedPage` — a decisão central".
 
 Os dois caminhos de extração — texto nativo e OCR — produzem exatamente esta
 estrutura. Como consequência:

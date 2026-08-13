@@ -14,7 +14,7 @@ DUAS DECISÕES QUE IMPORTAM
    idêntico ao do texto nativo, e é o que permite que o mesmo parser funcione
    nos dois caminhos.
 
-NOTA SOBRE QUALIDADE (ver docs/roadmap.md seção 2.1)
+NOTA SOBRE QUALIDADE
 
 Dos quatro documentos sem camada de texto, três (`time-card-02`,
 `time-card-03`, `payroll-04`) são PDFs vetoriais nítidos — o texto foi desenhado
@@ -77,8 +77,9 @@ def ocr_pages(
     encaixar no lugar certo sem depender de ordem.
 
     Recebe só as páginas necessárias de propósito: renderizar e passar OCR em
-    página que já tem texto seria desperdício, e o próprio roadmap alerta para
-    nunca aplicar OCR cegamente.
+    página que já tem texto seria desperdício, e aplicar OCR cegamente é
+    exatamente o que a estratégia de extração evita (ver SOLUCAO.md,
+    "Estratégia de extração").
     """
     alvos = sorted(set(page_numbers))
     if not alvos:

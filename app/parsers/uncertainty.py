@@ -28,7 +28,7 @@ E os 4 tokens realmente errados do documento têm confiança 25, 41, 44 e 53 —
 dentro da mesma faixa dos corretos. Um corte por confiança em 50 marcaria
 dezenas de valores corretos para pegar 4 errados.
 
-Há ainda dois contraexemplos diretos, registrados em `docs/PROCESSO.md`:
+Há ainda dois contraexemplos diretos, registrados em `PROCESSO.md`:
 
 - `07:00d`, `15:00d` e `06:59d` lidos CORRETAMENTE com confiança 10, 16 e 9;
 - `Sai1` lido ERRADO como `Sail` com confiança 95.

@@ -4,7 +4,7 @@ ATENÇÃO: nomes de campos, valores de enum e shape são LITERAIS do README da
 Quick Filler. Há avaliação automatizada comparando esta saída. Não renomear,
 não acrescentar campos ao envelope, não mudar tipos.
 
-Referência: docs/roadmap.md seções 3 e 8.
+Referência: SOLUCAO.md, seção "API".
 """
 
 from __future__ import annotations

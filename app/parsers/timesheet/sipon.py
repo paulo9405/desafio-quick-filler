@@ -52,7 +52,8 @@ from app.parsers.uncertainty import ler_horario
 COLUNAS = ("Dia", "Semana", "Jornada", "Entrada", "Saida", "Ocorrencia", "Qtde")
 
 # Colunas que contêm batidas — e a semântica de cada uma.
-# `kind` vem DA COLUNA, não da posição na lista de batidas. Ver roadmap 10.1.
+# `kind` vem DA COLUNA, não da posição na lista de batidas.
+# Ver SOLUCAO.md, "`kind` (IN/OUT) vem da coluna".
 COLUNAS_DE_BATIDA = (("Entrada", "IN"), ("Saida", "OUT"))
 
 # `Mes/Ano : 7 / 2012` — o mês pode vir com um ou dois dígitos.

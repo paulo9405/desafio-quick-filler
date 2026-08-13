@@ -3,14 +3,11 @@
 Documentação do processo de desenvolvimento assistido por IA, conforme exigido
 pelo README oficial da Quick Filler.
 
-> **Status:** em construção. Escrito ao longo da implementação, não no final.
-> Os registros abaixo são reais e datados; nada aqui foi reconstruído de
-> memória depois do fato.
-
-> **Nota de entrega:** este arquivo está em `docs/PROCESSO.md`. A lista oficial
-> de entregáveis nomeia `PROCESSO.md` sem caminho, e o avaliador pode procurá-lo
-> na raiz do repositório. Antes da entrega, decidir entre mover para a raiz ou
-> deixar um ponteiro na raiz apontando para cá.
+> **Como ler este arquivo.** Ele foi escrito ao longo da implementação, não no
+> final. As seções 3 e 4 são o registro corrido do trabalho — decisões e erros
+> anotados quando aconteceram, com as medições que os sustentam. As seções 5 e 6
+> são o fechamento, consolidado no fim a partir desse registro.
+> Nada aqui foi reconstruído de memória depois do fato.
 
 ---
 
@@ -18,7 +15,7 @@ pelo README oficial da Quick Filler.
 
 | Ferramenta | Para quê |
 |---|---|
-| **Claude Code (Opus)** | Agente principal de desenvolvimento: análise dos documentos oficiais e dos PDFs, revisão do roadmap, implementação, testes e validação em container. |
+| **Claude Code (Opus)** | Agente principal de desenvolvimento: análise dos documentos oficiais e dos PDFs, revisão do planejamento interno, implementação, testes e validação em container. |
 | **Docker / Docker Compose** | Ambiente de execução e de teste. O ambiente local tem Python 3.9 e não tem Tesseract; tudo roda no container para ter paridade com o `docker compose up` que a Quick Filler vai executar. |
 | **poppler-utils** (`pdftotext`, `pdfinfo`, `pdffonts`, `pdfimages`, `pdftoppm`) | Só na fase de **análise** dos 8 PDFs: verificar camada de texto, fontes embutidas, imagens e renderizar páginas para inspeção visual. Não é dependência da aplicação. |
 
@@ -26,33 +23,53 @@ Ferramentas de linha de comando de análise foram usadas para **entender** os
 documentos, não para processá-los na aplicação. A aplicação usa `pdfplumber` e
 `pypdfium2`.
 
+O uso de IA aqui foi intensivo, não acessório: **todo o código foi produzido
+com o agente.** A divisão exata do trabalho — o que coube a mim e o que coube a
+ele — está na [seção 5](#5-o-que-foi-reescrito-à-mão-e-por-quê), e os pontos em
+que ele errou estão na seção 4.
+
 ---
 
 ## 2. Linha do tempo do trabalho
 
-Tempo real controlado pelo candidato — os campos de duração são preenchidos por
-ele, não pelo agente.
+**Nota de método.** O tempo por bloco não foi cronometrado durante o trabalho.
+Em vez de reconstruir durações de memória no fim — que seria inventar precisão
+que nunca existiu — esta seção registra duas coisas que são verificáveis: o
+horário real dos commits, e a estimativa de tempo efetivo informada pelo
+candidato.
 
-### Sessão 1 — 12/08/2026
+### Duas sessões, pelos commits
 
-**Objetivo:** análise inicial, correção do roadmap e início da Fase 1.
+O histórico do Git é o registro objetivo. Cada linha marca o commit que fechou a
+etapa.
 
-| Bloco | Descrição | Tempo |
+| | 12/08/2026 — sessão 1 | 13/08/2026 — sessão 2 |
 |---|---|---|
-| 1.0 | Análise dos documentos oficiais (README, INSTRUCOES, repositório) e dos 8 PDFs | _(a preencher)_ |
-| 1.1 | Revisão do `docs/roadmap.md` com as correções D1–D12 | _(a preencher)_ |
-| 1.2 | Fase 1, bloco 1: fundação FastAPI + Docker + Tesseract + `/healthz` | _(a preencher)_ |
-| 1.3 | Fase 1, bloco 2: contrato HTTP + persistência + processamento assíncrono | _(a preencher)_ |
+| Início | 08:38 workspace inicial | 09:05 stack de deploy |
+| | 09:49 fundação + Docker + Tesseract | 10:23 adaptação ao Nginx da EC2 |
+| | 10:14 contrato HTTP + persistência | 11:01 medições reais da EC2 |
+| | 10:46 extração (nativo + OCR) | 11:15 README + SOLUCAO |
+| | 11:13 registry + primeiro parser | 11:48 planilhas dos exemplos |
+| | 11:51 cobertura dos dois tipos | |
+| | 12:55 incerteza `?` | |
+| | 13:07 avisos + destaques | |
+| | 14:28 interface de revisão | |
+| | 16:08 layouts restantes | |
+| | 17:11 configurações no compose | |
+| Fim | 18:18 concorrência + permissões | |
+| **Decorrido** | **~9h40** | **~2h45** |
 
-**Tempo acumulado até o bloco 27.3 (deploy): ~8 horas efetivas.**
+**Decorrido não é tempo efetivo.** Esses intervalos incluem pausas, refeições e
+o tempo em que a máquina rodava OCR sozinha.
 
-Estimativa informada pelo candidato. Desconta as pausas do dia — não é o tempo
-corrido desde o início da manhã. Não há precisão maior que essa, e inventá-la
-seria pior que a estimativa.
+### Tempo efetivo
 
-Contra o orçamento de ~14 h sugerido pela Quick Filler, restam **~6 horas** para
-deploy, documentação, planilhas dos exemplos e revisão final. A escolha de
-infraestrutura precisa caber nessa margem.
+**Até o bloco 27.3 (deploy): ~8 horas efetivas.** Estimativa do candidato,
+descontando as pausas. Não há precisão maior que essa, e fabricá-la seria pior
+que a estimativa.
+
+Contra o orçamento de ~14 h sugerido pela Quick Filler, isso deixou a margem que
+cobriu deploy, documentação, planilhas dos exemplos e revisão final.
 
 ---
 
@@ -170,8 +187,8 @@ impressa"; a segunda produz o dado que a planilha e a verificação de data
 sequencial realmente precisam.
 
 **A decisão foi deixada deliberadamente em aberto.** A pendência foi registrada
-como P1 em `docs/roadmap.md` seção 2.2, com instrução explícita de não
-implementar nenhuma das alternativas até haver definição. As Fases seguintes do
+como P1 no planejamento interno, com instrução explícita de não implementar
+nenhuma das alternativas até haver definição. As Fases seguintes do
 bloco de implementação foram conduzidas normalmente, porque nenhuma delas
 dependia dessa resposta — só o parser de cartão de ponto dependia.
 
@@ -276,9 +293,8 @@ Decisão: gravar a extração real do Tesseract como fixture
 O caminho de OCR de verdade continua coberto por um teste de integração que
 processa uma página real.
 
-É o mesmo movimento que o roadmap descreve para receber um layout novo na sessão
-ao vivo: analisar o documento, criar a fixture, criar o teste, implementar o
-parser. `tests/fixtures/gerar.py` regera quando necessário.
+É o mesmo movimento previsto para receber um layout novo na sessão ao vivo:
+analisar o documento, criar a fixture, criar o teste, implementar o parser. `tests/fixtures/gerar.py` regera quando necessário.
 
 ### 3.13 Estratégia de incerteza: validação estrutural, não confiança (bloco 2.2)
 
@@ -577,6 +593,40 @@ Total do documento: 86 → **92 verbas**.
 O padrão dos três é o mesmo, e vale registrar: heurística baseada em conteúdo
 (`tem barra?`, `é só dígito?`) falha em documento real; posição de coluna e
 estrutura são mais confiáveis.
+
+### 3.24 Auditoria de segurança: três lacunas fechadas (bloco 27.2)
+
+A revisão de segurança encontrou três coisas que a implementação prometia e não
+cumpria. Nenhuma era exótica; todas eram consequência de ter otimizado para o
+caminho feliz.
+
+**1. Concorrência sem limite.** Nada impedia N documentos de entrarem em OCR ao
+mesmo tempo. Medido: 6 uploads simultâneos de um documento de 19 s levaram
+**189 s** no total — pior que se tivessem esperado em fila (~114 s), porque o
+Tesseract já satura os núcleos disponíveis e a disputa só adiciona troca de
+contexto. Pior ainda na EC2: com 512 MiB e 2 jobs, o OOM killer derrubou o
+processo — reproduzido, não suposto.
+
+Corrigido com um `BoundedSemaphore` adquirido **dentro** da tarefa de
+background, não no request. O POST continua respondendo 202 na hora; o
+excedente espera com `status: processando`. A fila é o próprio semáforo — não
+há fila distribuída, e nem precisa haver.
+
+**2. PII em repouso sem restrição.** Os PDFs enviados contêm nome, CPF,
+matrícula e salário, e estavam sendo gravados com a máscara padrão do processo.
+Agora o diretório é `0700`, cada PDF `0600` e o banco `0600`. O nome original
+do upload nunca chega ao disco — o arquivo usa o id opaco da transcrição —, e
+isso tem teste próprio
+(`test_nome_original_do_upload_nunca_vai_para_o_disco`).
+
+**3. Retenção que dependia de tráfego.** A limpeza só rodava a cada upload, o
+que significa que uma instância parada guardava PII indefinidamente. Passou a
+rodar também na inicialização. Continua sem agendador, e a limitação residual
+está declarada no `SOLUCAO.md`: uma instância de pé por semanas sem nenhum
+upload só limpa no próximo reinício.
+
+A correção da lacuna 2 trouxe um bug próprio, registrado em 4.7 — é o erro mais
+instrutivo do conjunto, porque o teste passava.
 
 ### 3.25 Deploy: a infraestrutura real mudou a arquitetura (bloco 27.3)
 
@@ -928,11 +978,101 @@ deprecado no FastAPI.
 **Registro:** erro menor, anotado para não inflar a lista com algo que foi
 apenas desatualização de API.
 
+### 4.7 Um bug dentro da própria correção de segurança — e o teste passava
+
+**O que aconteceu:** ao fechar a lacuna de permissões (3.24), a correção
+proposta foi criar o diretório de PII já com o modo certo:
+
+```python
+self.storage_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
+```
+
+Parece correto e tem teste verde. **Não funciona.** O argumento `mode` do
+`mkdir` só se aplica quando o diretório é **criado**; com `exist_ok=True` sobre
+um diretório que já existe, a chamada é um no-op silencioso e as permissões
+antigas permanecem. Em produção o volume `/data` já existia desde o primeiro
+deploy — então o diretório seguia `0755`, expondo PII, enquanto a suíte
+afirmava que estava tudo certo.
+
+**Como foi percebido:** não pelo teste, que passava. O teste criava o diretório
+do zero em `tmp_path`, que é exatamente o único caso em que o `mode` do `mkdir`
+funciona. Apareceu ao conferir as permissões **reais** dentro do container, com
+`ls -ld`, em vez de aceitar o verde da suíte.
+
+**Correção:** `chmod` explícito, aplicado sempre, separado da criação:
+
+```python
+self.storage_dir.mkdir(parents=True, exist_ok=True)
+self.storage_dir.chmod(0o700)
+```
+
+E, principalmente, um teste de regressão que chama `ensure_directories()`
+**duas vezes** — a segunda sobre um diretório já existente, que é o caso real:
+`test_permissoes_sobrevivem_a_diretorio_ja_existente`.
+
+**Por que é o erro mais instrutivo da lista:** os outros produziram saída
+errada, visível a quem conferisse. Este produziu **verde**. O teste não estava
+errado no que afirmava — estava testando uma situação que nunca acontece em
+produção, e por isso a garantia que ele dava era falsa. Um teste que exercita o
+caminho fácil é pior que nenhum teste, porque compra confiança sem entregar
+cobertura.
+
 ---
 
-## 5. Código escrito ou reescrito à mão pelo candidato
+## 5. O que foi reescrito à mão, e por quê
 
-_(a preencher pelo candidato ao longo da implementação)_
+**Resposta direta: nenhum trecho de código foi reescrito à mão.**
+
+Todo o código desta entrega foi produzido com auxílio de IA. Não há nesta
+solução uma função, um parser ou um teste que eu tenha digitado manualmente
+para substituir o que o agente escreveu. Dizer o contrário renderia uma seção
+mais bonita, e seria mentira — num desafio cujo critério central é justamente
+não apresentar como certo aquilo de que não se tem certeza.
+
+### O que eu fiz, então
+
+O trabalho manual existiu, mas não foi digitar código. Foi:
+
+- **revisar** cada implementação gerada antes de aceitá-la;
+- **conduzir o desenvolvimento por etapas**, fechando um bloco por vez em vez
+  de pedir a solução inteira de uma só vez;
+- **validar o comportamento do sistema** contra os PDFs reais, em vez de
+  confiar na descrição do que o código deveria fazer;
+- **analisar os resultados dos testes** — inclusive os que passavam;
+- **solicitar correções e ajustes** quando o resultado não se sustentava;
+- **decidir se cada etapa estava adequada** antes de seguir para a próxima.
+
+### Por que isso não é um detalhe de processo
+
+Porque foi essa camada — e não a escrita de código — que pegou os erros deste
+documento. Vale conferir contra a seção 4:
+
+| O que o agente entregou | O que a revisão pegou |
+|---|---|
+| Um filtro `confiança < 30 → descartar`, plausível e nunca medido (4.4) | Exigir a medição antes de aceitar mostrou que ele apagava 4 batidas corretas em silêncio. O filtro foi removido inteiro. |
+| Um teste verde para a correção de permissões (4.7) | Conferir as permissões **reais** dentro do container, em vez de aceitar o verde, revelou que a correção era um no-op e a PII seguia exposta. |
+| Um parser de `payroll-02` que "funcionava" (3.23) | Conferir a saída contra o PDF página a página mostrou 9 verbas onde o documento tinha 10. |
+| A especificação lida numa versão traduzida e resumida (4.1) | Desconfiar da fonte e buscar o arquivo cru recuperou requisitos literais que tinham sumido na tradução. |
+
+O padrão é o mesmo nos quatro: **nenhum apareceu como erro**. Não houve exceção,
+teste vermelho ou log de falha. Todos apareceram porque a saída foi conferida
+contra o documento real, e porque medição foi exigida no lugar de plausibilidade.
+
+Se há uma habilidade demonstrada nesta entrega, não é a de escrever à mão as
+~9 mil linhas que ela tem (5.005 na aplicação, 3.497 em testes, 493 na
+interface) — é a de não aceitar as que estavam erradas. Foi também a
+percepção de que `date_raw` era ambíguo o suficiente para ser levado à Quick
+Filler (3.8) em vez de resolvido por suposição, e a de que `time-card-04` devia
+falhar explicitamente (3.20), mesmo custando um documento na nota de precisão.
+
+### O risco que isso deixa
+
+Registrado por honestidade, e desenvolvido em 6.3: revisão pega o que se sabe
+conferir. As perdas silenciosas foram encontradas porque havia um PDF ao lado
+para comparar. Num documento que eu não pudesse conferir contra a fonte, esse
+método não teria funcionado — e é exatamente por isso que a aplicação foi
+construída para marcar `?` e destacar linha suspeita, em vez de depender de
+alguém conferir tudo.
 
 ---
 
@@ -940,30 +1080,138 @@ _(a preencher pelo candidato ao longo da implementação)_
 
 ### 6.1 Três decisões em que havia mais de uma resposta razoável
 
-_(a consolidar no fim do projeto, a partir da seção 3 — as candidatas mais
-fortes hoje são 3.1 SQLite, 3.2 bibliotecas de PDF e 3.3 processamento
-assíncrono, mas decisões de interpretação da especificação podem se mostrar
-mais interessantes que as de infraestrutura.)_
+Havia decisões de infraestrutura com duas saídas defensáveis — SQLite contra
+PostgreSQL (3.1), `BackgroundTasks` contra Celery (3.3) — mas nelas o critério
+foi quase mecânico: o `docker compose up` é requisito duro, e cada serviço a
+mais custa contra ele. As três abaixo foram mais difíceis porque **nenhuma
+tinha um critério externo para resolver a disputa.**
+
+**1. Marcar incerteza por validação estrutural, não pela confiança do OCR
+(3.13).**
+
+A resposta "óbvia" é usar a confiança que o Tesseract já entrega: existe, é
+barata, e todo mundo faria. Foi o que o agente propôs, com um corte em 30.
+
+Escolhi o caminho oposto — validar a **forma** do campo, posição por posição —
+depois de medir. Em `time-card-03`, sobre 822 horários lidos corretamente, a
+confiança mínima era 0, a mediana 91, e **47 estavam certos com confiança
+abaixo de 30**. Os 4 tokens realmente errados tinham confiança 25, 41, 44 e 53
+— dentro da faixa dos corretos. E há o contraexemplo direto: `Sai1` lido
+**errado** como `Sail`, com confiança **95**.
+
+Por que essa: o corte por confiança falha nas duas direções ao mesmo tempo —
+descarta dado bom e deixa passar dado ruim. A validação estrutural erra menos
+porque pergunta algo que o documento pode responder ("o segundo caractere de um
+horário pode ser uma letra?") em vez de algo que só o motor de OCR opina.
+
+O custo está assumido: dígito trocado por dígito passa. Está em 6.3.
+
+**2. Compor ou não a data completa em `date_raw` (3.8).**
+
+Três dos quatro cartões imprimem só o dia na linha, com a competência no
+cabeçalho. `date_raw` é definido como "a data exatamente como está impressa" —
+o que, lido ao pé da letra, significa gravar `01` e descartar a única
+informação que torna a linha utilizável numa planilha.
+
+As duas leituras eram razoáveis, e a escolha mudava toda linha de todo cartão
+de ponto. **Levei a dúvida à Quick Filler em vez de assumir** — o README diz
+que perguntar é comportamento desejado. A resposta aceitou as duas e indicou
+compor quando a associação for segura, sem completar sob ambiguidade.
+
+Por que essa: era a decisão de maior alcance do projeto e a que eu tinha menos
+autoridade para tomar sozinho. Custou uma mensagem.
+
+**3. `time-card-04`: falhar explicitamente em vez de entregar algo (3.20).**
+
+Depois de 19 combinações de DPI, modo de segmentação e pré-processamento, o
+melhor resultado recuperou 1 de ~48 horários — e era lixo (`42:62`). Havia três
+saídas, todas defensáveis:
+
+| Saída | Por que foi rejeitada |
+|---|---|
+| Emitir os dias com `punches: []` | Afirma que dias com 6 marcações não têm nenhuma. É o "valor errado com cara de certo" que o enunciado chama de pior resultado possível. |
+| Emitir tudo com `?` | Não transcreveu nada, e o INSTRUCOES é explícito: "se você diz que não leu nada, você não transcreveu nada". |
+| `status: "erro"` com mensagem legível | **Escolhida.** |
+
+Por que essa: é a única que não mente. Custa 1 dos 8 documentos na nota de
+precisão, e eu preferi esse custo a contaminar a planilha. O enunciado trata
+"não sei ler este documento" como resposta aceitável — inclusive a lista como
+bônus.
 
 ### 6.2 O que quebra primeiro em produção?
 
-_(resposta final no fim do projeto. Hipóteses atuais, a confirmar:_
+**A memória, sob dois OCRs simultâneos.** Não é hipótese: está medido.
 
-- _a precisão do OCR em `time-card-04`, único scan real do conjunto;_
-- _um layout desconhecido chegando em produção — hoje isso termina em `erro`
-  explicado, que é o comportamento correto, mas significa documento não
-  transcrito;_
-- _a limpeza de retenção, que só roda quando há upload.)_
+A aplicação roda numa `t3.micro` com ~912 MiB, **compartilhada com outra
+aplicação em produção e um PostgreSQL**. Durante um OCR real, medido na própria
+EC2 (3.26): a RAM disponível caiu de 313 MiB para ~61–67 MiB, o swap subiu a
+~315–325 MiB e o container chegou a ~459–466 MiB do limite de 600.
+
+Isso é **um** documento. A margem que sobra não comporta o segundo. Por isso
+`QF_MAX_PROCESSAMENTO_SIMULTANEO=1` em produção — e essa é exatamente a
+confissão: a concorrência não está resolvida, está **desligada**. O segundo
+usuário não recebe erro; ele espera, com `status: processando`, o tempo inteiro
+do documento da frente. Num OCR de 28 s, com uma fila de cinco, o último espera
+mais de dois minutos sem nenhum sinal de que está em fila.
+
+Antes de chegar a `1`, o comportamento sem limite algum foi medido: 6 uploads
+simultâneos de um documento de 19 s levaram 189 s no total — **pior que em
+fila**. E com 512 MiB e 2 jobs, o OOM killer derrubou o processo. Os dois casos
+foram reproduzidos, não imaginados.
+
+Então a ordem realista de falha é: **capacidade primeiro** (fila visível ao
+usuário, e uma máquina que não tem para onde crescer), **layout desconhecido em
+segundo** (termina em `erro` explicado — comportamento correto, mas é um
+documento não transcrito), **retenção em terceiro** (só roda no start e a cada
+upload; uma instância parada por semanas só limpa no reinício).
+
+O caminho de correção não é misterioso — é uma instância com ~2 GiB e um worker
+de verdade. É decisão de custo, não de arquitetura, e está registrada em
+`deploy/README.md` como critério de migração.
 
 ### 6.3 Onde você não confia no que entregou?
 
-_(resposta final no fim do projeto.)_
+**Nos dígitos que o OCR trocou por outros dígitos.** É o furo conhecido da
+estratégia de incerteza, e o mais grave. `07:00` lido como `01:00` tem forma
+perfeita de horário: passa pela validação estrutural sem marca nenhuma, e sai
+na planilha com cara de dado bom. O caso real está no `payroll-04`, que teve o
+ano `2019` lido como `2016` em três páginas. Ali o aviso de mês não sequencial
+pegou — mas pegou por sorte estrutural, porque quebrou uma sequência. **Um
+horário trocado no meio de um cartão de ponto não quebra sequência nenhuma.**
+Não há segunda fonte de leitura para cruzar, e sem isso não é detectável.
+
+**Na generalização dos parsers.** Cada um dos 7 foi construído contra
+exatamente **um** documento. As armadilhas que eu conheço estão cobertas por
+teste, mas "conheço" aqui significa "encontrei nesses 8 PDFs". O INSTRUCOES
+lista "ajustar o código ao PDF de exemplo" como erro que derruba entregas, e a
+defesa adotada é estrutural — colunas localizadas pelo cabeçalho, nunca
+coordenada fixa; nenhum número de páginas ou data gravado no código. Isso é
+melhor que amarrar em x/y, mas **não é o mesmo que ter validado em documentos
+que eu nunca vi**. Um layout novo do mesmo emissor, com uma coluna a mais, é o
+teste que essa entrega não tem.
+
+**Na cobertura do que eu não sei que não sei.** As três perdas silenciosas do
+bloco 2.5 (3.23) — dias e verbas que sumiam sem erro, sem log, sem teste
+falhando — não apareceram por teste. Apareceram porque a saída foi conferida
+contra o PDF real, linha a linha. Elas existiam havia commits. Isso me diz que
+o método que as encontrou é conferência manual, e conferência manual não escala
+para além dos 8 documentos que eu conferi. É razoável supor que exista uma
+quarta que eu ainda não contei.
+
+**Onde eu confio:** na separação `fields`/`bases`, verificada documento a
+documento; no contrato HTTP, validado contra os exemplos literais do enunciado;
+em que nada é descartado em silêncio no caminho do OCR, que é uma regressão
+travada por teste; e em que o sistema falha alto quando não sabe ler, em vez de
+inventar.
 
 ---
 
 ## 7. Estado atual da implementação
 
-**Fase 1 — em andamento.**
+**Entrega fechada.** As três fases foram concluídas e commitadas; o que segue é
+o registro de cada bloco e as medições que o fecharam.
+
+### Fase 1 — fundação
 
 | Bloco | Estado |
 |---|---|
@@ -972,17 +1220,27 @@ _(resposta final no fim do projeto.)_
 | 3/4 — Extração (`ExtractedPage`: texto nativo + OCR) | concluído e validado |
 | 4/4 — Registry + primeiro parser real (SIPON) | concluído e validado |
 
-**Fase 1 concluída e commitada.**
-
-### Fase 2 — em andamento
+### Fase 2 — cobertura e revisão
 
 | Bloco | Entrega | Estado |
 |---|---|---|
 | 2.1 | `payroll-03` + `time-card-03` — cobertura dos dois tipos | concluído e validado |
 | 2.2 | Incerteza `?` por caractere | concluído e validado |
 | 2.3 | Avisos derivados + destaques na planilha | concluído e validado |
-| 2.4 | Interface de revisão | concluído — falta confirmação visual |
+| 2.4 | Interface de revisão | concluído e validado |
 | 2.5 | Layouts restantes | concluído — 7 de 8 PDFs suportados |
+
+### Fase 3 — operação, publicação e entrega
+
+| Bloco | Entrega | Estado |
+|---|---|---|
+| 27.1 | Validação do Docker em ambiente limpo | concluído |
+| 27.2 | Auditoria de segurança — três lacunas fechadas (3.24) | concluído |
+| 27.3 | Deploy real em EC2 com Nginx + HTTPS (3.25, 3.26) | concluído |
+| 27.4 | CI/CD | **pulado deliberadamente** — é diferencial, não requisito |
+| 27.5 | `README.md` e `SOLUCAO.md` | concluído |
+| 27.6 | Planilhas dos 8 PDFs de `exemplos/` | concluído — 7 geram planilha |
+| 27.7 | Revisão final da entrega | concluído |
 
 Cobertura de layouts: **7 de 8**. O único não suportado é `time-card-04`, e a
 investigação que sustenta essa decisão está na seção 3.20.
@@ -993,6 +1251,11 @@ Medição do bloco 2.1, contra os PDFs reais:
   de ano), 44 verbas, 45 bases, zero vazamento de base para `fields`;
 - `time-card-03`: 5 páginas via OCR, 280 dias, 822 batidas, datas contínuas de
   16/12/2019 a 20/09/2020 sem lacuna nem duplicata.
+
+> As 822 batidas acima são a medição **do bloco 2.1**, e ficaram para trás: o
+> bloco 2.2 removeu o descarte por confiança e recuperou 4 batidas que estavam
+> sendo perdidas em silêncio. O número final é **826**, que é o que aparece no
+> `SOLUCAO.md` e o que o teste de regressão trava.
 
 Observação operacional: `time-card-03` leva ~28 s para processar por HTTP, por
 causa do OCR. O `status` sai de `processando` e chega em `concluido` sem
@@ -1019,7 +1282,7 @@ melhor resultado **quando dia, mês e ano puderem ser associados com segurança*
 com a ressalva explícita de não completar informação quando houver ambiguidade
 ou incerteza.
 
-Regra adotada, registrada em `docs/roadmap.md` seção 2.2:
+Regra adotada:
 
 1. associação segura → `date_raw` recebe a data completa;
 2. associação insegura → preservar só o valor disponível na linha;

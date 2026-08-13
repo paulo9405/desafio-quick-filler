@@ -6,8 +6,9 @@ Rodar OCR nas 5 páginas de `time-card-03` leva mais de dois minutos. Repetir
 isso a cada execução da suíte tornaria os testes caros demais para serem
 rodados com frequência — e teste que não se roda não protege nada.
 
-A solução é a mesma que o roadmap descreve para receber um layout novo na
-sessão ao vivo: gravar a extração como fixture e testar o PARSER contra ela.
+A solução é a mesma prevista para receber um layout novo na sessão ao vivo:
+gravar a extração como fixture e testar o PARSER contra ela. Ver PROCESSO.md,
+decisão 3.12.
 
 O que cada camada testa:
 

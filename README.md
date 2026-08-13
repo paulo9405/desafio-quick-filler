@@ -180,7 +180,8 @@ app/
 └── static/         interface
 
 deploy/             Nginx e guia de publicação
-docs/               PROCESSO.md e roadmap
+exemplos/           os 8 PDFs oficiais do desafio
+planilhas/          as planilhas geradas a partir deles
 tests/              194 testes + fixtures de OCR
 ```
 
@@ -194,5 +195,6 @@ registrá-lo em `app/parsers/registry.py`. Nada mais muda.
 | | |
 |---|---|
 | [`SOLUCAO.md`](SOLUCAO.md) | como o sistema funciona, decisões e trade-offs |
-| [`docs/PROCESSO.md`](docs/PROCESSO.md) | como foi desenvolvido, uso de IA, erros e medições |
+| [`PROCESSO.md`](PROCESSO.md) | como foi desenvolvido, uso de IA, erros e medições |
 | [`deploy/README.md`](deploy/README.md) | publicação em EC2 com Nginx |
+| [`planilhas/`](planilhas/README.md) | as planilhas geradas dos PDFs de `exemplos/` |

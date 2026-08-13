@@ -30,5 +30,5 @@ EXPOSE 8000
 
 # Um único worker, de propósito: o processamento roda via BackgroundTasks no
 # mesmo processo e o estado vive em SQLite. Mais workers exigiriam fila externa,
-# que o roadmap decidiu não adicionar sem necessidade.
+# que a decisão 3.3 do PROCESSO.md descartou por não haver necessidade.
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
