@@ -1,0 +1,493 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "year": "2019",
+      "month": "10",
+      "fields": [
+        {
+          "code": "0105",
+          "label": "Dias Trabalhados",
+          "reference": "30,00",
+          "value": "1.678,61"
+        },
+        {
+          "code": "2007",
+          "label": "Horas Extras 100%",
+          "reference": "5,00",
+          "value": "76,30"
+        },
+        {
+          "code": "2027",
+          "label": "Horas Extras 100% Noturna",
+          "reference": "2,92",
+          "value": "47,40"
+        },
+        {
+          "code": "2040",
+          "label": "Ad. Noturno 20%",
+          "reference": "70,16",
+          "value": "107,06"
+        },
+        {
+          "code": "2100",
+          "label": "DSR sobre Variaveis",
+          "reference": "",
+          "value": "26,77"
+        },
+        {
+          "code": "2102",
+          "label": "DSR sobre H.Extra",
+          "reference": "",
+          "value": "30,93"
+        },
+        {
+          "code": "/314",
+          "label": "Contr. INSS Remuneração",
+          "reference": "9,00",
+          "value": "177,03"
+        },
+        {
+          "code": "/B02",
+          "label": "Adiantamento pago",
+          "reference": "",
+          "value": "671,44"
+        },
+        {
+          "code": "4039",
+          "label": "Conv. Odonto. (S. Franc.)",
+          "reference": "",
+          "value": "10,99"
+        }
+      ],
+      "bases": [
+        {
+          "label": "Total Proventos",
+          "value": "1.967,07"
+        },
+        {
+          "label": "Total Descontos",
+          "value": "859,46"
+        },
+        {
+          "label": "Líqüido",
+          "value": "1.107,61"
+        },
+        {
+          "label": "Base I.N.S.S.",
+          "value": "1.967,07"
+        },
+        {
+          "label": "F.G.T.S. do Mês",
+          "value": "157,37"
+        },
+        {
+          "label": "Base I.R.R.F.",
+          "value": "1.790,04"
+        },
+        {
+          "label": "Base I.R.R.F. 13o.",
+          "value": ""
+        },
+        {
+          "label": "Dep. I.R.R.F.",
+          "value": "0,00"
+        },
+        {
+          "label": "Base FGTS",
+          "value": "1.967,07"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2019",
+      "month": "11",
+      "fields": [
+        {
+          "code": "0105",
+          "label": "Dias Trabalhados",
+          "reference": "30,00",
+          "value": "1.678,61"
+        },
+        {
+          "code": "2007",
+          "label": "Horas Extras 100%",
+          "reference": "5,00",
+          "value": "76,30"
+        },
+        {
+          "code": "2027",
+          "label": "Horas Extras 100% Noturna",
+          "reference": "3,18",
+          "value": "51,74"
+        },
+        {
+          "code": "2040",
+          "label": "Ad. Noturno 20%",
+          "reference": "72,89",
+          "value": "111,23"
+        },
+        {
+          "code": "2100",
+          "label": "DSR sobre Variaveis",
+          "reference": "",
+          "value": "26,70"
+        },
+        {
+          "code": "2102",
+          "label": "DSR sobre H.Extra",
+          "reference": "",
+          "value": "30,73"
+        },
+        {
+          "code": "/314",
+          "label": "Contr. INSS Remuneração",
+          "reference": "9,00",
+          "value": "177,77"
+        },
+        {
+          "code": "/B02",
+          "label": "Adiantamento pago",
+          "reference": "",
+          "value": "671,44"
+        },
+        {
+          "code": "4039",
+          "label": "Conv. Odonto. (S. Franc.)",
+          "reference": "",
+          "value": "10,99"
+        }
+      ],
+      "bases": [
+        {
+          "label": "Total Proventos",
+          "value": "1.975,31"
+        },
+        {
+          "label": "Total Descontos",
+          "value": "860,20"
+        },
+        {
+          "label": "Líqüido",
+          "value": "1.115,11"
+        },
+        {
+          "label": "Base I.N.S.S.",
+          "value": "1.975,31"
+        },
+        {
+          "label": "F.G.T.S. do Mês",
+          "value": "158,02"
+        },
+        {
+          "label": "Base I.R.R.F.",
+          "value": "1.797,54"
+        },
+        {
+          "label": "Base I.R.R.F. 13o.",
+          "value": ""
+        },
+        {
+          "label": "Dep. I.R.R.F.",
+          "value": "0,00"
+        },
+        {
+          "label": "Base FGTS",
+          "value": "1.975,31"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2019",
+      "month": "12",
+      "fields": [
+        {
+          "code": "/337",
+          "label": "Diferença de 13º salário",
+          "reference": "",
+          "value": "23,04"
+        },
+        {
+          "code": "0105",
+          "label": "Dias Trabalhados",
+          "reference": "30,00",
+          "value": "1.678,61"
+        },
+        {
+          "code": "2007",
+          "label": "Horas Extras 100%",
+          "reference": "5,00",
+          "value": "76,30"
+        },
+        {
+          "code": "2027",
+          "label": "Horas Extras 100% Noturna",
+          "reference": "2,33",
+          "value": "37,84"
+        },
+        {
+          "code": "2040",
+          "label": "Ad. Noturno 20%",
+          "reference": "70,51",
+          "value": "107,60"
+        },
+        {
+          "code": "2100",
+          "label": "DSR sobre Variaveis",
+          "reference": "",
+          "value": "26,90"
+        },
+        {
+          "code": "2102",
+          "label": "DSR sobre H.Extra",
+          "reference": "",
+          "value": "28,54"
+        },
+        {
+          "code": "/303",
+          "label": "Trib.INSS (13o)",
+          "reference": "8,00",
+          "value": "1,84"
+        },
+        {
+          "code": "/314",
+          "label": "Contr. INSS Remuneração",
+          "reference": "9,00",
+          "value": "176,02"
+        },
+        {
+          "code": "/B02",
+          "label": "Adiantamento pago",
+          "reference": "",
+          "value": "671,44"
+        },
+        {
+          "code": "4039",
+          "label": "Conv. Odonto. (S. Franc.)",
+          "reference": "",
+          "value": "10,99"
+        }
+      ],
+      "bases": [
+        {
+          "label": "Total Proventos",
+          "value": "1.978,83"
+        },
+        {
+          "label": "Total Descontos",
+          "value": "860,29"
+        },
+        {
+          "label": "Líqüido",
+          "value": "1.118,54"
+        },
+        {
+          "label": "Base I.N.S.S.",
+          "value": "1.978,83"
+        },
+        {
+          "label": "F.G.T.S. do Mês",
+          "value": "158,30"
+        },
+        {
+          "label": "Base I.R.R.F.",
+          "value": "1.779,77"
+        },
+        {
+          "label": "Base I.R.R.F. 13o.",
+          "value": "21,20"
+        },
+        {
+          "label": "Dep. I.R.R.F.",
+          "value": "0,00"
+        },
+        {
+          "label": "Base FGTS",
+          "value": "1.978,83"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2020",
+      "month": "01",
+      "fields": [
+        {
+          "code": "0105",
+          "label": "Dias Trabalhados",
+          "reference": "30,00",
+          "value": "1.678,61"
+        },
+        {
+          "code": "2007",
+          "label": "Horas Extras 100%",
+          "reference": "5,00",
+          "value": "76,30"
+        },
+        {
+          "code": "2027",
+          "label": "Horas Extras 100% Noturna",
+          "reference": "2,93",
+          "value": "46,90"
+        },
+        {
+          "code": "2040",
+          "label": "Ad. Noturno 20%",
+          "reference": "53,93",
+          "value": "82,30"
+        },
+        {
+          "code": "2100",
+          "label": "DSR sobre Variaveis",
+          "reference": "",
+          "value": "19,75"
+        },
+        {
+          "code": "2102",
+          "label": "DSR sobre H.Extra",
+          "reference": "",
+          "value": "29,57"
+        },
+        {
+          "code": "/314",
+          "label": "Contr. INSS Remuneração",
+          "reference": "9,00",
+          "value": "174,00"
+        },
+        {
+          "code": "/B02",
+          "label": "Adiantamento pago",
+          "reference": "",
+          "value": "671,44"
+        },
+        {
+          "code": "4039",
+          "label": "Conv. Odonto. (S. Franc.)",
+          "reference": "",
+          "value": "10,99"
+        }
+      ],
+      "bases": [
+        {
+          "label": "Total Proventos",
+          "value": "1.933,43"
+        },
+        {
+          "label": "Total Descontos",
+          "value": "856,43"
+        },
+        {
+          "label": "Líqüido",
+          "value": "1.077,00"
+        },
+        {
+          "label": "Base I.N.S.S.",
+          "value": "1.933,43"
+        },
+        {
+          "label": "F.G.T.S. do Mês",
+          "value": "154,67"
+        },
+        {
+          "label": "Base I.R.R.F.",
+          "value": "1.759,43"
+        },
+        {
+          "label": "Base I.R.R.F. 13o.",
+          "value": ""
+        },
+        {
+          "label": "Dep. I.R.R.F.",
+          "value": "0,00"
+        },
+        {
+          "label": "Base FGTS",
+          "value": "1.933,43"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2020",
+      "month": "02",
+      "fields": [
+        {
+          "code": "0105",
+          "label": "Dias Trabalhados",
+          "reference": "30,00",
+          "value": "1.678,61"
+        },
+        {
+          "code": "2040",
+          "label": "Ad. Noturno 20%",
+          "reference": "72,32",
+          "value": "110,36"
+        },
+        {
+          "code": "2100",
+          "label": "DSR sobre Variaveis",
+          "reference": "",
+          "value": "21,22"
+        },
+        {
+          "code": "/314",
+          "label": "Contr. INSS Remuneração",
+          "reference": "8,00",
+          "value": "144,81"
+        },
+        {
+          "code": "/B02",
+          "label": "Adiantamento pago",
+          "reference": "",
+          "value": "671,44"
+        },
+        {
+          "code": "4039",
+          "label": "Conv. Odonto. (S. Franc.)",
+          "reference": "",
+          "value": "10,99"
+        }
+      ],
+      "bases": [
+        {
+          "label": "Total Proventos",
+          "value": "1.810,19"
+        },
+        {
+          "label": "Total Descontos",
+          "value": "827,24"
+        },
+        {
+          "label": "Líqüido",
+          "value": "982,95"
+        },
+        {
+          "label": "Base I.N.S.S.",
+          "value": "1.810,19"
+        },
+        {
+          "label": "F.G.T.S. do Mês",
+          "value": "144,82"
+        },
+        {
+          "label": "Base I.R.R.F.",
+          "value": "1.665,38"
+        },
+        {
+          "label": "Base I.R.R.F. 13o.",
+          "value": ""
+        },
+        {
+          "label": "Dep. I.R.R.F.",
+          "value": "0,00"
+        },
+        {
+          "label": "Base FGTS",
+          "value": "1.810,19"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "year": "2019",
+      "month": "09",
+      "fields": [
+        {
+          "code": "",
+          "label": "SALARIO",
+          "reference": "",
+          "value": "953,36"
+        },
+        {
+          "code": "",
+          "label": "INSS MES",
+          "reference": "",
+          "value": "200,43"
+        },
+        {
+          "code": "",
+          "label": "SR COMISSAO",
+          "reference": "",
+          "value": "173,68"
+        },
+        {
+          "code": "",
+          "label": "ESC ASS MEDICA AMIL",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "REMUNERACAO VARIAVEL",
+          "reference": "",
+          "value": "1.100,00"
+        },
+        {
+          "code": "",
+          "label": "ALE REFEICAO",
+          "reference": "",
+          "value": "6,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "TOTAL DE PROVENTOS",
+          "value": "2.227,04"
+        },
+        {
+          "label": "TOTAL DE DESCONTOS",
+          "value": "211,43"
+        },
+        {
+          "label": "LÍQUIDO A RECEBER",
+          "value": "2.015,61"
+        },
+        {
+          "label": "alário Base",
+          "value": "1.300,00"
+        },
+        {
+          "label": "al. Contrib. INSS",
+          "value": "2.227,04"
+        },
+        {
+          "label": "Base Cálc. FGTS",
+          "value": "0,00"
+        },
+        {
+          "label": "FGTS Mês",
+          "value": "178,16"
+        },
+        {
+          "label": "Base Cálc. IRRF",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2016",
+      "month": "10",
+      "fields": [
+        {
+          "code": "",
+          "label": "SALARIO",
+          "reference": "",
+          "value": "1.300,00"
+        },
+        {
+          "code": "",
+          "label": "INSS MES",
+          "reference": "",
+          "value": "339,73"
+        },
+        {
+          "code": "",
+          "label": "SR COMISSAO",
+          "reference": "",
+          "value": "288,46"
+        },
+        {
+          "code": "",
+          "label": "IRRF MES",
+          "reference": "",
+          "value": "63,35"
+        },
+        {
+          "code": "",
+          "label": "REMUNERACAO VARIAVEL",
+          "reference": "",
+          "value": "1.500,00"
+        },
+        {
+          "code": "",
+          "label": "ESC ASS MEDICA AMIL",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "ESC ADT QUINZENAL",
+          "reference": "",
+          "value": "520,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "TOTAL DE PROVENTOS",
+          "value": "3.088,46"
+        },
+        {
+          "label": "TOTAL DE DESCONTOS",
+          "value": "928,08"
+        },
+        {
+          "label": "LÍQUIDO A RECEBER",
+          "value": "2.160,38"
+        },
+        {
+          "label": "alário Base",
+          "value": "1.300,00"
+        },
+        {
+          "label": "al. Contrib. INSS",
+          "value": "3.088,46"
+        },
+        {
+          "label": "Base Cálc. FGTS",
+          "value": "0,00"
+        },
+        {
+          "label": "FGTS Mês",
+          "value": "247,08"
+        },
+        {
+          "label": "Base Cálc. IRRF",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2016",
+      "month": "11",
+      "fields": [
+        {
+          "code": "",
+          "label": "SALARIO",
+          "reference": "",
+          "value": "1.126,65"
+        },
+        {
+          "code": "",
+          "label": "INSS MES",
+          "reference": "",
+          "value": "250,71"
+        },
+        {
+          "code": "",
+          "label": "LICENCA PATERNIDADE",
+          "reference": "",
+          "value": "173,36"
+        },
+        {
+          "code": "",
+          "label": "IRRF MES",
+          "reference": "",
+          "value": "47,33"
+        },
+        {
+          "code": "",
+          "label": "SR COMISSAO",
+          "reference": "",
+          "value": "285,71"
+        },
+        {
+          "code": "",
+          "label": "ESC ASS MEDICA AMIL",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "REMUNERACAO VARIAVEL",
+          "reference": "",
+          "value": "1.200,00"
+        },
+        {
+          "code": "",
+          "label": "ESC DEP AM AMIL",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "ALE REFEICAO",
+          "reference": "",
+          "value": "6,00"
+        },
+        {
+          "code": "",
+          "label": "ESC ADT QUINZENAL",
+          "reference": "",
+          "value": "520,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "TOTAL DE PROVENTOS",
+          "value": "2.785,72"
+        },
+        {
+          "label": "TOTAL DE DESCONTOS",
+          "value": "834,04"
+        },
+        {
+          "label": "LÍQUIDO A RECEBER",
+          "value": "1.951,68"
+        },
+        {
+          "label": "alário Base",
+          "value": "1.300,00"
+        },
+        {
+          "label": "al. Contrib. INSS",
+          "value": "2.785,72"
+        },
+        {
+          "label": "Base Cálc. FGTS",
+          "value": "386,79"
+        },
+        {
+          "label": "FGTS Mês",
+          "value": "253,80"
+        },
+        {
+          "label": "Base Cálc. IRRF",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2016",
+      "month": "09",
+      "fields": [
+        {
+          "code": "",
+          "label": "SALARIO",
+          "reference": "",
+          "value": "1.300,00"
+        },
+        {
+          "code": "",
+          "label": "INSS MES",
+          "reference": "",
+          "value": "250,92"
+        },
+        {
+          "code": "",
+          "label": "SR COMISSAO",
+          "reference": "",
+          "value": "288,00"
+        },
+        {
+          "code": "",
+          "label": "INSS 13 SALARIO",
+          "reference": "",
+          "value": "9,92"
+        },
+        {
+          "code": "",
+          "label": "REMUNERACAO VARIAVEL",
+          "reference": "",
+          "value": "1.200,00"
+        },
+        {
+          "code": "",
+          "label": "IRRF MES",
+          "reference": "",
+          "value": "19,04"
+        },
+        {
+          "code": "",
+          "label": "IF MEDIA 13 SALARIO",
+          "reference": "",
+          "value": "124,00"
+        },
+        {
+          "code": "",
+          "label": "SSIST MED BRA",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "EP ASSIST MED BRA",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "ALE REFEICAO",
+          "reference": "",
+          "value": "6,00"
+        },
+        {
+          "code": "",
+          "label": "ESC ADT QUINZENAL",
+          "reference": "",
+          "value": "520,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "TOTAL DE PROVENTOS",
+          "value": "2.912,00"
+        },
+        {
+          "label": "TOTAL DE DESCONTOS",
+          "value": "815,88"
+        },
+        {
+          "label": "LÍQUIDO A RECEBER",
+          "value": "2.096,12"
+        },
+        {
+          "label": "alário Base",
+          "value": "1.300,00"
+        },
+        {
+          "label": "al. Contrib. INSS",
+          "value": "936,32"
+        },
+        {
+          "label": "Base Cálc. FGTS",
+          "value": "549,53"
+        },
+        {
+          "label": "FGTS Mês",
+          "value": "267,00"
+        },
+        {
+          "label": "Base Cálc. IRRF",
+          "value": "482,24"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2020",
+      "month": "01",
+      "fields": [
+        {
+          "code": "",
+          "label": "SALARIO",
+          "reference": "",
+          "value": "1.300,00"
+        },
+        {
+          "code": "",
+          "label": "INSS MES",
+          "reference": "",
+          "value": "200,70"
+        },
+        {
+          "code": "",
+          "label": "SR COMISSAO",
+          "reference": "",
+          "value": "180,00"
+        },
+        {
+          "code": "",
+          "label": "SSIST MED BRA",
+          "reference": "",
+          "value": "5,00"
+        },
+        {
+          "code": "",
+          "label": "REMUNERACAO VARIAVEL",
+          "reference": "",
+          "value": "750,00"
+        },
+        {
+          "code": "",
+          "label": "EP ASSIST MED BRA",
+          "reference": "",
+          "value": "10,00"
+        },
+        {
+          "code": "",
+          "label": "ALE REFEICAO",
+          "reference": "",
+          "value": "6,00"
+        },
+        {
+          "code": "",
+          "label": "ESC ADT QUINZENAL",
+          "reference": "",
+          "value": "520,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "TOTAL DE PROVENTOS",
+          "value": "2.230,00"
+        },
+        {
+          "label": "TOTAL DE DESCONTOS",
+          "value": "741,70"
+        },
+        {
+          "label": "LÍQUIDO A RECEBER",
+          "value": "1.488,30"
+        },
+        {
+          "label": "alário Base",
+          "value": "1.300,00"
+        },
+        {
+          "label": "al. Contrib. INSS",
+          "value": "0,00"
+        },
+        {
+          "label": "Base Cálc. FGTS",
+          "value": "0,00"
+        },
+        {
+          "label": "FGTS Mês",
+          "value": "178,40"
+        },
+        {
+          "label": "Base Cálc. IRRF",
+          "value": "0,00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3920 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "04",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "969,73"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "30,67"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "146,67"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,40"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "360,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "0",
+          "value": "36,00"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "146,67",
+          "value": "290,92"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "100,85"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "0",
+          "value": "58,18"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "1.260,65"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "780,62"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "1.260,65"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "100,85"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "1.620,65"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.392,55"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "228,10"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "05",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.454,59"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "46,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "756,39"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "19,23",
+          "value": "28,03"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,40"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "436,38"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "22",
+          "value": "66,00"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "8,48",
+          "value": "116,66"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "185,83"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "1,88",
+          "value": "29,13"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "0",
+          "value": "87,28"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.064,79"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.499,78"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.064,79"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "165,18"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "916,64"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.064,79"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.148,15"
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "06",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.454,59"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "46,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "756,39"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "45,20"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,40"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "436,38"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "60,00"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "11,37",
+          "value": "156,31"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "190,52"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "1,58",
+          "value": "24,49"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "215,10"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "42",
+          "value": "87,28"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.116,97"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.547,27"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.116,97"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "169,35"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "755,03"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.116,97"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.361,94"
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "07",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.454,59"
+        },
+        {
+          "code": "207",
+          "label": "Hrs Atrasos",
+          "reference": "0,683",
+          "value": "5,87"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "46,00"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,83",
+          "value": "28,85"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "756,39"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "436,38"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,40"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "9,13",
+          "value": "125,60"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "21",
+          "value": "63,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "0,83",
+          "value": "12,89"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "184,71"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "215,13"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "42",
+          "value": "87,28"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.052,44"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.488,55"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.052,44"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "164,19"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "693,28"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.058,31"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.365,03"
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "08",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.521,60"
+        },
+        {
+          "code": "34",
+          "label": "DSR",
+          "reference": "7,333",
+          "value": "50,72"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "46,00"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "15,39",
+          "value": "0,88"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "756,39"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "456,48"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,51"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "0,40",
+          "value": "5,75"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "25",
+          "value": "75,00"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "174,05"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "215,13"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "50",
+          "value": "91,30"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "1.933,99"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.380,76"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "1.933,99"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "154,71"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "569,36"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "1.984,71"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.415,35"
+        }
+      ]
+    },
+    {
+      "page": 1,
+      "year": "2017",
+      "month": "09",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.521,60"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "46,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "791,23"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "0,57"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,51"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "456,48"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "22",
+          "value": "66,00"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "0,20",
+          "value": "2,88"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "178,33"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "46",
+          "value": "91,30"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "1.981,53"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.424,02"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "1.981,53"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "158,52"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "593,44"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "1.981,53"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.388,09"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2017",
+      "month": "10",
+      "fields": [
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "2.819,91"
+        },
+        {
+          "code": "313",
+          "label": "IRF Part Result",
+          "reference": "0",
+          "value": "0,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "2.819,91"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.819,91"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2017",
+      "month": "10",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "207",
+          "label": "Hrs Atrasos",
+          "reference": "0,15",
+          "value": "1,39"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "50,14"
+        },
+        {
+          "code": "21",
+          "label": "Dif. Sal Diss",
+          "reference": "0,00",
+          "value": "59,45"
+        },
+        {
+          "code": "314",
+          "label": "PLR Pago",
+          "reference": "0",
+          "value": "2.819,91"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "3,45"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "791,23"
+        },
+        {
+          "code": "55",
+          "label": "Reemb Desc Inde",
+          "reference": "0,00",
+          "value": "50,72"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "21",
+          "value": "63,00"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "0,93",
+          "value": "13,82"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "190,14"
+        },
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "2.819,91"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,25"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "46",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.112,76"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.543,44"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.112,76"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "169,02"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "759,63"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "4.984,78"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "4.225,15"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2017",
+      "month": "11",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "133,77"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "33,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "72,60"
+        },
+        {
+          "code": "69",
+          "label": "Dif Diss VR",
+          "reference": "0,00",
+          "value": "57,00"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "243,56"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "13,46"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "30,15",
+          "value": "446,75"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "5,30",
+          "value": "88,35"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "",
+          "label": "41613º Sal. Adto",
+          "reference": "0,00",
+          "value": "764,00"
+        },
+        {
+          "code": "803",
+          "label": "13º Adt Pago",
+          "reference": "0",
+          "value": "764,00"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.706,30"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "2.083,56"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.706,30"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "216,50"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.294,23"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "13,46"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "3.560,30"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "2.266,07"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2017",
+      "month": "12",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "127,85"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "764,00"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "66,00"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "51",
+          "label": "Hr Adic Noturno",
+          "reference": "1,92",
+          "value": "6,21"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "66,00"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "240,90"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "20,00",
+          "value": "296,34"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "155,60"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "10,40",
+          "value": "173,38"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "11,44"
+        },
+        {
+          "code": "124",
+          "label": "Hr Ext Not 80%",
+          "reference": "1,92",
+          "value": "31,96"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "154",
+          "label": "Hr Supl Ext Not",
+          "reference": "0,49",
+          "value": "3,51"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "",
+          "label": "37313º Norm Recal",
+          "reference": "9,00",
+          "value": "1.528,07"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "",
+          "label": "37613º Adic Recal",
+          "reference": "0,00",
+          "value": "200,83"
+        },
+        {
+          "code": "804",
+          "label": "13º. Pg Dezembr",
+          "reference": "0",
+          "value": "749,19"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.676,68"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "2.056,60"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.676,68"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "214,13"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.312,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "11,44"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "4.471,58"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "3.159,58"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2017",
+      "month": "12",
+      "fields": [
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "9,00",
+          "value": "1.528,07"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "764,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "134,77"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "149,65"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.111,59"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "480,44"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.055,72"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.180,85"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "261,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "609,55"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "233,28"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.879,83"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "569,57"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.090,43"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.110,21"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "336,03"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "445,73"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "251,13"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.384,85"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "33,42"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "267,19"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.439,91"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.554,10"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "284,21"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "72,55"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "341,85"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.714,04"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "82,89"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.555,11"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "246,39"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "349,11"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "97,78"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.692,42"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "749,19"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.042,03"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.079,39"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.300,54"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.307,55"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.339,49"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.373,43"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.393,01"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "25.043,34"
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "year": "2018",
+      "month": "01",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "96,14"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "6,86"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "22",
+          "value": "72,60"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "2,32",
+          "value": "34,32"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "187,07"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.078,61"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.512,36"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.078,61"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "166,28"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "598,42"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "02",
+      "fields": [
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "458,42"
+        },
+        {
+          "code": "313",
+          "label": "IRF Part Result",
+          "reference": "0",
+          "value": "0,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "458,42"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "458,42"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "02",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "314",
+          "label": "PLR Pago",
+          "reference": "0",
+          "value": "458,42"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "18,81"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "6,35",
+          "value": "94,09"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "66,00"
+        },
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "458,42"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "193,52"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.150,33"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.577,63"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.150,33"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "172,02"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "718,36"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.608,75"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.890,39"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "03",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "61,15"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "33,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "21",
+          "value": "69,30"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "216,38"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "10,13",
+          "value": "150,15"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "9,33",
+          "value": "155,60"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "208,47"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "42",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.404,33"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.808,77"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.404,33"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "192,34"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "979,20"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.437,33"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.458,13"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "04",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "64,66"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "33,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "21",
+          "value": "69,30"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "212,46"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "8,40",
+          "value": "124,47"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "8,05",
+          "value": "134,19"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "233,49"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "70",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.360,75"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.769,11"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.360,75"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "188,86"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "914,52"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.393,75"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.479,23"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "05",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "112,06"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "99,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "21",
+          "value": "69,30"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "233,79"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "13,43",
+          "value": "199,06"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "14,95",
+          "value": "249,21"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "0",
+          "value": "94,03"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.597,76"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.984,79"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.597,76"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "207,82"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.274,04"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.696,76"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.422,72"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "06",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "7",
+          "label": "Reemb. Despesas",
+          "reference": "0,00",
+          "value": "20,00"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "2,58"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "122,74"
+        },
+        {
+          "code": "492",
+          "label": "Multas",
+          "reference": "0",
+          "value": "104,13"
+        },
+        {
+          "code": "58",
+          "label": "Reemb. Ass. Méd",
+          "reference": "0,00",
+          "value": "77,83"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "66,00"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "249,65"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "22,20",
+          "value": "328,94"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "18,08"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "17,08",
+          "value": "284,79"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.773,90"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "2.145,07"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.773,90"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "221,91"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.314,23"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "18,08"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.871,73"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.557,50"
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "year": "2018",
+      "month": "07",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.930,38"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "08",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.567,25"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "814,97"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "15,38",
+          "value": "79,09"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,76"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "297,00"
+        },
+        {
+          "code": "492",
+          "label": "Multas",
+          "reference": "0",
+          "value": "104,13"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "470,18"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "23",
+          "value": "75,90"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "15,15",
+          "value": "224,50"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "236,77"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "17,38",
+          "value": "289,77"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "86",
+          "value": "94,04"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.630,79"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "2.014,84"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.630,79"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "210,46"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.392,17"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.927,79"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.535,62"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "09",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "104,49"
+        },
+        {
+          "code": "237",
+          "label": "Ferias Recebida",
+          "reference": "0",
+          "value": "3.525,03"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "14,67"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "36,82"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,76"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "14,67",
+          "value": "31,35"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "349,01"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "5,83",
+          "value": "86,43"
+        },
+        {
+          "code": "564",
+          "label": "IRF Recol Fer",
+          "reference": "0",
+          "value": "32,79"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "3,65",
+          "value": "60,85"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "221",
+          "label": "Fer Normais",
+          "reference": "28,00",
+          "value": "1.901,60"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,32"
+        },
+        {
+          "code": "222",
+          "label": "Médias Férias",
+          "reference": "0,00",
+          "value": "238,08"
+        },
+        {
+          "code": "227",
+          "label": "Fer 1/3",
+          "reference": "0,00",
+          "value": "713,23"
+        },
+        {
+          "code": "",
+          "label": "41613º Sal. Adto",
+          "reference": "0,00",
+          "value": "1.018,72"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "3.172,85"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "319,94"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "25,59"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "74,93"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "32,79"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "4.116,64"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "4.191,57"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "10",
+      "fields": [
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "12,00",
+          "value": "3.878,54"
+        },
+        {
+          "code": "313",
+          "label": "IRF Part Result",
+          "reference": "0",
+          "value": "0,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "3.878,54"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "3.878,54"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "10",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.516,01"
+        },
+        {
+          "code": "237",
+          "label": "Ferias Recebida",
+          "reference": "0",
+          "value": "181,36"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "205,33"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "48,07"
+        },
+        {
+          "code": "21",
+          "label": "Dif. Sal Diss",
+          "reference": "0,00",
+          "value": "3,80"
+        },
+        {
+          "code": "314",
+          "label": "PLR Pago",
+          "reference": "0",
+          "value": "3.878,54"
+        },
+        {
+          "code": "22",
+          "label": "Dif.Diss.Ferias",
+          "reference": "0,00",
+          "value": "95,17"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "762,39"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "43,72"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,82"
+        },
+        {
+          "code": "40",
+          "label": "Reembolso VR",
+          "reference": "0,00",
+          "value": "33,00"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "66,00"
+        },
+        {
+          "code": "41",
+          "label": "Dif Diss HE/DSR",
+          "reference": "0,00",
+          "value": "6,70"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "228,93"
+        },
+        {
+          "code": "70",
+          "label": "Dif. Diss. Peri",
+          "reference": "0,00",
+          "value": "1,14"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "205,33",
+          "value": "454,80"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "5,97",
+          "value": "91,64"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,48"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "7,35",
+          "value": "126,98"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "90,96"
+        },
+        {
+          "code": "221",
+          "label": "Fer Normais",
+          "reference": "2,00",
+          "value": "135,83"
+        },
+        {
+          "code": "222",
+          "label": "Médias Férias",
+          "reference": "0,00",
+          "value": "17,01"
+        },
+        {
+          "code": "227",
+          "label": "Fer 1/3",
+          "reference": "0,00",
+          "value": "50,94"
+        },
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "3.878,54"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.543,74"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.659,10"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.244,79"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "179,58"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.037,07"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "5.418,21"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "6.455,28"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "11",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.624,30"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "53,86"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "844,64"
+        },
+        {
+          "code": "7",
+          "label": "Reemb. Despesas",
+          "reference": "0,00",
+          "value": "30,00"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,82"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "86,87"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "20",
+          "value": "72,30"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "487,29"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "229,13"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "11,13",
+          "value": "170,99"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "10,22",
+          "value": "176,50"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "",
+          "label": "41613º Sal. Adto",
+          "reference": "0,00",
+          "value": "37,00"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,48"
+        },
+        {
+          "code": "",
+          "label": "42013º Adic Adto",
+          "reference": "0,00",
+          "value": "261,00"
+        },
+        {
+          "code": "803",
+          "label": "13º Adt Pago",
+          "reference": "0",
+          "value": "298,00"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "40",
+          "value": "97,46"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.545,95"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.937,64"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.545,95"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "203,67"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.116,60"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.873,95"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.757,35"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "year": "2018",
+      "month": "12",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.624,30"
+        },
+        {
+          "code": "207",
+          "label": "Hrs Atrasos",
+          "reference": "0,167",
+          "value": "1,60"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "100,00"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "25,00",
+          "value": "94,39"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "844,64"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.581,94"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.970,39"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.581,94"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2018",
+      "month": "12",
+      "fields": [
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "9,00",
+          "value": "1.528,07"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "764,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "134,77"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "149,65"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.111,59"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "480,44"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.055,72"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.180,85"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "261,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "609,55"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "233,28"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "2.879,83"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "569,57"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.090,43"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.110,21"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "336,03"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "445,73"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "251,13"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.384,85"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "33,42"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "267,19"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.439,91"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.554,10"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "284,21"
+        },
+        {
+          "code": "",
+          "label": "37413º Adicionais",
+          "reference": "0,00",
+          "value": "72,55"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "341,85"
+        },
+        {
+          "code": "",
+          "label": "37113º Normal",
+          "reference": "12,00",
+          "value": "3.714,04"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "82,89"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.555,11"
+        },
+        {
+          "code": "421",
+          "label": "13º Adic Desc",
+          "reference": "0",
+          "value": "246,39"
+        },
+        {
+          "code": "512",
+          "label": "INSS 13o. Sal",
+          "reference": "0",
+          "value": "349,11"
+        },
+        {
+          "code": "563",
+          "label": "IRF 13o. Sal",
+          "reference": "0",
+          "value": "97,78"
+        },
+        {
+          "code": "419",
+          "label": "13º. Adto Desc",
+          "reference": "0",
+          "value": "1.692,42"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "749,19"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.042,03"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.079,39"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.300,54"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.307,55"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.339,49"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.373,43"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.393,01"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "25.043,34"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2019",
+      "month": "01",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.624,30"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "50,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "844,64"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "33,49"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,82"
+        },
+        {
+          "code": "51",
+          "label": "Hr Adic Noturno",
+          "reference": "0,17",
+          "value": "0,56"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "25",
+          "value": "86,25"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "487,29"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "208,12"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "6,48",
+          "value": "99,56"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "3,73",
+          "value": "64,51"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "122",
+          "label": "Hr Ext Not 60%",
+          "reference": "0,17",
+          "value": "2,56"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,48"
+        },
+        {
+          "code": "154",
+          "label": "Hr Supl Ext Not",
+          "reference": "0,04",
+          "value": "0,28"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "44",
+          "value": "97,46"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.312,55"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.725,25"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.312,55"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "185,00"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "864,12"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.312,55"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.448,43"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2019",
+      "month": "02",
+      "fields": [
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "12,00",
+          "value": "633,48"
+        },
+        {
+          "code": "313",
+          "label": "IRF Part Result",
+          "reference": "0",
+          "value": "0,00"
+        }
+      ],
+      "bases": [
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "633,48"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "633,48"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "0,00"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2019",
+      "month": "02",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.624,30"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "50,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "314",
+          "label": "PLR Pago",
+          "reference": "0",
+          "value": "633,48"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "49,17"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "844,64"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "487,29"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,82"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "7,83",
+          "value": "120,31"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "19",
+          "value": "65,55"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "7,27",
+          "value": "125,55"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "216,59"
+        },
+        {
+          "code": "311",
+          "label": "Part Lucr Resul",
+          "reference": "0,00",
+          "value": "633,48"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,48"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "38",
+          "value": "97,46"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.406,62"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.810,85"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.406,62"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "192,52"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "970,42"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "3.040,10"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "2.069,68"
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "year": "2019",
+      "month": "03",
+      "fields": [
+        {
+          "code": "",
+          "label": "REMUNERAÇÃOMES",
+          "reference": "",
+          "value": "1.624,30"
+        },
+        {
+          "code": "290",
+          "label": "VA Funcionario",
+          "reference": "0",
+          "value": "50,00"
+        },
+        {
+          "code": "",
+          "label": "DIAS/HORASTRAB",
+          "reference": "",
+          "value": "220,00"
+        },
+        {
+          "code": "404",
+          "label": "Adt Norm Desc",
+          "reference": "0",
+          "value": "844,64"
+        },
+        {
+          "code": "37",
+          "label": "DSR Adicional",
+          "reference": "20,00",
+          "value": "58,18"
+        },
+        {
+          "code": "491",
+          "label": "Seguro Vida Fun",
+          "reference": "0",
+          "value": "1,82"
+        },
+        {
+          "code": "91",
+          "label": "Hr Adic Pericul",
+          "reference": "220,00",
+          "value": "487,29"
+        },
+        {
+          "code": "499",
+          "label": "Vale Ref Func",
+          "reference": "23",
+          "value": "79,35"
+        },
+        {
+          "code": "102",
+          "label": "Hr Ext Diu 60%",
+          "reference": "7,47",
+          "value": "114,66"
+        },
+        {
+          "code": "511",
+          "label": "INSS Normal",
+          "reference": "0",
+          "value": "221,46"
+        },
+        {
+          "code": "104",
+          "label": "Hr Ext Diu 80%",
+          "reference": "7,02",
+          "value": "121,23"
+        },
+        {
+          "code": "561",
+          "label": "IRF Normal",
+          "reference": "0",
+          "value": "0,00"
+        },
+        {
+          "code": "107",
+          "label": "Hr Ext Diu 100%",
+          "reference": "2,87",
+          "value": "55,04"
+        },
+        {
+          "code": "613",
+          "label": "Smart 500 QC",
+          "reference": "0",
+          "value": "155,66"
+        },
+        {
+          "code": "684",
+          "label": "Vale Gas",
+          "reference": "0",
+          "value": "4,48"
+        },
+        {
+          "code": "820",
+          "label": "Vale Transp Fun",
+          "reference": "42",
+          "value": "97,46"
+        }
+      ],
+      "bases": [
+        {
+          "label": "BASEDECALCULODOINSS",
+          "value": "2.460,70"
+        },
+        {
+          "label": "BASEDECALCULODOIRF",
+          "value": "1.860,06"
+        },
+        {
+          "label": "BASEDECALCULODOFGTS",
+          "value": "2.460,70"
+        },
+        {
+          "label": "VALORDOFGTS",
+          "value": "196,85"
+        },
+        {
+          "label": "SALARIOLIQUIDONOMES",
+          "value": "1.005,83"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOT.RENDIMENTOS",
+          "value": "2.460,70"
+        },
+        {
+          "label": "VALORDOIRFARECOLHER",
+          "value": "0,00"
+        },
+        {
+          "label": "TOTALDESCONTOS",
+          "value": "1.454,87"
+        }
+      ]
+    }
+  ]
+}

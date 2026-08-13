@@ -1,0 +1,5489 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "days": [
+        {
+          "date_raw": "16/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "17:00d",
+              "time_hhmm": "17:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59d",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "16:59d",
+              "time_hhmm": "16:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59d",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "17:00d",
+              "time_hhmm": "17:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "16:59d",
+              "time_hhmm": "16:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "16:00d",
+              "time_hhmm": "16:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "22/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "23/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "13:00d",
+              "time_hhmm": "13:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "17:00d",
+              "time_hhmm": "17:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "25/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "26/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:59d",
+              "time_hhmm": "22:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/12/2019",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "31/12/2019",
+          "punches": []
+        },
+        {
+          "date_raw": "01/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59d",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:59d",
+              "time_hhmm": "22:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "08/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "09/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:59d",
+              "time_hhmm": "22:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "16/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "17/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59d",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:59d",
+              "time_hhmm": "22:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "22/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "24/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "25/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "26/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00?",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:24c",
+              "time_hhmm": "23:24"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:15c",
+              "time_hhmm": "07:15"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/01/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:56c",
+              "time_hhmm": "22:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:20c",
+              "time_hhmm": "07:20"
+            }
+          ]
+        },
+        {
+          "date_raw": "31/01/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "01/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "02/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:12c",
+              "time_hhmm": "15:12"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:12?",
+              "time_hhmm": "15:12"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:21c",
+              "time_hhmm": "23:21"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:20c",
+              "time_hhmm": "23:20"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:02c",
+              "time_hhmm": "07:02"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:56c",
+              "time_hhmm": "22:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:28c",
+              "time_hhmm": "07:28"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "09/02/2020",
+          "punches": []
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "days": [
+        {
+          "date_raw": "10/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:57c",
+              "time_hhmm": "06:57"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:20c",
+              "time_hhmm": "15:20"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00c",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:17c",
+              "time_hhmm": "15:17"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:56c",
+              "time_hhmm": "22:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:21c",
+              "time_hhmm": "07:21"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:02d",
+              "time_hhmm": "07:02"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "17/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "18/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:58c",
+              "time_hhmm": "15:58"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59c",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "22/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:59d",
+              "time_hhmm": "22:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:59d",
+              "time_hhmm": "06:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "25/02/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "26/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:11c",
+              "time_hhmm": "15:11"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:05c",
+              "time_hhmm": "15:05"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:05c",
+              "time_hhmm": "23:05"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/02/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:11c",
+              "time_hhmm": "23:11"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:05c",
+              "time_hhmm": "07:05"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:56c",
+              "time_hhmm": "22:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:16c",
+              "time_hhmm": "07:16"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "04/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "05/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:24c",
+              "time_hhmm": "15:24"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59d",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:02c",
+              "time_hhmm": "15:02"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59d",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:28c",
+              "time_hhmm": "23:28"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:21c",
+              "time_hhmm": "23:21"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+07:00c",
+              "time_hhmm": "07:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "22:55c",
+              "time_hhmm": "22:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+03:00d",
+              "time_hhmm": "03:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "+04:00d",
+              "time_hhmm": "04:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "+06:58c",
+              "time_hhmm": "06:58"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "12/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "13/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:01c",
+              "time_hhmm": "15:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:01c",
+              "time_hhmm": "15:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "16/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:01c",
+              "time_hhmm": "23:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "22:58c",
+              "time_hhmm": "22:58"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:09c",
+              "time_hhmm": "23:09"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "22:58c",
+              "time_hhmm": "22:58"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:57c",
+              "time_hhmm": "14:57"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:01c",
+              "time_hhmm": "23:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "22/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "23/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "25/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "26/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/03/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "30/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "31/03/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "05/04/2020",
+          "punches": []
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "days": [
+        {
+          "date_raw": "06/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "13/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "19/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "20/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "22/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "25/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "26/04/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "27/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/04/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "03/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "04/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "11/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "17/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "18/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "22/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "25/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "26/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/05/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "30/05/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "31/05/2020",
+          "punches": []
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "days": [
+        {
+          "date_raw": "01/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "08/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "14/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "15/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "22/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "25/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "26/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "27/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "28/06/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "29/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/06/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/07/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "06/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/07/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "12/07/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "13/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:59c",
+              "time_hhmm": "06:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:54c",
+              "time_hhmm": "06:54"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:01c",
+              "time_hhmm": "15:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/07/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "20/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00?",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:59c",
+              "time_hhmm": "14:59"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "22/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "23/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55d",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "24/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:56c",
+              "time_hhmm": "14:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "25/07/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "26/07/2020",
+          "punches": []
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "days": [
+        {
+          "date_raw": "27/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:01c",
+              "time_hhmm": "15:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "31/07/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "03/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "06/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "07/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "09/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "10/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "14/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "17/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "20/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "21/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00d",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "22/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "23/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "24/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "25/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "26/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "07:00d",
+              "time_hhmm": "07:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00d",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "27/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:01c",
+              "time_hhmm": "15:01"
+            }
+          ]
+        },
+        {
+          "date_raw": "28/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:02c",
+              "time_hhmm": "15:02"
+            }
+          ]
+        },
+        {
+          "date_raw": "29/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "30/08/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "31/08/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:18c",
+              "time_hhmm": "23:18"
+            }
+          ]
+        },
+        {
+          "date_raw": "01/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:22c",
+              "time_hhmm": "23:22"
+            }
+          ]
+        },
+        {
+          "date_raw": "02/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:19c",
+              "time_hhmm": "23:19"
+            }
+          ]
+        },
+        {
+          "date_raw": "03/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:23c",
+              "time_hhmm": "23:23"
+            }
+          ]
+        },
+        {
+          "date_raw": "04/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:04c",
+              "time_hhmm": "23:04"
+            }
+          ]
+        },
+        {
+          "date_raw": "05/09/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "06/09/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "07/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "08/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "09/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "10/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:56c",
+              "time_hhmm": "06:56"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "11/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "12/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "06:55c",
+              "time_hhmm": "06:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "11:00d",
+              "time_hhmm": "11:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "12:00d",
+              "time_hhmm": "12:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "15:00c",
+              "time_hhmm": "15:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "13/09/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "14/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00?",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "15/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "18:00d",
+              "time_hhmm": "18:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "16/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "23:00c",
+              "time_hhmm": "23:00"
+            }
+          ]
+        },
+        {
+          "date_raw": "17/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "22:59c",
+              "time_hhmm": "22:59"
+            }
+          ]
+        },
+        {
+          "date_raw": "18/09/2020",
+          "punches": [
+            {
+              "kind": "IN",
+              "time_raw": "14:55c",
+              "time_hhmm": "14:55"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "19:00d",
+              "time_hhmm": "19:00"
+            },
+            {
+              "kind": "IN",
+              "time_raw": "20:00d",
+              "time_hhmm": "20:00"
+            },
+            {
+              "kind": "OUT",
+              "time_raw": "22:57c",
+              "time_hhmm": "22:57"
+            }
+          ]
+        },
+        {
+          "date_raw": "19/09/2020",
+          "punches": []
+        },
+        {
+          "date_raw": "20/09/2020",
+          "punches": []
+        }
+      ]
+    }
+  ]
+}
